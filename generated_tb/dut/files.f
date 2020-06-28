@@ -1,0 +1,14 @@
+umem.sv
+axi_master_wrapper.sv
+instruction_parser.sv
+memslave.sv
+masterif.sv
+cpu.sv
+defines.sv
+design.sv
+sindrv.sv
+soc_top.sv
+lfsr5.sv
+mdriver_int.sv
+axi_mem.sv
+axil_int.sv

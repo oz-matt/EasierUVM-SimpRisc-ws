@@ -1,0 +1,187 @@
+################################################################################
+#                    DO NOT MANUALLY EDIT THIS FILE!                           #
+################################################################################
+# This file contains the automatically generated build configuration (2020/06/29 06:38:33)
+# requested at line 3 in /home/disk/uvm_diag/.dvt/default.build
+
+
+################ Verilog Auto-config Directives ################
++dvt_init
+
++dvt_autoconfig_scan_root_add+tb/top_tb/sv
+-uvm
+
+### AUTOCONFIG WARNING: Multiple incdir candidates.
+# The following includes have multiple incdir candidates:
+#`include "insgen_trans.sv" in insgen_pkg.sv (/home/disk/uvm_diag/generated_tb.bak/tb/insgen/sv/insgen_pkg.sv)
+#`include "insgen_config.sv" in insgen_pkg.sv (/home/disk/uvm_diag/generated_tb.bak/tb/insgen/sv/insgen_pkg.sv)
+#`include "insgen_driver.sv" in insgen_pkg.sv (/home/disk/uvm_diag/generated_tb.bak/tb/insgen/sv/insgen_pkg.sv)
+#`include "insgen_monitor.sv" in insgen_pkg.sv (/home/disk/uvm_diag/generated_tb.bak/tb/insgen/sv/insgen_pkg.sv)
+#`include "insgen_sequencer.sv" in insgen_pkg.sv (/home/disk/uvm_diag/generated_tb.bak/tb/insgen/sv/insgen_pkg.sv)
+#`include "insgen_coverage.sv" in insgen_pkg.sv (/home/disk/uvm_diag/generated_tb.bak/tb/insgen/sv/insgen_pkg.sv)
+#`include "insgen_agent.sv" in insgen_pkg.sv (/home/disk/uvm_diag/generated_tb.bak/tb/insgen/sv/insgen_pkg.sv)
+#`include "insgen_seq_lib.sv" in insgen_pkg.sv (/home/disk/uvm_diag/generated_tb.bak/tb/insgen/sv/insgen_pkg.sv)
+#`include "insgen_trans.sv" in insgen_pkg.sv (/home/disk/uvm_diag/generated_tb/tb/insgen/sv/insgen_pkg.sv)
+#`include "insgen_config.sv" in insgen_pkg.sv (/home/disk/uvm_diag/generated_tb/tb/insgen/sv/insgen_pkg.sv)
+#`include "insgen_driver.sv" in insgen_pkg.sv (/home/disk/uvm_diag/generated_tb/tb/insgen/sv/insgen_pkg.sv)
+#`include "insgen_monitor.sv" in insgen_pkg.sv (/home/disk/uvm_diag/generated_tb/tb/insgen/sv/insgen_pkg.sv)
+#`include "insgen_sequencer.sv" in insgen_pkg.sv (/home/disk/uvm_diag/generated_tb/tb/insgen/sv/insgen_pkg.sv)
+#`include "insgen_coverage.sv" in insgen_pkg.sv (/home/disk/uvm_diag/generated_tb/tb/insgen/sv/insgen_pkg.sv)
+#`include "insgen_agent.sv" in insgen_pkg.sv (/home/disk/uvm_diag/generated_tb/tb/insgen/sv/insgen_pkg.sv)
+#`include "insgen_seq_lib.sv" in insgen_pkg.sv (/home/disk/uvm_diag/generated_tb/tb/insgen/sv/insgen_pkg.sv)
+#`include "insgen_trans.sv" in insgen_pkg.sv (/home/disk/uvm_diag/tb/insgen/sv/insgen_pkg.sv)
+#`include "insgen_config.sv" in insgen_pkg.sv (/home/disk/uvm_diag/tb/insgen/sv/insgen_pkg.sv)
+#`include "insgen_driver.sv" in insgen_pkg.sv (/home/disk/uvm_diag/tb/insgen/sv/insgen_pkg.sv)
+#`include "insgen_monitor.sv" in insgen_pkg.sv (/home/disk/uvm_diag/tb/insgen/sv/insgen_pkg.sv)
+#`include "insgen_sequencer.sv" in insgen_pkg.sv (/home/disk/uvm_diag/tb/insgen/sv/insgen_pkg.sv)
+#`include "insgen_coverage.sv" in insgen_pkg.sv (/home/disk/uvm_diag/tb/insgen/sv/insgen_pkg.sv)
+#`include "insgen_agent.sv" in insgen_pkg.sv (/home/disk/uvm_diag/tb/insgen/sv/insgen_pkg.sv)
+#`include "insgen_seq_lib.sv" in insgen_pkg.sv (/home/disk/uvm_diag/tb/insgen/sv/insgen_pkg.sv)
+# The list of incdir candidates is:
++incdir+generated_tb/tb/insgen/sv
+# +incdir+tb/insgen/sv
+# +incdir+generated_tb.bak/tb/insgen/sv
+
+### AUTOCONFIG WARNING: Multiple incdir candidates.
+# The following includes have multiple incdir candidates:
+#`include "top_config.sv" in top_pkg.sv (/home/disk/uvm_diag/generated_tb.bak/tb/top/sv/top_pkg.sv)
+#`include "top_seq_lib.sv" in top_pkg.sv (/home/disk/uvm_diag/generated_tb.bak/tb/top/sv/top_pkg.sv)
+#`include "top_env.sv" in top_pkg.sv (/home/disk/uvm_diag/generated_tb.bak/tb/top/sv/top_pkg.sv)
+#`include "top_config.sv" in top_pkg.sv (/home/disk/uvm_diag/generated_tb/tb/top/sv/top_pkg.sv)
+#`include "top_seq_lib.sv" in top_pkg.sv (/home/disk/uvm_diag/generated_tb/tb/top/sv/top_pkg.sv)
+#`include "top_env.sv" in top_pkg.sv (/home/disk/uvm_diag/generated_tb/tb/top/sv/top_pkg.sv)
+#`include "top_config.sv" in top_pkg.sv (/home/disk/uvm_diag/tb/top/sv/top_pkg.sv)
+#`include "top_seq_lib.sv" in top_pkg.sv (/home/disk/uvm_diag/tb/top/sv/top_pkg.sv)
+#`include "top_env.sv" in top_pkg.sv (/home/disk/uvm_diag/tb/top/sv/top_pkg.sv)
+# The list of incdir candidates is:
++incdir+generated_tb/tb/top/sv
+# +incdir+tb/top/sv
+# +incdir+generated_tb.bak/tb/top/sv
+
+### AUTOCONFIG WARNING: Multiple incdir candidates.
+# The following includes have multiple incdir candidates:
+#`include "tb_incs.sv" in top_tb.sv (/home/disk/uvm_diag/generated_tb.bak/tb/top_tb/sv/top_tb.sv)
+#`include "th_define_clk_and_nreset.sv" in top_th.sv (/home/disk/uvm_diag/generated_tb.bak/tb/top_tb/sv/top_th.sv)
+#`include "tb_incs.sv" in top_tb.sv (/home/disk/uvm_diag/generated_tb/tb/top_tb/sv/top_tb.sv)
+#`include "th_define_clk_and_nreset.sv" in top_th.sv (/home/disk/uvm_diag/generated_tb/tb/top_tb/sv/top_th.sv)
+#`include "tb_incs.sv" in top_tb.sv (/home/disk/uvm_diag/tb/top_tb/sv/top_tb.sv)
+#`include "th_define_clk_and_nreset.sv" in top_th.sv (/home/disk/uvm_diag/tb/top_tb/sv/top_th.sv)
+# The list of incdir candidates is:
++incdir+generated_tb/tb/include
+# +incdir+tb/include
+# +incdir+generated_tb.bak/tb/include
+# +incdir+include
+
+### AUTOCONFIG WARNING: Multiple incdir candidates.
+# The following includes have multiple incdir candidates:
+#`include "top_test.sv" in top_test_pkg.sv (/home/disk/uvm_diag/generated_tb.bak/tb/top_test/sv/top_test_pkg.sv)
+#`include "top_test.sv" in top_test_pkg.sv (/home/disk/uvm_diag/generated_tb/tb/top_test/sv/top_test_pkg.sv)
+#`include "top_test.sv" in top_test_pkg.sv (/home/disk/uvm_diag/tb/top_test/sv/top_test_pkg.sv)
+# The list of incdir candidates is:
++incdir+generated_tb/tb/top_test/sv
+# +incdir+tb/top_test/sv
+# +incdir+generated_tb.bak/tb/top_test/sv
+
+# Available `ifdef / `ifndef controls:
+# +define+UVM_POST_VERSION_1_1
+
+generated_tb.bak/tb/insgen/sv/insgen_pkg.sv
+generated_tb.bak/tb/insgen/sv/insgen_trans.sv
+tb/insgen/sv/insgen_trans.sv
+generated_tb.bak/tb/top/sv/top_env.sv
+tb/top/sv/top_env.sv
+generated_tb.bak/tb/insgen/sv/insgen_seq_lib.sv
+generated_tb.bak/tb/top/sv/top_seq_lib.sv
+tb/insgen/sv/insgen_seq_lib.sv
+tb/top/sv/top_seq_lib.sv
+generated_tb.bak/tb/insgen/sv/insgen_agent.sv
+generated_tb.bak/tb/insgen/sv/insgen_coverage.sv
+tb/insgen/sv/insgen_agent.sv
+tb/insgen/sv/insgen_coverage.sv
+generated_tb.bak/tb/insgen/sv/insgen_driver.sv
+generated_tb.bak/tb/insgen/sv/insgen_monitor.sv
+tb/insgen/sv/insgen_driver.sv
+tb/insgen/sv/insgen_monitor.sv
+generated_tb.bak/tb/include/insgen_monitor_inc.sv
+generated_tb/tb/include/insgen_monitor_inc.sv
+include/insgen_monitor_inc.sv
+tb/include/insgen_monitor_inc.sv
+generated_tb.bak/tb/top_test/sv/top_test.sv
+tb/top_test/sv/top_test.sv
+generated_tb/tb/insgen/sv/insgen_pkg.sv
+tb/insgen/sv/insgen_pkg.sv
+tb/top/sv/top_pkg.sv
+generated_tb/tb/top/sv/top_pkg.sv
+generated_tb.bak/tb/top/sv/top_pkg.sv
+tb/top_test/sv/top_test_pkg.sv
+generated_tb/tb/top_test/sv/top_test_pkg.sv
+generated_tb.bak/tb/top_test/sv/top_test_pkg.sv
+tb/top_tb/sv/top_tb.sv
+generated_tb/tb/top_tb/sv/top_tb.sv
+generated_tb.bak/tb/top_tb/sv/top_tb.sv
+generated_tb.bak/tb/insgen/sv/insgen_if.sv
+generated_tb/tb/insgen/sv/insgen_if.sv
+tb/insgen/sv/insgen_if.sv
+dut/axi_master_wrapper.sv
+dut/axi_mem.sv
+dut/design.sv
+dut/instruction_parser.sv
+dut/lfsr5.sv
+dut/masterif.sv
+dut/memslave.sv
+dut/sindrv.sv
+dut/soc_top.sv
+dut/umem.sv
+generated_tb.bak/dut/axi_master_wrapper.sv
+generated_tb.bak/dut/axi_mem.sv
+generated_tb.bak/dut/design.sv
+generated_tb.bak/dut/instruction_parser.sv
+generated_tb.bak/dut/lfsr5.sv
+generated_tb.bak/dut/masterif.sv
+generated_tb.bak/dut/memslave.sv
+generated_tb.bak/dut/sindrv.sv
+generated_tb.bak/dut/soc_top.sv
+generated_tb.bak/dut/umem.sv
+generated_tb.bak/tb/include/ins_constraints.sv
+generated_tb.bak/tb/include/insgen_driver_inc.sv
+generated_tb.bak/tb/include/tb_incs.sv
+generated_tb.bak/tb/include/th_define_clk_and_nreset.sv
+generated_tb.bak/tb/top_tb/sv/top_th.sv
+generated_tb/dut/axi_master_wrapper.sv
+generated_tb/dut/axi_mem.sv
+generated_tb/dut/design.sv
+generated_tb/dut/instruction_parser.sv
+generated_tb/dut/lfsr5.sv
+generated_tb/dut/masterif.sv
+generated_tb/dut/memslave.sv
+generated_tb/dut/sindrv.sv
+generated_tb/dut/soc_top.sv
+generated_tb/dut/umem.sv
+generated_tb/tb/include/ins_constraints.sv
+generated_tb/tb/include/insgen_driver_inc.sv
+generated_tb/tb/top_tb/sv/top_th.sv
+include/ins_constraints.sv
+include/insgen_driver_inc.sv
+include/tb_incs.sv
+include/th_define_clk_and_nreset.sv
+tb/include/ins_constraints.sv
+tb/include/insgen_driver_inc.sv
+tb/include/tb_incs.sv
+tb/include/th_define_clk_and_nreset.sv
+tb/top_tb/sv/top_th.sv
+dut/axil_int.sv
+dut/mdriver_int.sv
+generated_tb.bak/dut/axil_int.sv
+generated_tb.bak/dut/mdriver_int.sv
+generated_tb.bak/tb/insgen/sv/insgen_config.sv
+generated_tb.bak/tb/insgen/sv/insgen_sequencer.sv
+generated_tb.bak/tb/top/sv/top_config.sv
+tb/insgen/sv/insgen_config.sv
+tb/insgen/sv/insgen_sequencer.sv
+tb/top/sv/top_config.sv
+dut/defines.sv
+generated_tb.bak/dut/defines.sv
+dut/cpu.sv
+generated_tb/dut/cpu.sv
+generated_tb.bak/dut/cpu.sv
+

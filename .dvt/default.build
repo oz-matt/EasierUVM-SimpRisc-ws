@@ -1,0 +1,5 @@
+# Automatically identify and compile all the source files in the project directory.
+# DO NOT explicitly list files/directories in 'dvt_auto_init' sections. Use 'dvt_init' sections instead.
++dvt_init_auto
+
++dvt_autoconfig_scan_root_add+tb/top_tb/sv

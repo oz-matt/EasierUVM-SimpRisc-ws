@@ -1,0 +1,14 @@
+*.report
+*.log
+*log
+*.fsdb
+*~
+*.dat.work.*
+*.h
+*.vpd
+*.key
+*.project
+
+/generated_tb/sim
+/generated_tb.bak
+
