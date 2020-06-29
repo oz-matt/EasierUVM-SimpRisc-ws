@@ -1,2 +1,0 @@
-$dumpfile("dump.vcd");
-$dumpvars;

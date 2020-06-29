@@ -2,4 +2,7 @@
 # DO NOT explicitly list files/directories in 'dvt_auto_init' sections. Use 'dvt_init' sections instead.
 +dvt_init_auto
 
-+dvt_autoconfig_scan_root_add+tb/top_tb/sv
++dvt_skip_compile+/home/disk/uvm_diag/include/*
++dvt_skip_compile+/home/disk/uvm_diag/generated_tb.bak/*
++dvt_skip_compile+/home/disk/uvm_diag/generated_tb/sim/*
+
