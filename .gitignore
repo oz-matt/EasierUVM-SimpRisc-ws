@@ -9,6 +9,8 @@
 *.key
 *.project
 
-/generated_tb/sim
+/generated_tb/sim/csrc
+/generated_tb/sim/simv.daidir
+/generated_tb/sim/simv.vdb
 /generated_tb.bak
 
