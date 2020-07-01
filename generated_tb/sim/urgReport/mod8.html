@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="Author" content="<username>"> <meta name="GENERATOR" content="urg/version [en] (platform name) [urg]">
+<title>Unified Coverage Report :: Module :: axi_master_wrapper</title>
+<link type="text/css" rel="stylesheet" href="css/.urg.css">
+<link type="text/css" rel="stylesheet" href="css/.layout.css">
+<link type="text/css" rel="stylesheet" href="css/.breadcrumb.css">
+<script type="text/javascript" src="js/.jquery.js"></script>
+<script type="text/javascript" src="js/.jquery-ui.js"></script>
+<script type="text/javascript" src="js/.sortable.js"></script>
+<script type="text/javascript" src="js/.layout.js"></script>
+<script type="text/javascript" src="js/.breadcrumb.js"></script>
+<script type="text/javascript">
+var layout, westLayout, centerLayout;
+$(document).ready(function () {
+  if ($("#north-bread-crumb")) {
+    $("#north-bread-crumb").jBreadCrumb({easing:'swing'})
+  }
+  layout = $("body").layout({ 
+    resizable: true,
+    spacing_open: 4,
+    spacing_closed: 4,
+    north: {
+      size: 76
+    },
+    south: {
+      size: 45,
+      initClosed: true
+    },
+    west: {
+      size: 500,
+      resizable: true,
+      initClosed: false
+    }
+  });
+  centerLayout = $('div.ui-layout-center').layout({
+    north__paneSelector: ".ui-layout-center-inner-north",
+    center__paneSelector: ".ui-layout-center-inner-center", 
+    north__size: 50,
+    spacing_open: 4,
+    spacing_closed: 4
+  });
+});
+</script>
+</head>
+<body onLoad="initPage();"><div class="ui-layout-north">
+<div class="logo"></div>
+<center class="pagetitle">Module Definition</center>
+<div align="center"><a href="dashboard.html" ><b>dashboard</b></a> | <a href="hierarchy.html" ><b>hierarchy</b></a> | <a href="modlist.html" ><b>modlist</b></a> | <a href="groups.html" ><b>groups</b></a> | <a href="tests.html" ><b>tests</b></a> | asserts</div>
+
+</div>
+<div class="ui-layout-west">
+<div name='tag_axi_master_wrapper'>
+<div class=modhdr>
+<br clear=all>
+<span class=titlename>Module : <a href="#"  onclick="showContent('tag_axi_master_wrapper')">axi_master_wrapper</a></span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td><td>FSM</td></tr><tr>
+<td class="s5 cl rt"> 52.81</td>
+<td class="s7 cl rt"><a href="mod8.html#Line" > 75.47</a></td>
+<td class="s4 cl rt"><a href="mod8.html#Cond" > 45.45</a></td>
+<td class="s3 cl rt"><a href="mod8.html#FSM" > 37.50</a></td>
+</tr></table><br clear=all>
+<span class=repname>Source File(s) : </span>
+<br clear=all>
+<a href="file:///home/disk/uvm_diag/generated_tb/sim/../dut/axi_master_wrapper.sv" >/home/disk/uvm_diag/generated_tb/sim/../dut/axi_master_wrapper.sv</a><br clear=all>
+<br clear=all>
+<span class=repname>Module self-instances :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td class="alfsrt">NAME</td><td>SCORE</td><td>LINE</td><td>COND</td><td>FSM</td></tr><tr>
+<td class="wht cl wordwrap"><a href="mod8.html#inst_tag_8"  onclick="showContent('inst_tag_8')">top_tb.th.uut.dut_top_inst.axi_master_wrapper_inst</a></td>
+<td class="s5 cl rt"> 52.81</td>
+<td class="s7 cl rt"><a href="mod8.html#Line" > 75.47</a></td>
+<td class="s4 cl rt"><a href="mod8.html#Cond" > 45.45</a></td>
+<td class="s3 cl rt"><a href="mod8.html#FSM" > 37.50</a></td>
+</tr></table></div>
+</div>
+<br clear=all>
+<div name='tag_axi_master_wrapper'>
+<hr>
+<a name="inst_tag_8"></a>
+<div class=modhdr>
+<br clear=all>
+<span class=titlename>Module Instance : <a href="hierarchy.html#tag_urg_inst_8" >top_tb.th.uut.dut_top_inst.axi_master_wrapper_inst</a></span>
+<br clear=all>
+<br clear=all>
+<span class=repname>Instance :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td><td>FSM</td></tr><tr>
+<td class="s5 cl rt"> 52.81</td>
+<td class="s7 cl rt"><a href="mod8.html#Line" > 75.47</a></td>
+<td class="s4 cl rt"><a href="mod8.html#Cond" > 45.45</a></td>
+<td class="s3 cl rt"><a href="mod8.html#FSM" > 37.50</a></td>
+</tr></table><br clear=all>
+<br clear=all>
+<span class=repname>Instance's subtree :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td><td>FSM</td></tr><tr>
+<td class="s5 cl rt"> 52.88</td>
+<td class="s8 cl rt"> 82.11</td>
+<td class="s3 cl rt"> 39.02</td>
+<td class="s3 cl rt"> 37.50</td>
+</tr></table><br clear=all>
+<br clear=all>
+<span class=repname>Parent : </span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td><td>FSM</td><td class="alfsrt">NAME</td></tr><tr>
+<td class="wht cl rt"></td>
+<td class="wht cl rt"></td>
+<td class="wht cl rt"></td>
+<td class="wht cl rt"></td>
+<td><a href="mod6.html#inst_tag_6" >dut_top_inst</a></td>
+</tr></table><br clear=all>
+<br clear=all>
+<span class=repname>Subtrees :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td class="alfsrt">NAME</td><td>SCORE</td><td>LINE</td><td>COND</td><td>FSM</td></tr><tr>
+<td class="wht cl wordwrap"><a href="mod10.html#inst_tag_10" id="tag_urg_inst_10">memslave_inst</a></td>
+<td class="s5 cl rt"> 51.49</td>
+<td class="s9 cl rt"> 90.48</td>
+<td class="s1 cl rt"> 12.50</td>
+<td class="wht cl rt"></td>
+</tr></table><br clear=all>
+</div>
+</div>
+<hr>
+Since this is the module's only instance, the coverage report is the same as for the module.</div>
+<div class="ui-layout-center">
+<div class="ui-layout-center-inner-center">
+<div name='tag_axi_master_wrapper'>
+<a name="Line"></a>
+Line Coverage for Module : <a href="mod8.html" >axi_master_wrapper</a><br clear=all>
+<table class="noborder">
+<col width="122">
+<col span="4" width="82">
+<tr><th></th><th>Line No.</th><th>Total</th><th>Covered</th><th>Percent</th></tr>
+<tr class="s7"><td class="lf">TOTAL</td><td></td><td>53</td><td>40</td><td>75.47</td></tr>
+<tr class="s7"><td class="lf">ALWAYS</td><td>38</td><td>25</td><td>19</td><td>76.00</td></tr>
+<tr class="s10"><td class="lf">ALWAYS</td><td>85</td><td>2</td><td>2</td><td>100.00</td></tr>
+<tr class="s5"><td class="lf">ALWAYS</td><td>96</td><td>14</td><td>8</td><td>57.14</td></tr>
+<tr class="s9"><td class="lf">ALWAYS</td><td>117</td><td>12</td><td>11</td><td>91.67</td></tr>
+</table>
+<pre class="code"><br clear=all>
+37                      	always_ff @(posedge io.clk or negedge io.nreset) begin
+38         1/1          		if (!io.nreset) begin
+39         1/1          			vif.AXI_ARVALID &lt;= 0;
+40         1/1          			vif.AXI_AWVALID &lt;= 0;
+41         1/1          			vif.AXI_WVALID &lt;= 0;
+42         1/1                      pstate &lt;= IDLE;
+43                      		end
+44                      		else begin
+45         1/1          			case (pstate)
+46                      				IDLE : begin
+47         1/1          					vif.AXI_ARVALID &lt;= 0;
+48         1/1          					vif.AXI_AWVALID &lt;= 0;
+49         1/1          					vif.AXI_WVALID &lt;= 0;
+50         1/1          					if (io.exec)
+51         1/1          						pstate &lt;= io.we ? EXECUTING_WRITE : EXECUTING_READ;
+                        MISSING_ELSE
+52                      				end
+53                      
+54                      				EXECUTING_READ : begin
+55         <font color = "red">0/1     ==>  					vif.AXI_ARVALID &lt;= 1;</font>
+56         <font color = "red">0/1     ==>  					if(vif.AXI_ARVALID &amp;&amp; vif.AXI_ARREADY) begin</font>
+57         <font color = "red">0/1     ==>  						vif.AXI_ARVALID &lt;= 0;</font>
+58         <font color = "red">0/1     ==>  						pstate &lt;= WAITING_READ;</font>
+59                      					end
+                   <font color = "red">==>  MISSING_ELSE</font>
+60                      				end
+61                      
+62                      				EXECUTING_WRITE : begin
+63         1/1          					vif.AXI_AWVALID &lt;= 1;
+64         1/1          					vif.AXI_WVALID &lt;= 1;
+65         1/1          					if(vif.AXI_AWVALID &amp;&amp; vif.AXI_AWREADY &amp;&amp; vif.AXI_WVALID &amp;&amp; vif.AXI_WREADY) begin
+66         1/1          						vif.AXI_AWVALID &lt;= 0;
+67         1/1          						vif.AXI_WVALID &lt;= 0;
+68         1/1          						pstate &lt;= WAITING_WRITE;
+69                      					end
+                        MISSING_ELSE
+70                      				end
+71                      
+72                      				WAITING_READ : begin
+73         <font color = "red">0/2     ==>  					if (finread) pstate &lt;= IDLE;</font>
+                   <font color = "red">==>  MISSING_ELSE</font>
+74                      				end
+75                      
+76                      				WAITING_WRITE : begin
+77         2/2          					if (finwrite) pstate &lt;= IDLE;
+                        MISSING_ELSE
+78                      				end
+                   <font color = "red">==>  MISSING_DEFAULT</font>
+79                      
+80                      			endcase
+81                      		end
+82                      	end
+83                      
+84                      	always_comb begin
+85         1/1          		valid_read_data_received = vif.AXI_RVALID &amp;&amp; vif.AXI_RREADY;
+86         1/1          		valid_write_response_received = vif.AXI_BVALID &amp;&amp; vif.AXI_BREADY;
+87                      	end
+88                      
+89                      	assign vif.AXI_ARADDR = (vif.AXI_ARVALID &amp;&amp; (pstate == EXECUTING_READ)) ? io.si_address : 0;
+90                      
+91                      	assign vif.AXI_AWADDR = (vif.AXI_AWVALID &amp;&amp; (pstate == EXECUTING_WRITE)) ? io.si_address : 0;
+92                      
+93                      	assign vif.AXI_WDATA = (vif.AXI_WVALID &amp;&amp; (pstate == EXECUTING_WRITE)) ? io.si_data : 0;
+94                      
+95                      	always_ff @ (posedge io.clk or negedge io.nreset) begin
+96         1/1                if (!io.nreset) begin
+97         1/1                  finread &lt;= 0;
+98         1/1          			ready_for_data &lt;= 0;
+99         1/1                  local_data &lt;= 0;
+100                           end
+101        1/1          		else if (finread) begin
+102        <font color = "red">0/1     ==>  			finread &lt;= 0;</font>
+103        <font color = "red">0/1     ==>  			ready_for_data &lt;= 1;</font>
+104                     		end
+105        1/1          		else if (valid_read_data_received) begin
+106        <font color = "red">0/1     ==>  			local_data &lt;= vif.AXI_RDATA;</font>
+107        <font color = "red">0/1     ==>  			ready_for_data &lt;= 0;</font>
+108        <font color = "red">0/1     ==>  			finread &lt;= 1;</font>
+109                     		end
+110        1/1          		else if (vif.AXI_RVALID)
+111        <font color = "red">0/1     ==>  			ready_for_data &lt;= 1;</font>
+112                     		else
+113        1/1          			ready_for_data &lt;= 1;
+114                     	end
+115                     
+116                     	always_ff @ (posedge io.clk or negedge io.nreset) begin
+117        1/1                if (!io.nreset) begin
+118        1/1          			ready_for_write_response &lt;= 0;
+119        1/1                   finwrite &lt;= 0;
+120                           end
+121        1/1          		else if (finwrite) begin
+122        1/1          			ready_for_write_response &lt;= 1;
+123        1/1          			finwrite &lt;= 0;
+124                     		end
+125        1/1          		else if (valid_write_response_received) begin
+126        1/1          			ready_for_write_response &lt;= 0;
+127        1/1          			finwrite &lt;= 1;
+128                     		end
+129        1/1          		else if (vif.AXI_BVALID)
+130        <font color = "red">0/1     ==>  			ready_for_write_response &lt;= 1;</font>
+131                     		else
+132        1/1          			ready_for_write_response &lt;= 1;
+</pre>
+<hr>
+<a name="Cond"></a>
+Cond Coverage for Module : <a href="mod8.html" >axi_master_wrapper</a><br clear=all>
+<table class="noborder">
+<col width="122">
+<col span="3" width="82">
+<tr><th></th><th>Total</th><th>Covered</th><th>Percent</th></tr>
+<tr class="s4"><td class="lf">Conditions</td><td>33</td><td>15</td><td>45.45</td></tr>
+<tr class="s4"><td class="lf">Logical</td><td>33</td><td>15</td><td>45.45</td></tr>
+<tr class="wht"><td class="lf">Non-Logical</td><td>0</td><td>0</td><td></td></tr>
+<tr class="wht"><td class="lf">Event</td><td>0</td><td>0</td><td></td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       33
+ EXPRESSION (io.we ? finwrite : finread)
+             --1--
+</pre>
+<table class="noborder">
+<col width="40">
+<tr><th>-1-</th><th>Status</th></tr>
+<tr class="uRed"><td>0</td><td class="lf">Not Covered</td></tr>
+<tr class="uGreen"><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       51
+ EXPRESSION (io.we ? EXECUTING_WRITE : EXECUTING_READ)
+             --1--
+</pre>
+<table class="noborder">
+<col width="40">
+<tr><th>-1-</th><th>Status</th></tr>
+<tr class="uRed"><td>0</td><td class="lf">Not Covered</td></tr>
+<tr class="uGreen"><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       56
+ EXPRESSION (vif.AXI_ARVALID &amp;&amp; vif.AXI_ARREADY)
+             -------1-------    -------2-------
+</pre>
+<table class="noborder">
+<col span="2" width="40">
+<tr><th>-1-</th><th>-2-</th><th>Status</th></tr>
+<tr class="uRed"><td>0</td><td>1</td><td class="lf">Not Covered</td></tr>
+<tr class="uRed"><td>1</td><td>0</td><td class="lf">Not Covered</td></tr>
+<tr class="uRed"><td>1</td><td>1</td><td class="lf">Not Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       65
+ EXPRESSION (vif.AXI_AWVALID &amp;&amp; vif.AXI_AWREADY &amp;&amp; vif.AXI_WVALID &amp;&amp; vif.AXI_WREADY)
+             -------1-------    -------2-------    -------3------    -------4------
+</pre>
+<table class="noborder">
+<col span="4" width="40">
+<tr><th>-1-</th><th>-2-</th><th>-3-</th><th>-4-</th><th>Status</th></tr>
+<tr class="uRed"><td>0</td><td>1</td><td>1</td><td>1</td><td class="lf">Not Covered</td></tr>
+<tr class="uRed"><td>1</td><td>0</td><td>1</td><td>1</td><td class="lf">Not Covered</td></tr>
+<tr class="uRed"><td>1</td><td>1</td><td>0</td><td>1</td><td class="lf">Not Covered</td></tr>
+<tr class="uRed"><td>1</td><td>1</td><td>1</td><td>0</td><td class="lf">Not Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>1</td><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       85
+ EXPRESSION (vif.AXI_RVALID &amp;&amp; vif.AXI_RREADY)
+             -------1------    -------2------
+</pre>
+<table class="noborder">
+<col span="2" width="40">
+<tr><th>-1-</th><th>-2-</th><th>Status</th></tr>
+<tr class="uGreen"><td>0</td><td>1</td><td class="lf">Covered</td></tr>
+<tr class="uRed"><td>1</td><td>0</td><td class="lf">Not Covered</td></tr>
+<tr class="uRed"><td>1</td><td>1</td><td class="lf">Not Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       86
+ EXPRESSION (vif.AXI_BVALID &amp;&amp; vif.AXI_BREADY)
+             -------1------    -------2------
+</pre>
+<table class="noborder">
+<col span="2" width="40">
+<tr><th>-1-</th><th>-2-</th><th>Status</th></tr>
+<tr class="uGreen"><td>0</td><td>1</td><td class="lf">Covered</td></tr>
+<tr class="uRed"><td>1</td><td>0</td><td class="lf">Not Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       89
+ EXPRESSION ((vif.AXI_ARVALID &amp;&amp; (pstate == EXECUTING_READ)) ? io.si_address : 0)
+             -----------------------1-----------------------
+</pre>
+<table class="noborder">
+<col width="40">
+<tr><th>-1-</th><th>Status</th></tr>
+<tr class="uGreen"><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uRed"><td>1</td><td class="lf">Not Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       89
+ SUB-EXPRESSION (vif.AXI_ARVALID &amp;&amp; (pstate == EXECUTING_READ))
+                 -------1-------    -------------2------------
+</pre>
+<table class="noborder">
+<col span="2" width="40">
+<tr><th>-1-</th><th>-2-</th><th>Status</th></tr>
+<tr class="uRed"><td>0</td><td>1</td><td class="lf">Not Covered</td></tr>
+<tr class="uRed"><td>1</td><td>0</td><td class="lf">Not Covered</td></tr>
+<tr class="uRed"><td>1</td><td>1</td><td class="lf">Not Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       91
+ EXPRESSION ((vif.AXI_AWVALID &amp;&amp; (pstate == EXECUTING_WRITE)) ? io.si_address : 0)
+             ------------------------1-----------------------
+</pre>
+<table class="noborder">
+<col width="40">
+<tr><th>-1-</th><th>Status</th></tr>
+<tr class="uGreen"><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       91
+ SUB-EXPRESSION (vif.AXI_AWVALID &amp;&amp; (pstate == EXECUTING_WRITE))
+                 -------1-------    -------------2-------------
+</pre>
+<table class="noborder">
+<col span="2" width="40">
+<tr><th>-1-</th><th>-2-</th><th>Status</th></tr>
+<tr class="uGreen"><td>0</td><td>1</td><td class="lf">Covered</td></tr>
+<tr class="uRed"><td>1</td><td>0</td><td class="lf">Not Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       93
+ EXPRESSION ((vif.AXI_WVALID &amp;&amp; (pstate == EXECUTING_WRITE)) ? io.si_data : 0)
+             -----------------------1-----------------------
+</pre>
+<table class="noborder">
+<col width="40">
+<tr><th>-1-</th><th>Status</th></tr>
+<tr class="uGreen"><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       93
+ SUB-EXPRESSION (vif.AXI_WVALID &amp;&amp; (pstate == EXECUTING_WRITE))
+                 -------1------    -------------2-------------
+</pre>
+<table class="noborder">
+<col span="2" width="40">
+<tr><th>-1-</th><th>-2-</th><th>Status</th></tr>
+<tr class="uGreen"><td>0</td><td>1</td><td class="lf">Covered</td></tr>
+<tr class="uRed"><td>1</td><td>0</td><td class="lf">Not Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<hr>
+<a name="FSM"></a>
+FSM Coverage for Module : <a href="mod8.html" >axi_master_wrapper</a><br clear=all>
+<table align=left class="noborder">
+<caption><b>Summary for FSM :: pstate</b></caption>
+<tr>
+<th nowrap width=120></th><th nowrap width=80>Total</th><th nowrap width=80>Covered</th><th nowrap width=80>Percent</th><th nowrap width=200></th></tr><tr class="wht">
+<td>States</td>
+<td class="rt">5</td>
+<td class="rt">3</td>
+<td class="rt">60.00 </td>
+<td>(Not included in score)</td>
+</tr><tr class="s3">
+<td>Transitions</td>
+<td class="rt">8</td>
+<td class="rt">3</td>
+<td class="rt">37.50 </td>
+<td></td>
+</tr><tr class="wht">
+<td>Sequences</td>
+<td class="rt">0</td>
+<td class="rt">0</td>
+<td></td>
+<td></td>
+</tr></table><br clear=all>
+<b>State, Transition and Sequence Details for FSM :: pstate</b><hr>
+<table align=left class="sortable noborder">
+<tr class="sortablehead">
+<td class="alfsrt">states</td><td>Line No.</td><td class="alfsrt">Covered</td></tr><tr class="uGreen">
+<td nowrap>IDLE</td>
+<td class="rt">42</td>
+<td>Covered</td>
+</tr><tr class="uRed">
+<td nowrap>EXECUTING_READ</td>
+<td class="rt">51</td>
+<td>Not&nbsp;Covered</td>
+</tr><tr class="uGreen">
+<td nowrap>EXECUTING_WRITE</td>
+<td class="rt">51</td>
+<td>Covered</td>
+</tr><tr class="uRed">
+<td nowrap>WAITING_READ</td>
+<td class="rt">58</td>
+<td>Not&nbsp;Covered</td>
+</tr><tr class="uGreen">
+<td nowrap>WAITING_WRITE</td>
+<td class="rt">68</td>
+<td>Covered</td>
+</tr></table><br clear=all>
+<br clear=all>
+<table align=left class="sortable noborder">
+<tr class="sortablehead">
+<td class="alfsrt">transitions</td><td>Line No.</td><td class="alfsrt">Covered</td></tr><tr class="uRed">
+<td nowrap>IDLE->EXECUTING_READ</td>
+<td class="rt">51</td>
+<td>Not&nbsp;Covered</td>
+</tr><tr class="uGreen">
+<td nowrap>IDLE->EXECUTING_WRITE</td>
+<td class="rt">51</td>
+<td>Covered</td>
+</tr><tr class="uRed">
+<td nowrap>EXECUTING_READ->IDLE</td>
+<td class="rt">42</td>
+<td>Not&nbsp;Covered</td>
+</tr><tr class="uRed">
+<td nowrap>EXECUTING_READ->WAITING_READ</td>
+<td class="rt">58</td>
+<td>Not&nbsp;Covered</td>
+</tr><tr class="uRed">
+<td nowrap>EXECUTING_WRITE->IDLE</td>
+<td class="rt">42</td>
+<td>Not&nbsp;Covered</td>
+</tr><tr class="uGreen">
+<td nowrap>EXECUTING_WRITE->WAITING_WRITE</td>
+<td class="rt">68</td>
+<td>Covered</td>
+</tr><tr class="uRed">
+<td nowrap>WAITING_READ->IDLE</td>
+<td class="rt">42</td>
+<td>Not&nbsp;Covered</td>
+</tr><tr class="uGreen">
+<td nowrap>WAITING_WRITE->IDLE</td>
+<td class="rt">42</td>
+<td>Covered</td>
+</tr></table><br clear=all>
+<br clear=all>
+<table align=left class="noborder">
+<tr class="sortablehead">
+<td class="alfsrt">sequences</td><td class="alfsrt">Covered</td></tr></table><br clear=all>
+<br clear=all>
+</div>
+</div>
+<div class="ui-layout-center-inner-north">
+<div id="center-bread-crumb" class="breadCrumb module urg-margin-bottom">
+  <ul name="inst_tag_8">
+    <li>
+      <a href="#Line">Line</a>    </li>
+    <li>
+      <a href="#Cond">Cond</a>    </li>
+    <li>
+      <a href="#FSM">FSM</a>    </li>
+  </ul>
+  <ul name="tag_axi_master_wrapper">
+    <li>
+      <a href="#Line">Line</a>    </li>
+    <li>
+      <a href="#Cond">Cond</a>    </li>
+    <li>
+      <a href="#FSM">FSM</a>    </li>
+  </ul>
+</div>
+</div>
+</div>
+<div class="ui-layout-south">
+<table align=center><tr><td class="s0 cl">0%</td>
+<td class="s1 cl">10%</td>
+<td class="s2 cl">20%</td>
+<td class="s3 cl">30%</td>
+<td class="s4 cl">40%</td>
+<td class="s5 cl">50%</td>
+<td class="s6 cl">60%</td>
+<td class="s7 cl">70%</td>
+<td class="s8 cl">80%</td>
+<td class="s9 cl">90%</td>
+<td class="s10 cl">100%</td></tr></table></div>
+</body>
+</html>

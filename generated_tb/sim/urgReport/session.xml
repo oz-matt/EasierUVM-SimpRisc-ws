@@ -1,0 +1,25 @@
+<session version="1.1" release="L-2016.06" timestp="2020-07-01 23:39:16 GMT">
+  <hvp>
+    <datadef>
+      <metdef name="Line" type="ratio" aggregator="average" builtin="1" />
+      <metdef name="Cond" type="ratio" aggregator="average" builtin="1" />
+      <metdef name="FSM" type="ratio" aggregator="average" builtin="1" />
+      <metdef name="Group" type="percent" aggregator="average" builtin="1" />
+    </datadef>
+  </hvp>
+  <old_coverage>
+  <scope type="top" name="top">
+    <metric name="Line" value="185/324" />
+    <metric name="Cond" value="57/98" />
+    <metric name="FSM" value="3/8" />
+    <metric name="Group" value="1.5625%" />
+  </scope>
+  <scope type="instance" name="top">
+  </scope>
+  <scope type="group" name="top">
+    <scope type="group" name="insgen_pkg::insgen_coverage::m_cov">
+      <metric name="Group" value="1.5625%" />
+    </scope>
+  </scope>
+  </old_coverage>
+</session>

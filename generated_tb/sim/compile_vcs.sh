@@ -1,5 +1,5 @@
 #!/bin/sh
-vcs -sverilog +acc +vpi -timescale=1ns/1ps -ntb_opts uvm-1.2 \
+vcs -sverilog -cm line+cond+fsm +acc +vpi -timescale=1ns/1ps -ntb_opts uvm-1.2 \
 +incdir+../tb/include \
 +incdir+../tb/insgen/sv \
 +incdir+../tb/top/sv \
