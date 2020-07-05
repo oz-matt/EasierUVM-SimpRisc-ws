@@ -8,8 +8,8 @@ module memslave(axilite_int.slave io, aximem.axim memaxi);
 
 	always_comb begin
 		valid_read_received = io.AXI_ARVALID && io.AXI_ARREADY;
-		write_request_permitted = vif.AXI_AWVALID && vif.AXI_AWREADY && vif.AXI_WVALID && vif.AXI_WREADY;
-    end
+		write_request_permitted = io.AXI_AWVALID && io.AXI_AWREADY && io.AXI_WVALID && io.AXI_WREADY;
+		end
 
 	always_ff @ (posedge io.AXI_ACLK or negedge io.AXI_ARESETN) begin
 		if (!io.AXI_ARESETN)
@@ -69,11 +69,11 @@ module memslave(axilite_int.slave io, aximem.axim memaxi);
 			io.AXI_RDATA <= 0;
 	end
 
-  always_ff @(posedge write_request_permitted) begin
+	always_ff @(posedge write_request_permitted) begin
 	mem[io.AXI_AWADDR] <= io.AXI_WDATA;
-    memaxi.axi_mem_w <= 1;
-    memaxi.axi_mem_addr <= io.AXI_AWADDR;
-    memaxi.axi_mem_data <= io.AXI_WDATA;
-  end
+		memaxi.axi_mem_w <= 1;
+		memaxi.axi_mem_addr <= io.AXI_AWADDR;
+		memaxi.axi_mem_data <= io.AXI_WDATA;
+	end
 
 endmodule

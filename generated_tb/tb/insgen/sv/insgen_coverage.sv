@@ -8,7 +8,7 @@
 //
 // Version:   1.0
 //
-// Code created by Easier UVM Code Generator version 2017-01-19 on Wed Jul  1 21:39:30 2020
+// Code created by Easier UVM Code Generator version 2017-01-19 on Mon Jul  6 04:43:25 2020
 //=============================================================================
 // Description: Coverage for agent insgen
 //=============================================================================
@@ -26,17 +26,19 @@ class insgen_coverage extends uvm_subscriber #(trans);
   bit           m_is_covered;
   trans         m_item;
      
-  // You can replace covergroup m_cov by setting agent_cover_inc in file insgen.tpl
-  // or remove covergroup m_cov by setting agent_cover_generate_methods_inside_class = no in file insgen.tpl
-
+  // Start of inlined include file generated_tb/tb/include/insgen_cover_inc.sv
   covergroup m_cov;
     option.per_instance = 1;
-    // You may insert additional coverpoints here ...
-
-    cp_rand_instruction: coverpoint m_item.rand_instruction;
-    //  Add bins here if required
-
+    cp_data: coverpoint m_item.adc_data {
+      bins zero = {0};
+      bins one  = {1};
+      bins negative = { [-128:-1] };
+      bins positive = { [1: 127] };
+      option.at_least = 16;
+    }
   endgroup
+  
+  // End of inlined include file
 
   // You can remove new, write, and report_phase by setting agent_cover_generate_methods_inside_class = no in file insgen.tpl
 

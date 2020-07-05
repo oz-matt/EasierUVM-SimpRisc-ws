@@ -8,7 +8,7 @@
 //
 // Version:   1.0
 //
-// Code created by Easier UVM Code Generator version 2017-01-19 on Wed Jul  1 21:39:30 2020
+// Code created by Easier UVM Code Generator version 2017-01-19 on Mon Jul  6 04:43:25 2020
 //=============================================================================
 // Description: Driver for insgen
 //=============================================================================
@@ -58,8 +58,10 @@ endtask : run_phase
 // Start of inlined include file generated_tb/tb/include/insgen_driver_inc.sv
 task insgen_driver::do_drive();
 	vif.data_bus <= req.rand_instruction;
+	vif.adc_in <= req.adc_data;
 	#10;
-endtask// End of inlined include file
+endtask
+// End of inlined include file
 
 // You can insert code here by setting driver_inc_after_class in file insgen.tpl
 

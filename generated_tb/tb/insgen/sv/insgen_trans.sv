@@ -8,7 +8,7 @@
 //
 // Version:   1.0
 //
-// Code created by Easier UVM Code Generator version 2017-01-19 on Wed Jul  1 21:39:30 2020
+// Code created by Easier UVM Code Generator version 2017-01-19 on Mon Jul  6 04:43:25 2020
 //=============================================================================
 // Description: Sequence item for insgen_sequencer
 //=============================================================================
@@ -27,6 +27,7 @@ class trans extends uvm_sequence_item;
 
   // Transaction variables
   rand logic[31:0] rand_instruction;
+  rand logic[31:0] adc_data;
 
 
   extern function new(string name = "");
@@ -62,6 +63,7 @@ function void trans::do_copy(uvm_object rhs);
     `uvm_fatal(get_type_name(), "Cast of rhs object failed")
   super.do_copy(rhs);
   rand_instruction = rhs_.rand_instruction;
+  adc_data         = rhs_.adc_data;        
 endfunction : do_copy
 
 
@@ -72,6 +74,7 @@ function bit trans::do_compare(uvm_object rhs, uvm_comparer comparer);
     `uvm_fatal(get_type_name(), "Cast of rhs object failed")
   result = super.do_compare(rhs, comparer);
   result &= comparer.compare_field("rand_instruction", rand_instruction, rhs_.rand_instruction, $bits(rand_instruction));
+  result &= comparer.compare_field("adc_data", adc_data,                 rhs_.adc_data,         $bits(adc_data));
   return result;
 endfunction : do_compare
 
@@ -88,18 +91,21 @@ function void trans::do_record(uvm_recorder recorder);
   super.do_record(recorder);
   // Use the record macros to record the item fields:
   `uvm_record_field("rand_instruction", rand_instruction)
+  `uvm_record_field("adc_data",         adc_data)        
 endfunction : do_record
 
 
 function void trans::do_pack(uvm_packer packer);
   super.do_pack(packer);
   `uvm_pack_int(rand_instruction) 
+  `uvm_pack_int(adc_data)         
 endfunction : do_pack
 
 
 function void trans::do_unpack(uvm_packer packer);
   super.do_unpack(packer);
   `uvm_unpack_int(rand_instruction) 
+  `uvm_unpack_int(adc_data)         
 endfunction : do_unpack
 
 
@@ -107,8 +113,9 @@ function string trans::convert2string();
   string s;
   $sformat(s, "%s\n", super.convert2string());
   $sformat(s, {"%s\n",
-    "rand_instruction = 'h%0h  'd%0d\n"},
-    get_full_name(), rand_instruction, rand_instruction);
+    "rand_instruction = 'h%0h  'd%0d\n", 
+    "adc_data         = 'h%0h  'd%0d\n"},
+    get_full_name(), rand_instruction, rand_instruction, adc_data, adc_data);
   return s;
 endfunction : convert2string
 

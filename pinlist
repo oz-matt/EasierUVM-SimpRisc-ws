@@ -2,4 +2,5 @@
 clk  clk
 nreset nreset
 data_bus data_bus
-addr_bus addr_bus
+addr_bus addr_busadc_in adc_in
+

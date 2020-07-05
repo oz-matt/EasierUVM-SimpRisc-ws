@@ -8,7 +8,7 @@
 //
 // Version:   1.0
 //
-// Code created by Easier UVM Code Generator version 2017-01-19 on Wed Jul  1 21:39:30 2020
+// Code created by Easier UVM Code Generator version 2017-01-19 on Mon Jul  6 04:43:25 2020
 //=============================================================================
 // Description: Signal interface for agent insgen
 //=============================================================================
@@ -27,6 +27,7 @@ interface insgen_if();
   logic nreset;
   logic[31:0] data_bus;
   logic[31:0] addr_bus;
+  logic[31:0] adc_in;
 
   // You can insert properties and assertions here
 
