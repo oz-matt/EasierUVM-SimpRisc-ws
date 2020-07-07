@@ -1,7 +1,7 @@
 #!/bin/sh
 cd ../generated_tb/sim;
 rm -rf csrc/ simv.vdb/ simv.daidir/ simv;
-vcs -sverilog -cm line+cond+fsm +acc +vpi -timescale=1ns/1ps -ntb_opts uvm-1.2 \
+vcs -sverilog -cm line+cond+fsm -covg_dump_range +acc +vpi -timescale=1ns/1ps -ntb_opts uvm-1.2 \
 +incdir+../tb/include \
 +incdir+../tb/insgen/sv \
 +incdir+../tb/top/sv \

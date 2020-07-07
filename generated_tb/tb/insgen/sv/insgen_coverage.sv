@@ -8,7 +8,7 @@
 //
 // Version:   1.0
 //
-// Code created by Easier UVM Code Generator version 2017-01-19 on Mon Jul  6 04:43:25 2020
+// Code created by Easier UVM Code Generator version 2017-01-19 on Wed Jul  8 07:42:42 2020
 //=============================================================================
 // Description: Coverage for agent insgen
 //=============================================================================
@@ -28,14 +28,13 @@ class insgen_coverage extends uvm_subscriber #(trans);
      
   // Start of inlined include file generated_tb/tb/include/insgen_cover_inc.sv
   covergroup m_cov;
-    option.per_instance = 1;
-    cp_data: coverpoint m_item.adc_data {
-      bins zero = {0};
-      bins one  = {1};
-      bins negative = { [-128:-1] };
-      bins positive = { [1: 127] };
-      option.at_least = 16;
-    }
+  	option.per_instance = 1;
+  	cp_data: coverpoint m_item.adc_data {
+  		bins zero = {0};
+  		bins one  = {1};
+  		bins positive = { [1: 127] };
+  		option.at_least = 16;
+  	}
   endgroup
   
   // End of inlined include file
