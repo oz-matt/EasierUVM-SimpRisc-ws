@@ -8,7 +8,7 @@
 //
 // Version:   1.0
 //
-// Code created by Easier UVM Code Generator version 2017-01-19 on Wed Jul  8 07:42:42 2020
+// Code created by Easier UVM Code Generator version 2017-01-19 on Fri Jul 10 01:50:20 2020
 //=============================================================================
 // Description: Testbench
 //=============================================================================
@@ -22,6 +22,7 @@ module top_tb;
 
   import uvm_pkg::*;
 
+  import verif_pkg::*;
   import top_test_pkg::*;
   import top_pkg::top_config;
 
@@ -44,11 +45,7 @@ module top_tb;
     if ( !top_env_config.randomize() )
       `uvm_error("top_tb", "Failed to randomize top-level configuration object" )
 
-    top_env_config.insgen_vif             = th.insgen_if_0;
-    top_env_config.is_active_insgen       = UVM_ACTIVE;    
-    top_env_config.checks_enable_insgen   = 1;             
-    top_env_config.coverage_enable_insgen = 1;             
-
+    top_env_config.m_insgen_config.vif = th.insgen_if_0;
 
     uvm_config_db #(top_config)::set(null, "uvm_test_top", "config", top_env_config);
     uvm_config_db #(top_config)::set(null, "uvm_test_top.m_env", "config", top_env_config);

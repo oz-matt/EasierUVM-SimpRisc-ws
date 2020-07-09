@@ -3,28 +3,30 @@
 //=============================================================================
 // Project  : generated_tb
 //
-// File Name: top_pkg.sv
+// File Name: _pkg.sv
 //
 //
 // Version:   1.0
 //
-// Code created by Easier UVM Code Generator version 2017-01-19 on Fri Jul 10 01:50:20 2020
+// Code created by Easier UVM Code Generator version 2017-01-19 on Fri Jul 10 01:43:41 2020
 //=============================================================================
-// Description: Package for top
+// Description: Package for agent 
 //=============================================================================
 
-package top_pkg;
+package _pkg;
 
   `include "uvm_macros.svh"
 
   import uvm_pkg::*;
 
-  import verif_pkg::*;
-  import insgen_pkg::*;
 
-  `include "top_config.sv"
-  `include "top_seq_lib.sv"
-  `include "top_env.sv"
+  `include "_.sv"
+  `include "_config.sv"
+  `include "_driver.sv"
+  `include "_monitor.sv"
+  `include "_sequencer.sv"
+  `include "_coverage.sv"
+  `include "_agent.sv"
+  `include "_seq_lib.sv"
 
-endpackage : top_pkg
-
+endpackage : _pkg

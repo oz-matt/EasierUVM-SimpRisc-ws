@@ -6,6 +6,7 @@ vcs -sverilog +acc +vpi -timescale=1ns/1ps -ntb_opts uvm-1.2 \
 +incdir+../tb/top_test/sv \
 +incdir+../tb/top_tb/sv \
 -F ../dut/files.f \
+../tb/include/verif_pkg.sv \
 ../tb/insgen/sv/insgen_pkg.sv \
 ../tb/insgen/sv/insgen_if.sv \
 ../tb/top/sv/top_pkg.sv \

@@ -1,9 +1,10 @@
-class insgen_test_config extends uvm_object;
+
+class insgen_test_config;
 	
-	boolean init_cpu_regs_with_rand_vals;
+	int init_cpu_regs_with_rand_vals;
 	
-	function new(boolean init_regs);
-		init_cpu_regs_with_rand_vals = init_regs;
+	function new();
+		init_cpu_regs_with_rand_vals = 1;
 	endfunction
 	
 endclass

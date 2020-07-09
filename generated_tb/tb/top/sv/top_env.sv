@@ -8,7 +8,7 @@
 //
 // Version:   1.0
 //
-// Code created by Easier UVM Code Generator version 2017-01-19 on Wed Jul  8 07:42:42 2020
+// Code created by Easier UVM Code Generator version 2017-01-19 on Fri Jul 10 01:50:20 2020
 //=============================================================================
 // Description: Environment for top
 //=============================================================================
@@ -59,11 +59,7 @@ function void top_env::build_phase(uvm_phase phase);
   if (!uvm_config_db #(top_config)::get(this, "", "config", m_config)) 
     `uvm_error(get_type_name(), "Unable to get top_config")
 
-  m_insgen_config                 = new("m_insgen_config");         
-  m_insgen_config.vif             = m_config.insgen_vif;            
-  m_insgen_config.is_active       = m_config.is_active_insgen;      
-  m_insgen_config.checks_enable   = m_config.checks_enable_insgen;  
-  m_insgen_config.coverage_enable = m_config.coverage_enable_insgen;
+  m_insgen_config = m_config.m_insgen_config;
 
   // You can insert code here by setting agent_copy_config_vars in file insgen.tpl
 

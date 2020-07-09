@@ -1,3 +1,1 @@
-insgen_test_config tconfig;
-
-tconfig = new(true);
+//insgen_test_config tco;

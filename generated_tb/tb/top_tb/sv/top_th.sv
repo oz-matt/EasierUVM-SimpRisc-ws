@@ -8,7 +8,7 @@
 //
 // Version:   1.0
 //
-// Code created by Easier UVM Code Generator version 2017-01-19 on Wed Jul  8 07:42:42 2020
+// Code created by Easier UVM Code Generator version 2017-01-19 on Fri Jul 10 01:50:20 2020
 //=============================================================================
 // Description: Test Harness
 //=============================================================================
@@ -18,6 +18,7 @@ module top_th;
   timeunit      1ns;
   timeprecision 1ps;
 
+  import verif_pkg::*;
 
   `include "th_define_clk_and_nreset.sv"
 

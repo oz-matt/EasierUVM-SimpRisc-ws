@@ -3,28 +3,22 @@
 //=============================================================================
 // Project  : generated_tb
 //
-// File Name: top_pkg.sv
+// File Name: _sequencer.sv
 //
 //
 // Version:   1.0
 //
-// Code created by Easier UVM Code Generator version 2017-01-19 on Fri Jul 10 01:50:20 2020
+// Code created by Easier UVM Code Generator version 2017-01-19 on Fri Jul 10 01:43:41 2020
 //=============================================================================
-// Description: Package for top
+// Description: Sequencer for 
 //=============================================================================
 
-package top_pkg;
+`ifndef _SEQUENCER_SV
+`define _SEQUENCER_SV
 
-  `include "uvm_macros.svh"
+// Sequencer class is specialization of uvm_sequencer
+typedef uvm_sequencer #() _sequencer_t;
 
-  import uvm_pkg::*;
 
-  import verif_pkg::*;
-  import insgen_pkg::*;
-
-  `include "top_config.sv"
-  `include "top_seq_lib.sv"
-  `include "top_env.sv"
-
-endpackage : top_pkg
+`endif // _SEQUENCER_SV
 

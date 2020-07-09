@@ -3,24 +3,24 @@
 //=============================================================================
 // Project  : generated_tb
 //
-// File Name: insgen_seq_lib.sv
+// File Name: _seq_lib.sv
 //
 //
 // Version:   1.0
 //
-// Code created by Easier UVM Code Generator version 2017-01-19 on Fri Jul 10 01:50:20 2020
+// Code created by Easier UVM Code Generator version 2017-01-19 on Fri Jul 10 01:43:41 2020
 //=============================================================================
-// Description: Sequence for agent insgen
+// Description: Sequence for agent 
 //=============================================================================
 
-`ifndef INSGEN_SEQ_LIB_SV
-`define INSGEN_SEQ_LIB_SV
+`ifndef _SEQ_LIB_SV
+`define _SEQ_LIB_SV
 
-class insgen_default_seq extends uvm_sequence #(trans);
+class _default_seq extends uvm_sequence #();
 
-  `uvm_object_utils(insgen_default_seq)
+  `uvm_object_utils(_default_seq)
 
-  insgen_config  m_config;
+  _config  m_config;
 
   extern function new(string name = "");
   extern task body();
@@ -31,18 +31,18 @@ class insgen_default_seq extends uvm_sequence #(trans);
   extern function void set_starting_phase(uvm_phase phase);
 `endif
 
-endclass : insgen_default_seq
+endclass : _default_seq
 
 
-function insgen_default_seq::new(string name = "");
+function _default_seq::new(string name = "");
   super.new(name);
 endfunction : new
 
 
-task insgen_default_seq::body();
+task _default_seq::body();
   `uvm_info(get_type_name(), "Default sequence starting", UVM_HIGH)
 
-  req = trans::type_id::create("req");
+  req = ::type_id::create("req");
   start_item(req); 
   if ( !req.randomize() )
     `uvm_error(get_type_name(), "Failed to randomize transaction")
@@ -53,18 +53,18 @@ endtask : body
 
 
 `ifndef UVM_POST_VERSION_1_1
-function uvm_phase insgen_default_seq::get_starting_phase();
+function uvm_phase _default_seq::get_starting_phase();
   return starting_phase;
 endfunction: get_starting_phase
 
 
-function void insgen_default_seq::set_starting_phase(uvm_phase phase);
+function void _default_seq::set_starting_phase(uvm_phase phase);
   starting_phase = phase;
 endfunction: set_starting_phase
 `endif
 
 
-// You can insert code here by setting agent_seq_inc in file insgen.tpl
+// You can insert code here by setting agent_seq_inc in file 
 
-`endif // INSGEN_SEQ_LIB_SV
+`endif // _SEQ_LIB_SV
 

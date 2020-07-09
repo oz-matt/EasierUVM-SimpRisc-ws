@@ -8,7 +8,7 @@
 //
 // Version:   1.0
 //
-// Code created by Easier UVM Code Generator version 2017-01-19 on Wed Jul  8 07:42:42 2020
+// Code created by Easier UVM Code Generator version 2017-01-19 on Fri Jul 10 01:50:20 2020
 //=============================================================================
 // Description: Test class for top (included in package top_test_pkg)
 //=============================================================================
@@ -30,7 +30,8 @@ class top_test extends uvm_test;
 
   extern function void build_phase(uvm_phase phase);
 
-  `include "test_insert_config.sv"
+  // Start of inlined include file generated_tb/tb/include/test_insert_config.sv
+  //insgen_test_config tco;  // End of inlined include file
 
 endclass : top_test
 
@@ -44,7 +45,9 @@ endfunction : new
 
 function void top_test::build_phase(uvm_phase phase);
 
-  // You can insert code here by setting test_prepend_to_build_phase in file common.tpl
+  // Start of inlined include file generated_tb/tb/include/test_insert_config_build.sv
+  //tconfig = new;
+  // End of inlined include file
 
   // You could modify any test-specific configuration object variables here
 

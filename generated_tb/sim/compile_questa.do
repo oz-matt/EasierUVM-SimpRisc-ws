@@ -8,6 +8,9 @@ set cmd "vlog -F ../dut/files.f"
 eval $cmd
 
 set tb_name top
+set cmd "vlog -sv +incdir+../tb/include  ../tb/include/verif_pkg.sv"
+eval $cmd
+
 set agent_list {\ 
     insgen \
 }
