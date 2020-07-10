@@ -8,7 +8,7 @@
 //
 // Version:   1.0
 //
-// Code created by Easier UVM Code Generator version 2017-01-19 on Fri Jul 10 05:32:45 2020
+// Code created by Easier UVM Code Generator version 2017-01-19 on Fri Jul 10 22:44:56 2020
 //=============================================================================
 // Description: Sequence item for insgen_sequencer
 //=============================================================================
@@ -42,7 +42,6 @@ class trans extends uvm_sequence_item;
   extern function string convert2string();
 
   // Start of inlined include file generated_tb/tb/include/ins_constraints.sv
-  //insgen_test_config tco;
   
   constraint ins_c {
   	rand_instruction inside {32'h0040A003, 32'h00110113};

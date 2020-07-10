@@ -8,7 +8,7 @@
 //
 // Version:   1.0
 //
-// Code created by Easier UVM Code Generator version 2017-01-19 on Fri Jul 10 05:32:45 2020
+// Code created by Easier UVM Code Generator version 2017-01-19 on Fri Jul 10 22:44:56 2020
 //=============================================================================
 // Description: Test class for top (included in package top_test_pkg)
 //=============================================================================
@@ -31,7 +31,7 @@ class top_test extends uvm_test;
   extern function void build_phase(uvm_phase phase);
 
   // Start of inlined include file generated_tb/tb/include/test_insert_config.sv
-  //insgen_test_config tco;  // End of inlined include file
+  insgen_test_config tconfig;  // End of inlined include file
 
 endclass : top_test
 
@@ -46,7 +46,12 @@ endfunction : new
 function void top_test::build_phase(uvm_phase phase);
 
   // Start of inlined include file generated_tb/tb/include/test_insert_config_build.sv
-  //tconfig = new;
+  instr_category_bm ibm;
+  $cast(ibm, LOAD | STORE | ARITHMETIC);
+  
+  tconfig = new(true, ibm);
+  
+  uvm_config_db#(insgen_test_config)::set(this, "top_test.m_env", "tconfig", tconfig);
   // End of inlined include file
 
   // You could modify any test-specific configuration object variables here

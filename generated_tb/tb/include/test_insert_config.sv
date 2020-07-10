@@ -1,1 +1,1 @@
-//insgen_test_config tco;
+insgen_test_config tconfig;
