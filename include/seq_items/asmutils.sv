@@ -4,8 +4,8 @@ static function instr_category_bm get_rand_type_from_mask(int mask);
 		int rand_pick, bit_pick;
 		int bitq[$];
 		instr_category_bm new_bm;
-		
-		$display("!!!!!!!!!!");
+	
+  
 		for(int i=0;i<32;i++) begin
 			if(mask & (1 << i)) bitq.push_back(i);
 		end
