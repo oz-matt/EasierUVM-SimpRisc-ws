@@ -8,7 +8,7 @@
 //
 // Version:   1.0
 //
-// Code created by Easier UVM Code Generator version 2017-01-19 on Sat Jul 11 02:24:29 2020
+// Code created by Easier UVM Code Generator version 2017-01-19 on Sat Jul 11 09:39:22 2020
 //=============================================================================
 // Description: Agent for insgen
 //=============================================================================
@@ -39,7 +39,9 @@ class insgen_agent extends uvm_agent;
   extern function void connect_phase(uvm_phase phase);
   extern function uvm_active_passive_enum get_is_active();
 
-  // You can insert code here by setting agent_inc_inside_class in file insgen.tpl
+  // Start of inlined include file generated_tb/tb/include/agentinclass_inc.sv
+  rand_ins_gen rig;
+  // End of inlined include file
 
 endclass : insgen_agent 
 
@@ -67,7 +69,13 @@ function void insgen_agent::build_phase(uvm_phase phase);
     m_sequencer = insgen_sequencer_t::type_id::create("m_sequencer", this);
   end
 
-  // You can insert code here by setting agent_append_to_build_phase in file insgen.tpl
+  // Start of inlined include file generated_tb/tb/include/agentinbuild_inc.sv
+  
+  	if (get_is_active() == UVM_ACTIVE)
+  	begin
+  		rig    = rand_ins_gen     ::type_id::create("rig", this);
+  	end
+  // End of inlined include file
 
 endfunction : build_phase
 
@@ -87,7 +95,12 @@ function void insgen_agent::connect_phase(uvm_phase phase);
     m_driver.m_config = m_config;
   end
 
-  // You can insert code here by setting agent_append_to_connect_phase in file insgen.tpl
+  // Start of inlined include file generated_tb/tb/include/agentinconnect_inc.sv
+  
+  if (get_is_active() == UVM_ACTIVE)
+  	begin
+  		m_driver.pull_port.connect(rig.pull_imp);
+  	end  // End of inlined include file
 
 endfunction : connect_phase
 
