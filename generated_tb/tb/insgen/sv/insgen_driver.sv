@@ -8,7 +8,7 @@
 //
 // Version:   1.0
 //
-// Code created by Easier UVM Code Generator version 2017-01-19 on Sat Jul 11 09:39:22 2020
+// Code created by Easier UVM Code Generator version 2017-01-19 on Sat Jul 11 23:14:55 2020
 //=============================================================================
 // Description: Driver for insgen
 //=============================================================================
@@ -35,7 +35,7 @@ class insgen_driver extends uvm_driver #(trans);
   // Start of inlined include file generated_tb/tb/include/dclass_inc.sv
   extern function void build_phase (uvm_phase phase);
   
-  uvm_seq_item_pull_port#(instruction_base_si) pull_port;
+  uvm_blocking_get_port#(instruction_base_si) pull_port;
   // End of inlined include file
 
 endclass : insgen_driver 

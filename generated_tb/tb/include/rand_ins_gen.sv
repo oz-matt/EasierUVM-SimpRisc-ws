@@ -1,8 +1,10 @@
 
+import uvm_pkg::*;
+
 class rand_ins_gen extends uvm_component;
 	`uvm_component_utils(rand_ins_gen)
 	
-	uvm_seq_item_pull_imp#(instruction_base_si) pull_imp;
+	uvm_blocking_get_imp#(instruction_base_si, rand_ins_gen) pull_imp;
 	insgen_test_config tconfig;
 	
 	extern function new(string name, uvm_component parent);
