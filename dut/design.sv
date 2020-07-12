@@ -4,7 +4,8 @@ module dut_top(
 	input logic nreset,
 	input logic[31:0] data_bus,
 	output logic[31:0] addr_bus,
-	input logic[31:0] adc_in
+	input logic[31:0] adc_in,
+	output logic[31:0] out_data_bus
 );
 	
 	

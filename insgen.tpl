@@ -8,6 +8,7 @@ if_port    = logic nreset;
 if_port    = logic[31:0] data_bus;
 if_port    = logic[31:0] addr_bus;
 if_port    = logic[31:0] adc_in;
+if_port    = logic[31:0] out_data_bus;
 if_clock   = clk
 
 driver_inc = insgen_driver_inc.sv   inline

@@ -3,7 +3,8 @@ module cpu (
 	input nreset,
 	aximem.mem io,
 	input logic[31:0] data_bus,
-	output logic[31:0] addr_bus
+	output logic[31:0] addr_bus,
+	output logic[31:0] out_data_bus
 );
 
 	masterif mif(.*);
