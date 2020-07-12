@@ -8,7 +8,7 @@
 //
 // Version:   1.0
 //
-// Code created by Easier UVM Code Generator version 2017-01-19 on Sat Jul 11 23:14:55 2020
+// Code created by Easier UVM Code Generator version 2017-01-19 on Mon Jul 13 05:35:12 2020
 //=============================================================================
 // Description: Monitor for insgen
 //=============================================================================
@@ -57,7 +57,7 @@ endtask : run_phase
 
 // Start of inlined include file generated_tb/tb/include/insgen_monitor_inc.sv
 task insgen_monitor::do_mon;
-	forever @(vif.data_bus) begin
+	forever  @(vif.data_bus or vif.adc_in) begin
 		m_trans.rand_instruction = vif.data_bus;
 		m_trans.adc_data = vif.adc_in;
 		analysis_port.write(m_trans);

@@ -1,5 +1,5 @@
 task insgen_monitor::do_mon;
-	forever @(vif.data_bus) begin
+	forever  @(vif.data_bus or vif.adc_in) begin
 		m_trans.rand_instruction = vif.data_bus;
 		m_trans.adc_data = vif.adc_in;
 		analysis_port.write(m_trans);

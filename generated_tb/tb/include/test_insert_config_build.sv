@@ -1,6 +1,5 @@
-instr_category_bm ibm;
-$cast(ibm, LOAD | STORE | ARITHMETIC);
+instr_category_bm ibm = instr_category_bm'(LOAD | STORE | ARITHMETIC);
 
 tconfig = new(true, ibm);
 
-uvm_config_db#(insgen_test_config)::set(this, "top_test.m_env", "tconfig", tconfig);
+uvm_config_db#(insgen_test_config)::set(this, "m_env.m_insgen_agent.*", "tconfig", tconfig);
