@@ -1,7 +1,9 @@
 interface masterif (
 	input logic clk,
 	input logic nreset,
-	output logic[31:0] out_data_bus,
+  output wire[31:0] out_data_bus_port2,
+  output wire[31:0] out_addr_bus_port2
+  
 );
 	
 	logic[31:0] rx [31:0];
@@ -23,7 +25,8 @@ interface masterif (
 	modport umem (
 		input clk,
 		//input pc,
-		output out_data_bus,
+        output out_data_bus_port2,
+      output out_addr_bus_port2,
 		input mem_wdata,
 		output mem_rdata,
 		input mem_addr,

@@ -2,20 +2,26 @@ module cpu (
 	input clk,
 	input nreset,
 	aximem.mem io,
-	input logic[31:0] data_bus,
-	output logic[31:0] addr_bus,
-	output logic[31:0] out_data_bus
+  input logic[31:0] instr_bus,
+  input logic[31:0] in_data_bus,
+  output wire mem_rw,
+  output logic[3:0] mem_wstrobe,
+  output logic[31:0] pc_out,
+	output logic[31:0] out_data_bus,
+	output logic[31:0] out_addr_bus,
+  output wire[31:0] out_data_bus_port2,
+  output wire[31:0] out_addr_bus_port2
 );
 
 	masterif mif(.*);
 
-	instruction_parser instruction(data_bus);
+  instruction_parser instruction(instr_bus);
 	
 	umem umem_inst(.io(mif.umem), .mem(io), .insf3(instruction.funct3));
 	
 	
 	logic[31:0] pc = 32'h80000000;
-	assign addr_bus = pc;
+	assign pc_out = pc;
 	
 	logic[31:0] jump;
 	
@@ -103,10 +109,13 @@ module cpu (
 	
 	logic[31:0] rdbuffer;
 	logic[31:0] gbuf; // general buffer since select-of-concatenate not supported in vcs2016
+  logic[3:0] mem_wstrobe;
+  
+  assign mem_rw = mif.mem_rw;
 	
 	always_comb begin
 		if(!mif.nreset) begin
-			mif.mem_addr = 0;
+			out_addr_bus = 0;
 			jump = 1;
 		end
 		else begin
@@ -114,38 +123,53 @@ module cpu (
 				
 				LW: begin //Load 32-bit val at umem[rx[rs1] + imm] into rd
 					mif.mem_rw = 0;
-					mif.mem_addr = mif.rx[instruction.rs1] + `SIGN_EXTEND32(12, instruction.i_imm);
-					rdbuffer = mif.mem_rdata;
+					out_addr_bus = mif.rx[instruction.rs1] + `SIGN_EXTEND32(12, instruction.i_imm);
+					rdbuffer = in_data_bus;
 				end
 				
 				LH: begin //Load 16-bit val (sign extended to 32-bits) at umem[rx[rs1] + imm] into rd
 					mif.mem_rw = 0;
-					mif.mem_addr = mif.rx[instruction.rs1] + `SIGN_EXTEND32(12, instruction.i_imm);
-					rdbuffer = `SIGN_EXTEND32(16, mif.mem_rdata);
+					out_addr_bus = mif.rx[instruction.rs1] + `SIGN_EXTEND32(12, instruction.i_imm);
+					rdbuffer = `SIGN_EXTEND32(16, in_data_bus);
 				end
 				
 				LHU: begin //Load 16-bit val (zero extended to 32-bits) at umem[rx[rs1] + imm] into rd
 					mif.mem_rw = 0;
-					mif.mem_addr = mif.rx[instruction.rs1] + `SIGN_EXTEND32(12, instruction.i_imm);
-					rdbuffer = {16'h0000, mif.mem_rdata[15:0]};
+					out_addr_bus = mif.rx[instruction.rs1] + `SIGN_EXTEND32(12, instruction.i_imm);
+					rdbuffer = {16'h0000, in_data_bus[15:0]};
 				end
 				
 				LB: begin //Load 8-bit val (sign extended to 32-bits) at umem[rx[rs1] + imm] into rd
 					mif.mem_rw = 0;
-					mif.mem_addr = mif.rx[instruction.rs1] + `SIGN_EXTEND32(12, instruction.i_imm);
-					rdbuffer = `SIGN_EXTEND32(8, mif.mem_rdata);
+					out_addr_bus = mif.rx[instruction.rs1] + `SIGN_EXTEND32(12, instruction.i_imm);
+					rdbuffer = `SIGN_EXTEND32(8, in_data_bus);
 				end
 				
 				LBU: begin //Load 8-bit val (zero extended to 32-bits) at umem[rx[rs1] + imm] into rd
 					mif.mem_rw = 0;
-					mif.mem_addr = mif.rx[instruction.rs1] + `SIGN_EXTEND32(12, instruction.i_imm);
-					rdbuffer = {24'h000000, mif.mem_rdata[7:0]};
+					out_addr_bus = mif.rx[instruction.rs1] + `SIGN_EXTEND32(12, instruction.i_imm);
+					rdbuffer = {24'h000000, in_data_bus[7:0]};
 				end
 				
-				SW, SH, SB: begin //Store 32, 16 or 8 bit val from rs2 into umem[rx[rs1] + imm]
+				SW: begin //Store 32, 16 or 8 bit val from rs2 into umem[rx[rs1] + imm]
 					mif.mem_rw = 1; //umem controller uses instruction.funct3 to determine write width
-					mif.mem_addr = mif.rx[instruction.rs1] + `SIGN_EXTEND32(12, instruction.s_imm);
-					mif.mem_wdata = mif.rx[instruction.rs2];
+					out_addr_bus = mif.rx[instruction.rs1] + `SIGN_EXTEND32(12, instruction.s_imm);
+                  mem_wstrobe = 4'b1111;
+					out_data_bus = mif.rx[instruction.rs2];
+				end
+				SH: begin //Store 32, 16 or 8 bit val from rs2 into umem[rx[rs1] + imm]
+					mif.mem_rw = 1; //umem controller uses instruction.funct3 to determine write width
+					out_addr_bus = mif.rx[instruction.rs1] + `SIGN_EXTEND32(12, instruction.s_imm);
+                  gbuf = mif.rx[instruction.rs2];
+                  mem_wstrobe = 4'b0011;
+                  out_data_bus = {16'h0000, gbuf[15:0]};
+				end
+				SB: begin //Store 32, 16 or 8 bit val from rs2 into umem[rx[rs1] + imm]
+					mif.mem_rw = 1; //umem controller uses instruction.funct3 to determine write width
+					out_addr_bus = mif.rx[instruction.rs1] + `SIGN_EXTEND32(12, instruction.s_imm);
+					gbuf = mif.rx[instruction.rs2];
+                  mem_wstrobe = 4'b0001;
+                  out_data_bus = {24'h000000, gbuf[7:0]};
 				end
 				
 				ADDI: begin
@@ -296,7 +320,7 @@ module cpu (
 		if(!mif.nreset) begin
 			//mif.rx = '{default:32'h00000000};
 			mif.rx[0] = 0;
-			mif.rx[1] = 0;
+          mif.rx[1] = 256;
 			mif.rx[2] = 4;
 			mif.rx[3] = 44;
 			mif.rx[4] = 'hfffffffe;
@@ -307,6 +331,6 @@ module cpu (
 		end
 	end
 	
-				//$display("lw: addr:%X, rs1:%X, rd:%X, imm:%X, rdata:%X, full:%X, res:%X", mif.mem_addr, instruction.rs1, instruction.rd, instruction.i_imm, mif.mem_rdata, data_bus, mif.rx[instruction.rd]);
+				//$display("lw: addr:%X, rs1:%X, rd:%X, imm:%X, rdata:%X, full:%X, res:%X", out_addr_bus, instruction.rs1, instruction.rd, instruction.i_imm, mif.mem_rdata, data_bus, mif.rx[instruction.rd]);
 	
 endmodule
