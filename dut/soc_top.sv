@@ -17,3 +17,4 @@ module soc_top(
 	dut_top dut_top_inst(.*);
 	
 endmodule
+

@@ -1,6 +1,14 @@
 !insgen_if
 clk  clk
 nreset nreset
-data_bus data_bus
+instr_bus instr_bus
+in_data_bus in_data_bus
 adc_in adc_in
-addr_bus addr_bus
+mem_rw mem_rw
+mem_wstrobe mem_wstrobe
+pc_out pc_out
+out_data_bus out_data_bus
+out_addr_bus out_addr_bus
+out_data_bus_port2 out_data_bus_port2
+out_addr_bus_port2 out_addr_bus_port2
+

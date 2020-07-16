@@ -8,7 +8,7 @@
 //
 // Version:   1.0
 //
-// Code created by Easier UVM Code Generator version 2017-01-19 on Wed Jul 15 07:47:33 2020
+// Code created by Easier UVM Code Generator version 2017-01-19 on Thu Jul 16 08:01:04 2020
 //=============================================================================
 // Description: Driver for insgen
 //=============================================================================
@@ -68,7 +68,7 @@ endfunction
 task insgen_driver::do_drive();
 	instruction_base_si rind;
 	pull_port.get(rind);
-	vif.data_bus <= rind.get_raw_bits();
+	vif.instr_bus <= rind.get_raw_bits();
 	vif.adc_in <= req.adc_data;
 	#10;
 endtask

@@ -1,17 +1,3 @@
-`include "masterif.sv"
-`include "mdriver_int.sv"
-`include "axil_int.sv"
-`include "defines.sv"
-`include "umem.sv"
-`include "memslave.sv"
-`include "axi_master_wrapper.sv"
-`include "instruction_parser.sv"
-`include "axi_mem.sv"
-`include "sindrv.sv"
-`include "lfsr5.sv"
-`include "cpu.sv"
-`include "soc_top.sv"
-
 
 module dut_top(
 	input logic clk,
