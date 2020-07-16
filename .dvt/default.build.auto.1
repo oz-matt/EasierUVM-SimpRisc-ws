@@ -1,21 +1,21 @@
 ################################################################################
 #                    DO NOT MANUALLY EDIT THIS FILE!                           #
 ################################################################################
-# This file contains the automatically generated build configuration (2020/07/13 06:01:30)
-# requested at line 3 in /home/disk/uvm_diag/.dvt/default.build
+# This file contains the automatically generated build configuration (2020/07/17 05:46:58)
+# requested at line 3 in /home/disk/EasierUVM-SimpRisc-ws/.dvt/default.build
 
 
 ################ Verilog Auto-config Directives ################
 +dvt_init
 
-+dvt_skip_compile+/home/disk/uvm_diag/include/*
-+dvt_skip_compile+/home/disk/uvm_diag/generated_tb.bak/*
-+dvt_skip_compile+/home/disk/uvm_diag/generated_tb/sim/*
++dvt_skip_compile+/home/disk/EasierUVM-SimpRisc-ws/include/*
++dvt_skip_compile+/home/disk/EasierUVM-SimpRisc-ws/generated_tb.bak/*
++dvt_skip_compile+/home/disk/EasierUVM-SimpRisc-ws/generated_tb/sim/*
 -uvm
 
 ### AUTOCONFIG WARNING: Multiple incdir candidates.
 # The following includes have multiple incdir candidates:
-#`include "defines.sv" in verif_pkg.sv (/home/disk/uvm_diag/generated_tb/tb/include/verif_pkg.sv)
+#`include "defines.sv" in verif_pkg.sv (/home/disk/EasierUVM-SimpRisc-ws/generated_tb/tb/include/verif_pkg.sv)
 # The list of incdir candidates is:
 +incdir+generated_tb/tb/include
 # +incdir+generated_tb/dut
@@ -49,6 +49,7 @@ dut/masterif.sv
 dut/memslave.sv
 dut/sindrv.sv
 dut/soc_top.sv
+dut/testbench.sv
 dut/umem.sv
 generated_tb/dut/axi_master_wrapper.sv
 generated_tb/dut/axi_mem.sv
