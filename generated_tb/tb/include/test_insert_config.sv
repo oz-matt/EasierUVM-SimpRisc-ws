@@ -1,1 +1,0 @@
-insgen_test_config tconfig;

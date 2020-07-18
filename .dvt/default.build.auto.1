@@ -1,7 +1,7 @@
 ################################################################################
 #                    DO NOT MANUALLY EDIT THIS FILE!                           #
 ################################################################################
-# This file contains the automatically generated build configuration (2020/07/17 05:46:58)
+# This file contains the automatically generated build configuration (2020/07/19 00:07:23)
 # requested at line 3 in /home/disk/EasierUVM-SimpRisc-ws/.dvt/default.build
 
 
@@ -11,35 +11,26 @@
 +dvt_skip_compile+/home/disk/EasierUVM-SimpRisc-ws/include/*
 +dvt_skip_compile+/home/disk/EasierUVM-SimpRisc-ws/generated_tb.bak/*
 +dvt_skip_compile+/home/disk/EasierUVM-SimpRisc-ws/generated_tb/sim/*
++dvt_skip_compile+/home/disk/EasierUVM-SimpRisc-ws/generated_tb/tb/include/inlines/*
++dvt_skip_compile+/home/disk/EasierUVM-SimpRisc-ws/generated_tb/tb/sv/*
 -uvm
 
 ### AUTOCONFIG WARNING: Multiple incdir candidates.
 # The following includes have multiple incdir candidates:
-#`include "defines.sv" in verif_pkg.sv (/home/disk/EasierUVM-SimpRisc-ws/generated_tb/tb/include/verif_pkg.sv)
+#`include "defines.sv" in verif_pkg.sv (/home/disk/EasierUVM-SimpRisc-ws/generated_tb/tb/include/pkg/verif_pkg.sv)
 # The list of incdir candidates is:
 +incdir+generated_tb/tb/include
 # +incdir+generated_tb/dut
 # +incdir+dut
 
-+incdir+generated_tb/tb/insgen/sv
-+incdir+generated_tb/tb/sv
-+incdir+generated_tb/tb/top/sv
 +incdir+generated_tb/tb/include
++incdir+generated_tb/tb/insgen/sv
++incdir+generated_tb/tb/top/sv
 +incdir+generated_tb/tb/top_test/sv
 
 # Available `ifdef / `ifndef controls:
 # +define+UVM_POST_VERSION_1_1
 
-generated_tb/tb/sv/_pkg.sv
-generated_tb/tb/include/verif_pkg.sv
-generated_tb/tb/insgen/sv/insgen_pkg.sv
-generated_tb/tb/top/sv/top_pkg.sv
-generated_tb/tb/top_test/sv/top_test_pkg.sv
-generated_tb/tb/top_tb/sv/top_tb.sv
-generated_tb/tb/include/insgen_monitor_inc.sv
-generated_tb/tb/insgen/sv/insgen_if.sv
-generated_tb/tb/top_tb/sv/top_th.sv
-generated_tb/tb/sv/_if.sv
 dut/axi_master_wrapper.sv
 dut/axi_mem.sv
 dut/design.sv
@@ -60,25 +51,21 @@ generated_tb/dut/masterif.sv
 generated_tb/dut/memslave.sv
 generated_tb/dut/sindrv.sv
 generated_tb/dut/soc_top.sv
+generated_tb/dut/testbench.sv
 generated_tb/dut/umem.sv
-generated_tb/tb/include/agentinbuild_inc.sv
-generated_tb/tb/include/agentinclass_inc.sv
-generated_tb/tb/include/agentinconnect_inc.sv
-generated_tb/tb/include/dclass_inc.sv
-generated_tb/tb/include/ins_constraints.sv
-generated_tb/tb/include/insgen_cover_inc.sv
-generated_tb/tb/include/insgen_driver_inc.sv
-generated_tb/tb/include/seqinclass_inc.sv
-generated_tb/tb/include/test_insert_config.sv
-generated_tb/tb/include/test_insert_config_build.sv
-generated_tb/tb/include/seq_ins_pkg.sv
 dut/axil_int.sv
 dut/mdriver_int.sv
 generated_tb/dut/axil_int.sv
 generated_tb/dut/mdriver_int.sv
 dut/defines.sv
 generated_tb/dut/defines.sv
-generated_tb/tb/include/seq_items/seq_ins_pkg.sv
+generated_tb/tb/include/pkg/verif_pkg.sv
+generated_tb/tb/top_tb/sv/top_th.sv
+generated_tb/tb/insgen/sv/insgen_pkg.sv
+generated_tb/tb/top/sv/top_pkg.sv
+generated_tb/tb/top_test/sv/top_test_pkg.sv
+generated_tb/tb/top_tb/sv/top_tb.sv
+generated_tb/tb/insgen/sv/insgen_if.sv
 generated_tb/dut/cpu.sv
 dut/cpu.sv
 

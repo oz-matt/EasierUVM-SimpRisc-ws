@@ -8,7 +8,7 @@
 //
 // Version:   1.0
 //
-// Code created by Easier UVM Code Generator version 2017-01-19 on Fri Jul 17 05:48:24 2020
+// Code created by Easier UVM Code Generator version 2017-01-19 on Sun Jul 19 00:30:30 2020
 //=============================================================================
 // Description: Test Harness
 //=============================================================================
@@ -20,7 +20,21 @@ module top_th;
 
   import verif_pkg::*;
 
-  `include "th_define_clk_and_nreset.sv"
+  // Start of inlined include file generated_tb/tb/include/inlines/th_define_clk_and_nreset.sv
+    logic clock = 0;
+    logic reset;
+  
+    always #10 clock = ~clock;
+  
+    initial
+    begin
+      reset = 0;         // Active low reset in this example
+      #75 reset = 1;
+    end
+  
+    assign insgen_if_0.clk = clock;
+    assign insgen_if_0.nreset = reset;
+  // End of inlined include file
 
   // Pin-level interfaces connected to DUT
   // You can remove interface instances by setting generate_interface_instance = no in the interface template file

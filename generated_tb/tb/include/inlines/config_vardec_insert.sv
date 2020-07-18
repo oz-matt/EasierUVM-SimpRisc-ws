@@ -1,0 +1,2 @@
+boolean init_cpu_regs_with_rand_vals;
+instr_category_bm allowed_instr_types;

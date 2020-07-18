@@ -8,7 +8,7 @@
 //
 // Version:   1.0
 //
-// Code created by Easier UVM Code Generator version 2017-01-19 on Fri Jul 17 05:48:24 2020
+// Code created by Easier UVM Code Generator version 2017-01-19 on Sun Jul 19 00:30:30 2020
 //=============================================================================
 // Description: Testbench
 //=============================================================================
@@ -38,7 +38,9 @@ module top_tb;
 
   initial
   begin
-    `include "tb_incs.sv"
+    // Start of inlined include file generated_tb/tb/include/inlines/tb_incs.sv
+    $dumpfile("dump.vcd");
+    $dumpvars;    // End of inlined include file
 
     // Create and populate top-level configuration object
     top_env_config = new("top_env_config");

@@ -8,7 +8,7 @@
 //
 // Version:   1.0
 //
-// Code created by Easier UVM Code Generator version 2017-01-19 on Fri Jul 17 05:48:24 2020
+// Code created by Easier UVM Code Generator version 2017-01-19 on Sun Jul 19 00:30:30 2020
 //=============================================================================
 // Description: Test class for top (included in package top_test_pkg)
 //=============================================================================
@@ -30,7 +30,7 @@ class top_test extends uvm_test;
 
   extern function void build_phase(uvm_phase phase);
 
-  // Start of inlined include file generated_tb/tb/include/test_insert_config.sv
+  // Start of inlined include file generated_tb/tb/include/inlines/test_insert_config.sv
   insgen_test_config tconfig;  // End of inlined include file
 
 endclass : top_test
@@ -45,7 +45,7 @@ endfunction : new
 
 function void top_test::build_phase(uvm_phase phase);
 
-  // Start of inlined include file generated_tb/tb/include/test_insert_config_build.sv
+  // Start of inlined include file generated_tb/tb/include/inlines/test_insert_config_build.sv
   instr_category_bm ibm = instr_category_bm'(LOAD | STORE | ARITHMETIC);
   
   tconfig = new(true, ibm);

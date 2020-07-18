@@ -5,3 +5,5 @@
 +dvt_skip_compile+/home/disk/EasierUVM-SimpRisc-ws/include/*
 +dvt_skip_compile+/home/disk/EasierUVM-SimpRisc-ws/generated_tb.bak/*
 +dvt_skip_compile+/home/disk/EasierUVM-SimpRisc-ws/generated_tb/sim/*
++dvt_skip_compile+/home/disk/EasierUVM-SimpRisc-ws/generated_tb/tb/include/inlines/*
++dvt_skip_compile+/home/disk/EasierUVM-SimpRisc-ws/generated_tb/tb/sv/*

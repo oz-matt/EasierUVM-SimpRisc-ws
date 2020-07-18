@@ -7,7 +7,7 @@ irun -vtimescale 1ns/1ps -uvmhome ${IUS_HOME}/tools/methodology/UVM/CDNS-1.2 \
 +incdir+../tb/top_test/sv \
 +incdir+../tb/top_tb/sv \
 -F ../dut/files.f \
-../tb/include/verif_pkg.sv \
+../tb/include//pkg/verif_pkg.sv \
 ../tb/insgen/sv/insgen_pkg.sv \
 ../tb/insgen/sv/insgen_if.sv \
 ../tb/top/sv/top_pkg.sv \
