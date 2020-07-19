@@ -11,7 +11,7 @@ package verif_pkg;
 	`include "seq_items/load_instruction_si.sv"
 	`include "seq_items/asmutils.sv"
 	
-	`include "insgen_test_config.sv"
 	`include "rand_ins_gen.sv"
+
 	
 endpackage : verif_pkg

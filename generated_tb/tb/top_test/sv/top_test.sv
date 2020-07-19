@@ -8,7 +8,7 @@
 //
 // Version:   1.0
 //
-// Code created by Easier UVM Code Generator version 2017-01-19 on Fri Jul 17 05:48:24 2020
+// Code created by Easier UVM Code Generator version 2017-01-19 on Mon Jul 20 06:11:49 2020
 //=============================================================================
 // Description: Test class for top (included in package top_test_pkg)
 //=============================================================================
@@ -30,8 +30,8 @@ class top_test extends uvm_test;
 
   extern function void build_phase(uvm_phase phase);
 
-  // Start of inlined include file generated_tb/tb/include/test_insert_config.sv
-  insgen_test_config tconfig;  // End of inlined include file
+  // Start of inlined include file generated_tb/tb/include/inlines/test_insert_config_afterc.sv
+  extern function void start_of_simulation_phase(uvm_phase phase);  // End of inlined include file
 
 endclass : top_test
 
@@ -45,13 +45,7 @@ endfunction : new
 
 function void top_test::build_phase(uvm_phase phase);
 
-  // Start of inlined include file generated_tb/tb/include/test_insert_config_build.sv
-  instr_category_bm ibm = instr_category_bm'(LOAD | STORE | ARITHMETIC);
-  
-  tconfig = new(true, ibm);
-  
-  uvm_config_db#(insgen_test_config)::set(this, "m_env.m_insgen_agent.*", "tconfig", tconfig);
-  // End of inlined include file
+  // You can insert code here by setting test_prepend_to_build_phase in file common.tpl
 
   // You could modify any test-specific configuration object variables here
 
@@ -64,7 +58,12 @@ function void top_test::build_phase(uvm_phase phase);
 endfunction : build_phase
 
 
-// You can insert code here by setting test_inc_after_class in file common.tpl
+// Start of inlined include file generated_tb/tb/include/inlines/test_insert_config.sv
+function void top_test::start_of_simulation_phase(uvm_phase phase);
+	
+	insgen_default_seq::type_id::set_type_override(insgen_prand_ins_seq::get_type());
+	
+endfunction// End of inlined include file
 
 `endif // TOP_TEST_SV
 

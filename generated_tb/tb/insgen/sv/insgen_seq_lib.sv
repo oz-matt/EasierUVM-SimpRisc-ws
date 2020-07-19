@@ -8,7 +8,7 @@
 //
 // Version:   1.0
 //
-// Code created by Easier UVM Code Generator version 2017-01-19 on Fri Jul 17 05:48:24 2020
+// Code created by Easier UVM Code Generator version 2017-01-19 on Mon Jul 20 06:11:49 2020
 //=============================================================================
 // Description: Sequence for agent insgen
 //=============================================================================
@@ -64,7 +64,32 @@ endfunction: set_starting_phase
 `endif
 
 
-// You can insert code here by setting agent_seq_inc in file insgen.tpl
+// Start of inlined include file generated_tb/tb/include/inlines/insgen_prand_ins_seq.sv
+
+class insgen_prand_ins_seq extends insgen_default_seq;
+
+	`uvm_object_utils(insgen_prand_ins_seq)
+
+	extern task pre_start();
+	extern function void mid_do(uvm_sequence_item this_item); 
+
+endclass
+
+task insgen_prand_ins_seq::pre_start();
+	instr_category_bm ibm = instr_category_bm'(LOAD | STORE | ARITHMETIC);
+	this.m_config = new(true, ibm);
+	uvm_config_db#(insgen_config)::set(null, "uvm_test_top.m_env.m_insgen_agent.*", "m_config", m_config);
+endtask : pre_start
+
+function void insgen_prand_ins_seq::mid_do(uvm_sequence_item this_item);
+	trans pkt;
+	$cast(pkt, this_item);
+	pkt.ibsi = asmutils::get_rand_instruction(this.m_config.allowed_instr_types);
+	pkt.rand_instruction = pkt.ibsi.get_raw_bits();
+endfunction : mid_do
+
+
+// End of inlined include file
 
 `endif // INSGEN_SEQ_LIB_SV
 

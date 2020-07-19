@@ -15,7 +15,7 @@ set tb_name top
 append cmd " +incdir+../tb/include "
 
 # Compile the common env package
-append cmd " ../tb/include/verif_pkg.sv"
+append cmd " ../tb/include//pkg/verif_pkg.sv"
 
 # Compile the agents
 set agent_list {\ 

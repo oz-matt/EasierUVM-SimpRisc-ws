@@ -1,0 +1,1 @@
+extern function void start_of_simulation_phase(uvm_phase phase);

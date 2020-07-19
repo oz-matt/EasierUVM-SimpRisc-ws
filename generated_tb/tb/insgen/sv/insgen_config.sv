@@ -8,7 +8,7 @@
 //
 // Version:   1.0
 //
-// Code created by Easier UVM Code Generator version 2017-01-19 on Fri Jul 17 05:48:24 2020
+// Code created by Easier UVM Code Generator version 2017-01-19 on Mon Jul 20 06:11:49 2020
 //=============================================================================
 // Description: Configuration for agent insgen
 //=============================================================================
@@ -28,13 +28,15 @@ class insgen_config extends uvm_object;
   bit                      coverage_enable;       
   bit                      checks_enable;         
 
-  // You can insert variables here by setting config_var in file insgen.tpl
+  boolean init_cpu_regs_with_rand_vals;
+  instr_category_bm allowed_instr_types;
 
   // You can remove new by setting agent_config_generate_methods_inside_class = no in file insgen.tpl
 
   extern function new(string name = "");
 
-  // You can insert code here by setting agent_config_inc_inside_class in file insgen.tpl
+  // Start of inlined include file generated_tb/tb/include/inlines/config_cextern.sv
+  extern function init_params(boolean init_rx, instr_category_bm icbm);  // End of inlined include file
 
 endclass : insgen_config 
 
@@ -46,7 +48,13 @@ function insgen_config::new(string name = "");
 endfunction : new
 
 
-// You can insert code here by setting agent_config_inc_after_class in file insgen.tpl
+// Start of inlined include file generated_tb/tb/include/inlines/config_new.sv
+
+	function insgen_config::init_params(boolean init_rx, instr_category_bm icbm);
+		this.init_cpu_regs_with_rand_vals = init_rx;
+		this.allowed_instr_types = icbm;
+	endfunction
+// End of inlined include file
 
 `endif // INSGEN_CONFIG_SV
 

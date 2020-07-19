@@ -8,7 +8,7 @@
 //
 // Version:   1.0
 //
-// Code created by Easier UVM Code Generator version 2017-01-19 on Fri Jul 17 05:48:24 2020
+// Code created by Easier UVM Code Generator version 2017-01-19 on Mon Jul 20 06:11:49 2020
 //=============================================================================
 // Description: Sequence item for insgen_sequencer
 //=============================================================================
@@ -28,6 +28,7 @@ class trans extends uvm_sequence_item;
   // Transaction variables
   rand logic[31:0] rand_instruction;
   rand logic[31:0] adc_data;
+  instruction_base_si ibsi;
 
 
   extern function new(string name = "");
@@ -41,7 +42,7 @@ class trans extends uvm_sequence_item;
   extern function void do_unpack(uvm_packer packer);
   extern function string convert2string();
 
-  // Start of inlined include file generated_tb/tb/include/ins_constraints.sv
+  // Start of inlined include file generated_tb/tb/include/inlines/ins_constraints.sv
   
   constraint ins_c {
   	rand_instruction inside {32'h0040A003, 32'h00110113};
@@ -66,6 +67,7 @@ function void trans::do_copy(uvm_object rhs);
   super.do_copy(rhs);
   rand_instruction = rhs_.rand_instruction;
   adc_data         = rhs_.adc_data;        
+  ibsi             = rhs_.ibsi;            
 endfunction : do_copy
 
 
@@ -77,6 +79,7 @@ function bit trans::do_compare(uvm_object rhs, uvm_comparer comparer);
   result = super.do_compare(rhs, comparer);
   result &= comparer.compare_field("rand_instruction", rand_instruction, rhs_.rand_instruction, $bits(rand_instruction));
   result &= comparer.compare_field("adc_data", adc_data,                 rhs_.adc_data,         $bits(adc_data));
+  result &= comparer.compare_field("ibsi", ibsi,                         rhs_.ibsi,             $bits(ibsi));
   return result;
 endfunction : do_compare
 
@@ -94,6 +97,7 @@ function void trans::do_record(uvm_recorder recorder);
   // Use the record macros to record the item fields:
   `uvm_record_field("rand_instruction", rand_instruction)
   `uvm_record_field("adc_data",         adc_data)        
+  `uvm_record_field("ibsi",             ibsi)            
 endfunction : do_record
 
 
@@ -101,6 +105,7 @@ function void trans::do_pack(uvm_packer packer);
   super.do_pack(packer);
   `uvm_pack_int(rand_instruction) 
   `uvm_pack_int(adc_data)         
+  `uvm_pack_int(ibsi)             
 endfunction : do_pack
 
 
@@ -108,6 +113,7 @@ function void trans::do_unpack(uvm_packer packer);
   super.do_unpack(packer);
   `uvm_unpack_int(rand_instruction) 
   `uvm_unpack_int(adc_data)         
+  `uvm_unpack_int(ibsi)             
 endfunction : do_unpack
 
 
@@ -116,8 +122,9 @@ function string trans::convert2string();
   $sformat(s, "%s\n", super.convert2string());
   $sformat(s, {"%s\n",
     "rand_instruction = 'h%0h  'd%0d\n", 
-    "adc_data         = 'h%0h  'd%0d\n"},
-    get_full_name(), rand_instruction, rand_instruction, adc_data, adc_data);
+    "adc_data         = 'h%0h  'd%0d\n", 
+    "ibsi             = 'h%0h  'd%0d\n"},
+    get_full_name(), rand_instruction, rand_instruction, adc_data, adc_data, ibsi, ibsi);
   return s;
 endfunction : convert2string
 

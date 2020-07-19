@@ -1,0 +1,1 @@
+extern function init_params(boolean init_rx, instr_category_bm icbm);
