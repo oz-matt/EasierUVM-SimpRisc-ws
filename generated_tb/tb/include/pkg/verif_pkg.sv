@@ -12,6 +12,6 @@ package verif_pkg;
 	`include "seq_items/asmutils.sv"
 	
 	`include "rand_ins_gen.sv"
-	
+
 	
 endpackage : verif_pkg
