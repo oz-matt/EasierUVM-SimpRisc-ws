@@ -8,7 +8,7 @@
 //
 // Version:   1.0
 //
-// Code created by Easier UVM Code Generator version 2017-01-19 on Tue Jul 21 03:15:04 2020
+// Code created by Easier UVM Code Generator version 2017-01-19 on Tue Jul 21 06:33:54 2020
 //=============================================================================
 // Description: Monitor for insgen
 //=============================================================================
@@ -61,7 +61,7 @@ task insgen_monitor::do_mon;
 		m_trans.rand_instruction = vif.instr_bus;
 		m_trans.adc_data = vif.adc_in;
 		analysis_port.write(m_trans);
-		`uvm_info(get_type_name(), $sformatf("ins: %0X, adc: %0X", vif.instr_bus, vif.adc_in), UVM_MEDIUM);
+		`uvm_info(get_type_name(), $sformatf("ins: %X", vif.instr_bus), UVM_MEDIUM);
 	end
 endtask
 // End of inlined include file

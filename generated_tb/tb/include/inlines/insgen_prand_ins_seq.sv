@@ -24,7 +24,6 @@ function void insgen_prand_ins_seq::mid_do(uvm_sequence_item this_item);
 	trans pkt;
 	$cast(pkt, this_item);
 	pkt.ibsi = asmutils::get_rand_instruction(this.m_config.allowed_instr_types);
-	pkt.rand_instruction = 9;//pkt.ibsi.get_raw_bits();
 endfunction : mid_do
 
 
