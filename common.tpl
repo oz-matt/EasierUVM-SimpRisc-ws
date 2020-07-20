@@ -14,5 +14,3 @@ tb_prepend_to_initial = inlines/tb_incs.sv inline
 test_inc_inside_class = inlines/test_insert_config_afterc.sv inline
 
 test_inc_after_class = inlines/test_insert_config.sv inline
-
-top_env_config_append_to_new = inlines/top_config_insert_new.sv inline

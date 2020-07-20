@@ -8,7 +8,7 @@
 //
 // Version:   1.0
 //
-// Code created by Easier UVM Code Generator version 2017-01-19 on Mon Jul 20 06:19:22 2020
+// Code created by Easier UVM Code Generator version 2017-01-19 on Mon Jul 20 21:54:09 2020
 //=============================================================================
 // Description: Configuration for top
 //=============================================================================
@@ -45,10 +45,7 @@ function top_config::new(string name = "");
   m_insgen_config.checks_enable   = 1;                     
   m_insgen_config.coverage_enable = 1;                     
 
-  // Start of inlined include file generated_tb/tb/include/inlines/top_config_insert_new.sv
-  instr_category_bm ibm = instr_category_bm'(LOAD | STORE | ARITHMETIC);
-  
-  m_insgen_config.init_params(true, ibm);  // End of inlined include file
+  // You can insert code here by setting top_env_config_append_to_new in file common.tpl
 
 endfunction : new
 
