@@ -22,6 +22,8 @@ monitor_inc = inlines/insgen_monitor_inc.sv inline
 agent_cover_inc   = inlines/insgen_cover_inc.sv  inline
 trans_inc_inside_class = inlines/ins_constraints.sv inline
 
+driver_inc = inlines/insgen_driver_inc.sv inline
+
 trans_generate_methods_inside_class = no 
 trans_generate_methods_after_class = no
 
