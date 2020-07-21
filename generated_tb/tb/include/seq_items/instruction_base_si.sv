@@ -7,7 +7,7 @@ class instruction_base_si extends uvm_sequence_item;
 
 	rand bit[4:0] rs1, rs2, rd;
 
-	`uvm_object_utils(instruction_base_si)
+	//`uvm_object_utils(instruction_base_si)
 
 
 	function new(string inst_name = "instruction_base_si");

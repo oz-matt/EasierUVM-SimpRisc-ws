@@ -29,13 +29,13 @@ class arithmetic_instruction_si extends instruction_base_si;
 		endcase
 	endfunction
 	
-	constraint c_ari {
+	/*constraint c_ari {
 		format inside {R_FORMAT, U_FORMAT, I_FORMAT, I_FORMAT_SHIFT};
 		(format == R_FORMAT) -> name inside {ADD, SLT, SLTU, AND,
 			OR, XOR, SLL, SRL, SUB, SRA};
 		(format == U_FORMAT) -> name inside {LUI, AUIPC};
 		(format == I_FORMAT_SHIFT) -> name inside {SLLI, SRLI, SRAI};
 		(format == I_FORMAT) -> name inside {ADDI, SLTI, ANDI, ORI, XORI};
-	};
+	};*/
 
 endclass

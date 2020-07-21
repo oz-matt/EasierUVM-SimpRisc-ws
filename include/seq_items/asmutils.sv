@@ -1,11 +1,11 @@
 
 class asmutils;
-static function instr_category_bm get_rand_type_from_mask(int mask);
+	static function instr_category_bm get_rand_type_from_mask(int mask);
 		int rand_pick, bit_pick;
 		int bitq[$];
 		instr_category_bm new_bm;
 	
-  
+	
 		for(int i=0;i<32;i++) begin
 			if(mask & (1 << i)) bitq.push_back(i);
 		end
@@ -28,14 +28,31 @@ static function instr_category_bm get_rand_type_from_mask(int mask);
 		case(new_mask)
 			LOAD : begin
 				load_instruction_si li = new();
+				li.randomize() with {
+					format inside {I_FORMAT};
+					name inside {LW, LH, LHU, LB, LBU};
+				};
 				ret = li;
 			end
 			STORE : begin
 				store_instruction_si si = new();
+				si.randomize() with {
+		format inside {S_FORMAT};
+		name inside {SW, SH, SB};
+				};
 				ret = si;
 			end
 			ARITHMETIC : begin
 				arithmetic_instruction_si ai = new();
+				ai.randomize() with {
+					solve format before name;
+					format inside {R_FORMAT, U_FORMAT, I_FORMAT, I_FORMAT_SHIFT};
+		(format == R_FORMAT) -> name inside {ADD, SLT, SLTU, AND,
+			OR, XOR, SLL, SRL, SUB, SRA};
+		(format == U_FORMAT) -> name inside {LUI, AUIPC};
+		(format == I_FORMAT_SHIFT) -> name inside {SLLI, SRLI, SRAI};
+		(format == I_FORMAT) -> name inside {ADDI, SLTI, ANDI, ORI, XORI};
+				};
 				ret = ai;
 			end
 		endcase

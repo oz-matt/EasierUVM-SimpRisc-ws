@@ -17,9 +17,9 @@ class store_instruction_si extends instruction_base_si;
 			return $sformatf("\t\t%s\tx%0d,%0d(x%0d)", name.name(), rs2, $signed(`SIGN_EXTEND32(12, s_imm)), rs1);
 	endfunction
 	
-	constraint c_store {
+	/*constraint c_store {
 		format inside {S_FORMAT};
 		name inside {SW, SH, SB};
-	};
+	};*/
 
 endclass

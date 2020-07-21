@@ -17,10 +17,10 @@ class load_instruction_si extends instruction_base_si;
 		return $sformatf("\t\t%s\tx%0d,%0d(x%0d)", name.name(), rd, $signed(`SIGN_EXTEND32(12, i_imm)), rs1);
 	endfunction
 	
-	constraint c_store {
+	/*constraint c_store {
 		format inside {I_FORMAT};
 		name inside {LW, LH, LHU, LB, LBU};
-	};
+	};*/
 
 endclass
 

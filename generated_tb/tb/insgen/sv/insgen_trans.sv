@@ -8,7 +8,7 @@
 //
 // Version:   1.0
 //
-// Code created by Easier UVM Code Generator version 2017-01-19 on Tue Jul 21 23:15:30 2020
+// Code created by Easier UVM Code Generator version 2017-01-19 on Wed Jul 22 06:49:00 2020
 //=============================================================================
 // Description: Sequence item for insgen_sequencer
 //=============================================================================
@@ -33,13 +33,7 @@ class trans extends uvm_sequence_item;
 
   extern function new(string name = "");
 
-  // Start of inlined include file generated_tb/tb/include/inlines/ins_constraints.sv
-  
-  constraint ins_c {
-  	rand_instruction inside {32'h0040A003, 32'h00110113};
-  	adc_data dist {0:=20, 1:=20, [2:128]:/50, [129:(2**32)-1]:/50};
-  };
-  // End of inlined include file
+  // You can insert code here by setting trans_inc_inside_class in file insgen.tpl
 
 endclass : trans 
 

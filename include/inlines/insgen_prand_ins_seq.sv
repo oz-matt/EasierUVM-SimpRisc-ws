@@ -26,6 +26,7 @@ function void insgen_prand_ins_seq::mid_do(uvm_sequence_item this_item);
 	trans pkt;
 	$cast(pkt, this_item);
 	pkt.ibsi = asmutils::get_rand_instruction(m_config.allowed_instr_types);
+	//pkt.ibsi.randomize();
 endfunction : mid_do
 
 task insgen_prand_ins_seq::body();
@@ -35,10 +36,10 @@ task insgen_prand_ins_seq::body();
 	start_item(req); 
 	if ( !req.randomize() )
 		`uvm_error(get_type_name(), "Failed to randomize transaction")
-	if(m_config.init_cpu_regs_with_rand_vals == false) 
+	/*if(m_config.init_cpu_regs_with_rand_vals == false) 
 		req.rand_instruction = 8;
 	else
-		req.rand_instruction = 3;
+		req.rand_instruction = 3;*/
 	
 	finish_item(req); 
 
