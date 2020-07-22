@@ -59,4 +59,34 @@ class asmutils;
 		
 		return ret;
 	endfunction
+	
+	static function li_instruction_t get_rand_li_pseudo(int dest);
+		
+		li_instruction_t ret;
+		
+		arithmetic_instruction_si luiins = new();
+		arithmetic_instruction_si addiins = new();
+		
+		luiins.randomize() with {
+			solve format before name;
+			format inside {U_FORMAT};
+			name inside {LUI};
+			rd == dest;
+		};
+		
+		addiins.randomize() with {
+			solve format before name;
+			format inside {I_FORMAT};
+			name inside {ADDI};
+			rd == dest;
+			rs1 == dest;
+		};
+		
+		ret.l = luiins;
+		ret.a = addiins;
+		
+		return ret;
+		
+	endfunction
+	
 endclass

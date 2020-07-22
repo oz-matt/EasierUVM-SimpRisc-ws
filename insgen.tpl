@@ -28,6 +28,7 @@ trans_generate_methods_after_class = no
 
 config_var = boolean init_cpu_regs_with_rand_vals;
 config_var = instr_category_bm allowed_instr_types;
+config_var = int init_cpu_regs_ctr = 0;
 
 agent_seq_inc = inlines/insgen_prand_ins_seq.sv inline
 

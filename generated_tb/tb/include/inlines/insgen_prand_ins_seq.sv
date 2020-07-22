@@ -25,12 +25,13 @@ endtask : pre_start
 function void insgen_prand_ins_seq::mid_do(uvm_sequence_item this_item);
 	trans pkt;
 	$cast(pkt, this_item);
-	pkt.ibsi = asmutils::get_rand_instruction(m_config.allowed_instr_types);
+	//pkt.ibsi = asmutils::
+	//pkt.ibsi = asmutils::get_rand_instruction(m_config.allowed_instr_types);
 	//pkt.ibsi.randomize();
 endfunction : mid_do
 
 task insgen_prand_ins_seq::body();
-	`uvm_info(get_type_name(), "Default sequence starting :D", UVM_HIGH)
+	`uvm_info(get_type_name(), "Default sequence starting", UVM_HIGH)
 
 	req = trans::type_id::create("req");
 	start_item(req); 

@@ -8,7 +8,7 @@
 //
 // Version:   1.0
 //
-// Code created by Easier UVM Code Generator version 2017-01-19 on Wed Jul 22 06:49:00 2020
+// Code created by Easier UVM Code Generator version 2017-01-19 on Thu Jul 23 05:03:21 2020
 //=============================================================================
 // Description: Configuration for agent insgen
 //=============================================================================
@@ -30,6 +30,7 @@ class insgen_config extends uvm_object;
 
   boolean init_cpu_regs_with_rand_vals;
   instr_category_bm allowed_instr_types;
+  int init_cpu_regs_ctr = 0;
 
   // You can remove new by setting agent_config_generate_methods_inside_class = no in file insgen.tpl
 
