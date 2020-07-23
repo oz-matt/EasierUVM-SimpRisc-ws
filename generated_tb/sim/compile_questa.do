@@ -13,6 +13,7 @@ eval $cmd
 
 set agent_list {\ 
     insgen \
+    memw \
 }
 foreach  ele $agent_list {
   if {$ele != " "} {

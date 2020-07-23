@@ -8,7 +8,7 @@
 //
 // Version:   1.0
 //
-// Code created by Easier UVM Code Generator version 2017-01-19 on Thu Jul 23 06:14:54 2020
+// Code created by Easier UVM Code Generator version 2017-01-19 on Fri Jul 24 04:12:53 2020
 //=============================================================================
 // Description: Sequence item for insgen_sequencer
 //=============================================================================
@@ -18,9 +18,9 @@
 
 // You can insert code here by setting trans_inc_before_class in file insgen.tpl
 
-class trans extends uvm_sequence_item; 
+class trans_rand_ins extends uvm_sequence_item; 
 
-  `uvm_object_utils(trans)
+  `uvm_object_utils(trans_rand_ins)
 
   // To include variables in copy, compare, print, record, pack, unpack, and compare2string, define them using trans_var in file insgen.tpl
   // To exclude variables from compare, pack, and unpack methods, define them using trans_meta in file insgen.tpl
@@ -35,10 +35,10 @@ class trans extends uvm_sequence_item;
 
   // You can insert code here by setting trans_inc_inside_class in file insgen.tpl
 
-endclass : trans 
+endclass : trans_rand_ins 
 
 
-function trans::new(string name = "");
+function trans_rand_ins::new(string name = "");
   super.new(name);
 endfunction : new
 

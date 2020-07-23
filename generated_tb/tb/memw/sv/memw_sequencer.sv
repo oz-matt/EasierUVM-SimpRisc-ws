@@ -3,31 +3,22 @@
 //=============================================================================
 // Project  : generated_tb
 //
-// File Name: insgen_pkg.sv
+// File Name: memw_sequencer.sv
 //
 //
 // Version:   1.0
 //
 // Code created by Easier UVM Code Generator version 2017-01-19 on Fri Jul 24 04:12:53 2020
 //=============================================================================
-// Description: Package for agent insgen
+// Description: Sequencer for memw
 //=============================================================================
 
-package insgen_pkg;
+`ifndef MEMW_SEQUENCER_SV
+`define MEMW_SEQUENCER_SV
 
-  `include "uvm_macros.svh"
+// Sequencer class is specialization of uvm_sequencer
+typedef uvm_sequencer #(memw_obj) memw_sequencer_t;
 
-  import uvm_pkg::*;
 
-  import verif_pkg::*;
+`endif // MEMW_SEQUENCER_SV
 
-  `include "insgen_trans_rand_ins.sv"
-  `include "insgen_config.sv"
-  `include "insgen_driver.sv"
-  `include "insgen_monitor.sv"
-  `include "insgen_sequencer.sv"
-  `include "insgen_coverage.sv"
-  `include "insgen_agent.sv"
-  `include "insgen_seq_lib.sv"
-
-endpackage : insgen_pkg

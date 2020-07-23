@@ -8,7 +8,7 @@
 //
 // Version:   1.0
 //
-// Code created by Easier UVM Code Generator version 2017-01-19 on Thu Jul 23 05:03:21 2020
+// Code created by Easier UVM Code Generator version 2017-01-19 on Fri Jul 24 04:12:53 2020
 //=============================================================================
 // Description: Sequence for top
 //=============================================================================
@@ -23,6 +23,7 @@ class top_default_seq extends uvm_sequence #(uvm_sequence_item);
   top_config    m_config;
      
   insgen_agent  m_insgen_agent;
+  memw_agent    m_memw_agent;  
 
   // Number of times to repeat child sequences
   int m_seq_count = 100;
@@ -63,6 +64,17 @@ task top_default_seq::body();
         seq.m_config = m_insgen_agent.m_config;
         seq.set_starting_phase( get_starting_phase() );
         seq.start(m_insgen_agent.m_sequencer, this);
+      end
+      if (m_memw_agent.m_config.is_active == UVM_ACTIVE)
+      begin
+        memw_default_seq seq;
+        seq = memw_default_seq::type_id::create("seq");
+        seq.set_item_context(this, m_memw_agent.m_sequencer);
+        if ( !seq.randomize() )
+          `uvm_error(get_type_name(), "Failed to randomize sequence")
+        seq.m_config = m_memw_agent.m_config;
+        seq.set_starting_phase( get_starting_phase() );
+        seq.start(m_memw_agent.m_sequencer, this);
       end
     join
   end

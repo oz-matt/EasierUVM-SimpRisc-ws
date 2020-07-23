@@ -8,7 +8,7 @@
 //
 // Version:   1.0
 //
-// Code created by Easier UVM Code Generator version 2017-01-19 on Thu Jul 23 05:03:21 2020
+// Code created by Easier UVM Code Generator version 2017-01-19 on Fri Jul 24 04:12:53 2020
 //=============================================================================
 // Description: Testbench
 //=============================================================================
@@ -48,6 +48,7 @@ module top_tb;
       `uvm_error("top_tb", "Failed to randomize top-level configuration object" )
 
     top_env_config.m_insgen_config.vif = th.insgen_if_0;
+    top_env_config.m_memw_config.vif   = th.memw_if_0;  
 
     uvm_config_db #(top_config)::set(null, "uvm_test_top", "config", top_env_config);
     uvm_config_db #(top_config)::set(null, "uvm_test_top.m_env", "config", top_env_config);

@@ -8,7 +8,7 @@
 //
 // Version:   1.0
 //
-// Code created by Easier UVM Code Generator version 2017-01-19 on Thu Jul 23 05:03:21 2020
+// Code created by Easier UVM Code Generator version 2017-01-19 on Fri Jul 24 04:12:53 2020
 //=============================================================================
 // Description: Configuration for top
 //=============================================================================
@@ -23,6 +23,7 @@ class top_config extends uvm_object;
   // Do not register config class with the factory
 
   rand insgen_config  m_insgen_config;
+  rand memw_config    m_memw_config;  
 
   // You can insert variables here by setting config_var in file common.tpl
 
@@ -44,6 +45,11 @@ function top_config::new(string name = "");
   m_insgen_config.is_active       = UVM_ACTIVE;            
   m_insgen_config.checks_enable   = 1;                     
   m_insgen_config.coverage_enable = 1;                     
+
+  m_memw_config                   = new("m_memw_config");  
+  m_memw_config.is_active         = UVM_PASSIVE;           
+  m_memw_config.checks_enable     = 1;                     
+  m_memw_config.coverage_enable   = 1;                     
 
   // You can insert code here by setting top_env_config_append_to_new in file common.tpl
 

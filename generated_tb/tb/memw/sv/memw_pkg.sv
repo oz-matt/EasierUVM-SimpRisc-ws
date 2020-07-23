@@ -3,17 +3,17 @@
 //=============================================================================
 // Project  : generated_tb
 //
-// File Name: insgen_pkg.sv
+// File Name: memw_pkg.sv
 //
 //
 // Version:   1.0
 //
 // Code created by Easier UVM Code Generator version 2017-01-19 on Fri Jul 24 04:12:53 2020
 //=============================================================================
-// Description: Package for agent insgen
+// Description: Package for agent memw
 //=============================================================================
 
-package insgen_pkg;
+package memw_pkg;
 
   `include "uvm_macros.svh"
 
@@ -21,13 +21,13 @@ package insgen_pkg;
 
   import verif_pkg::*;
 
-  `include "insgen_trans_rand_ins.sv"
-  `include "insgen_config.sv"
-  `include "insgen_driver.sv"
-  `include "insgen_monitor.sv"
-  `include "insgen_sequencer.sv"
-  `include "insgen_coverage.sv"
-  `include "insgen_agent.sv"
-  `include "insgen_seq_lib.sv"
+  `include "memw_memw_obj.sv"
+  `include "memw_config.sv"
+  `include "memw_driver.sv"
+  `include "memw_monitor.sv"
+  `include "memw_sequencer.sv"
+  `include "memw_coverage.sv"
+  `include "memw_agent.sv"
+  `include "memw_seq_lib.sv"
 
-endpackage : insgen_pkg
+endpackage : memw_pkg

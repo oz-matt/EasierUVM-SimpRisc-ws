@@ -20,6 +20,7 @@ append cmd " ../tb/include//pkg/verif_pkg.sv"
 # Compile the agents
 set agent_list {\ 
     insgen \
+    memw \
 }
 foreach  ele $agent_list {
   if {$ele != " "} {

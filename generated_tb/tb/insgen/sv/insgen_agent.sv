@@ -8,7 +8,7 @@
 //
 // Version:   1.0
 //
-// Code created by Easier UVM Code Generator version 2017-01-19 on Thu Jul 23 05:03:21 2020
+// Code created by Easier UVM Code Generator version 2017-01-19 on Fri Jul 24 04:12:53 2020
 //=============================================================================
 // Description: Agent for insgen
 //=============================================================================
@@ -22,7 +22,7 @@ class insgen_agent extends uvm_agent;
 
   `uvm_component_utils(insgen_agent)
 
-  uvm_analysis_port #(trans) analysis_port;
+  uvm_analysis_port #(trans_rand_ins) analysis_port;
 
   insgen_config       m_config;
   insgen_sequencer_t  m_sequencer;

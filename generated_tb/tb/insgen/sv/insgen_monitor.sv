@@ -8,7 +8,7 @@
 //
 // Version:   1.0
 //
-// Code created by Easier UVM Code Generator version 2017-01-19 on Thu Jul 23 05:03:21 2020
+// Code created by Easier UVM Code Generator version 2017-01-19 on Fri Jul 24 04:12:53 2020
 //=============================================================================
 // Description: Monitor for insgen
 //=============================================================================
@@ -26,9 +26,9 @@ class insgen_monitor extends uvm_monitor;
 
   insgen_config     m_config;
 
-  uvm_analysis_port #(trans) analysis_port;
+  uvm_analysis_port #(trans_rand_ins) analysis_port;
 
-  trans m_trans;
+  trans_rand_ins m_trans;
 
   extern function new(string name, uvm_component parent);
 
@@ -50,7 +50,7 @@ endfunction : new
 task insgen_monitor::run_phase(uvm_phase phase);
   `uvm_info(get_type_name(), "run_phase", UVM_HIGH)
 
-  m_trans = trans::type_id::create("m_trans");
+  m_trans = trans_rand_ins::type_id::create("m_trans");
   do_mon();
 endtask : run_phase
 

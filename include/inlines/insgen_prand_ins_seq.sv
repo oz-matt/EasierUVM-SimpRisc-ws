@@ -23,17 +23,36 @@ task insgen_prand_ins_seq::pre_start();
 endtask : pre_start
 
 function void insgen_prand_ins_seq::mid_do(uvm_sequence_item this_item);
-	trans pkt;
+	trans_rand_ins pkt;
 	$cast(pkt, this_item);
-	//pkt.ibsi = asmutils::
-	//pkt.ibsi = asmutils::get_rand_instruction(m_config.allowed_instr_types);
-	//pkt.ibsi.randomize();
+	if (m_config.init_cpu_regs_ctr < 32) begin
+		
+		// For each of the 32 cpu registers, generate and insert a random value
+		// using LUI and ADDI instruction pairs
+		
+		li_instruction_t li_obj;
+		
+		li_obj = asmutils::get_rand_li_pseudo(m_config.init_cpu_regs_ctr);
+		
+		if (m_config.on_reg_init_lui == true) begin
+			pkt.ibsi = li_obj.l;
+			m_config.on_reg_init_lui = false;
+		end
+		else begin
+			pkt.ibsi = li_obj.a;
+			m_config.on_reg_init_lui = true;
+			m_config.init_cpu_regs_ctr++;
+		end
+	end
+	else begin
+		pkt.ibsi = asmutils::get_rand_instruction(m_config.allowed_instr_types);
+	end
 endfunction : mid_do
 
 task insgen_prand_ins_seq::body();
 	`uvm_info(get_type_name(), "Default sequence starting", UVM_HIGH)
 
-	req = trans::type_id::create("req");
+	req = trans_rand_ins::type_id::create("req");
 	start_item(req); 
 	if ( !req.randomize() )
 		`uvm_error(get_type_name(), "Failed to randomize transaction")

@@ -8,7 +8,7 @@
 //
 // Version:   1.0
 //
-// Code created by Easier UVM Code Generator version 2017-01-19 on Thu Jul 23 05:03:21 2020
+// Code created by Easier UVM Code Generator version 2017-01-19 on Fri Jul 24 04:12:53 2020
 //=============================================================================
 // Description: Environment for top
 //=============================================================================
@@ -29,6 +29,10 @@ class top_env extends uvm_env;
   insgen_config    m_insgen_config;  
   insgen_agent     m_insgen_agent;   
   insgen_coverage  m_insgen_coverage;
+
+  memw_config      m_memw_config;    
+  memw_agent       m_memw_agent;     
+  memw_coverage    m_memw_coverage;  
 
   top_config       m_config;
         
@@ -68,9 +72,21 @@ function void top_env::build_phase(uvm_phase phase);
     uvm_config_db #(insgen_config)::set(this, "m_insgen_agent.m_sequencer", "config", m_insgen_config);
   uvm_config_db #(insgen_config)::set(this, "m_insgen_coverage", "config", m_insgen_config);
 
+  m_memw_config = m_config.m_memw_config;
+
+  // You can insert code here by setting agent_copy_config_vars in file memw_agent.tpl
+
+  uvm_config_db #(memw_config)::set(this, "m_memw_agent", "config", m_memw_config);
+  if (m_memw_config.is_active == UVM_ACTIVE )
+    uvm_config_db #(memw_config)::set(this, "m_memw_agent.m_sequencer", "config", m_memw_config);
+  uvm_config_db #(memw_config)::set(this, "m_memw_coverage", "config", m_memw_config);
+
 
   m_insgen_agent    = insgen_agent   ::type_id::create("m_insgen_agent", this);
   m_insgen_coverage = insgen_coverage::type_id::create("m_insgen_coverage", this);
+
+  m_memw_agent      = memw_agent     ::type_id::create("m_memw_agent", this);
+  m_memw_coverage   = memw_coverage  ::type_id::create("m_memw_coverage", this);
 
   // You can insert code here by setting top_env_append_to_build_phase in file common.tpl
 
@@ -81,6 +97,8 @@ function void top_env::connect_phase(uvm_phase phase);
   `uvm_info(get_type_name(), "In connect_phase", UVM_HIGH)
 
   m_insgen_agent.analysis_port.connect(m_insgen_coverage.analysis_export);
+
+  m_memw_agent.analysis_port.connect(m_memw_coverage.analysis_export);
 
 
   // You can insert code here by setting top_env_append_to_connect_phase in file common.tpl
@@ -108,6 +126,7 @@ task top_env::run_phase(uvm_phase phase);
   if ( !vseq.randomize() )
     `uvm_fatal(get_type_name(), "Failed to randomize virtual sequence")
   vseq.m_insgen_agent = m_insgen_agent;
+  vseq.m_memw_agent   = m_memw_agent;  
   vseq.m_config       = m_config;      
   vseq.set_starting_phase(phase);
   vseq.start(null);

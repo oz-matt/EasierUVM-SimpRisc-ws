@@ -8,7 +8,7 @@
 //
 // Version:   1.0
 //
-// Code created by Easier UVM Code Generator version 2017-01-19 on Thu Jul 23 05:03:21 2020
+// Code created by Easier UVM Code Generator version 2017-01-19 on Fri Jul 24 04:12:53 2020
 //=============================================================================
 // Description: Coverage for agent insgen
 //=============================================================================
@@ -18,13 +18,13 @@
 
 // You can insert code here by setting agent_cover_inc_before_class in file insgen.tpl
 
-class insgen_coverage extends uvm_subscriber #(trans);
+class insgen_coverage extends uvm_subscriber #(trans_rand_ins);
 
   `uvm_component_utils(insgen_coverage)
 
-  insgen_config m_config;    
-  bit           m_is_covered;
-  trans         m_item;
+  insgen_config  m_config;    
+  bit            m_is_covered;
+  trans_rand_ins m_item;
      
   // Start of inlined include file generated_tb/tb/include/inlines/insgen_cover_inc.sv
   covergroup m_cov;
@@ -42,7 +42,7 @@ class insgen_coverage extends uvm_subscriber #(trans);
   // You can remove new, write, and report_phase by setting agent_cover_generate_methods_inside_class = no in file insgen.tpl
 
   extern function new(string name, uvm_component parent);
-  extern function void write(input trans t);
+  extern function void write(input trans_rand_ins t);
   extern function void build_phase(uvm_phase phase);
   extern function void report_phase(uvm_phase phase);
 
@@ -60,7 +60,7 @@ function insgen_coverage::new(string name, uvm_component parent);
 endfunction : new
 
 
-function void insgen_coverage::write(input trans t);
+function void insgen_coverage::write(input trans_rand_ins t);
   if (m_config.coverage_enable)
   begin
     m_item = t;
