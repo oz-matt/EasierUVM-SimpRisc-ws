@@ -8,7 +8,7 @@
 //
 // Version:   1.0
 //
-// Code created by Easier UVM Code Generator version 2017-01-19 on Fri Jul 24 04:12:53 2020
+// Code created by Easier UVM Code Generator version 2017-01-19 on Fri Jul 24 10:11:19 2020
 //=============================================================================
 // Description: Driver for memw
 //=============================================================================
@@ -16,7 +16,7 @@
 `ifndef MEMW_DRIVER_SV
 `define MEMW_DRIVER_SV
 
-// You can insert code here by setting driver_inc_before_class in file memw_agent.tpl
+// You can insert code here by setting driver_inc_before_class in file memw.tpl
 
 class memw_driver extends uvm_driver #(memw_obj);
 
@@ -28,7 +28,7 @@ class memw_driver extends uvm_driver #(memw_obj);
 
   extern function new(string name, uvm_component parent);
 
-  // You can insert code here by setting driver_inc_inside_class in file memw_agent.tpl
+  // You can insert code here by setting driver_inc_inside_class in file memw.tpl
 
 endclass : memw_driver 
 
@@ -38,7 +38,7 @@ function memw_driver::new(string name, uvm_component parent);
 endfunction : new
 
 
-// You can insert code here by setting driver_inc_after_class in file memw_agent.tpl
+// You can insert code here by setting driver_inc_after_class in file memw.tpl
 
 `endif // MEMW_DRIVER_SV
 

@@ -2,7 +2,7 @@
 instr_bus instr_bus
 adc_in adc_in
 
-!memw_agent_if
+!memw_if
 mem_rw mem_rw
 mem_wstrobe mem_wstrobe
 out_data_bus out_data_bus

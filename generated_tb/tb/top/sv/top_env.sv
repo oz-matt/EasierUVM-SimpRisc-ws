@@ -8,7 +8,7 @@
 //
 // Version:   1.0
 //
-// Code created by Easier UVM Code Generator version 2017-01-19 on Fri Jul 24 04:12:53 2020
+// Code created by Easier UVM Code Generator version 2017-01-19 on Fri Jul 24 10:11:19 2020
 //=============================================================================
 // Description: Environment for top
 //=============================================================================
@@ -74,7 +74,7 @@ function void top_env::build_phase(uvm_phase phase);
 
   m_memw_config = m_config.m_memw_config;
 
-  // You can insert code here by setting agent_copy_config_vars in file memw_agent.tpl
+  // You can insert code here by setting agent_copy_config_vars in file memw.tpl
 
   uvm_config_db #(memw_config)::set(this, "m_memw_agent", "config", m_memw_config);
   if (m_memw_config.is_active == UVM_ACTIVE )

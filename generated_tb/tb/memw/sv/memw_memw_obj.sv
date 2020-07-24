@@ -8,7 +8,7 @@
 //
 // Version:   1.0
 //
-// Code created by Easier UVM Code Generator version 2017-01-19 on Fri Jul 24 04:12:53 2020
+// Code created by Easier UVM Code Generator version 2017-01-19 on Fri Jul 24 10:11:19 2020
 //=============================================================================
 // Description: Sequence item for memw_sequencer
 //=============================================================================
@@ -16,27 +16,27 @@
 `ifndef MEMW_SEQ_ITEM_SV
 `define MEMW_SEQ_ITEM_SV
 
-// You can insert code here by setting trans_inc_before_class in file memw_agent.tpl
+// You can insert code here by setting trans_inc_before_class in file memw.tpl
 
 class memw_obj extends uvm_sequence_item; 
 
   `uvm_object_utils(memw_obj)
 
-  // To include variables in copy, compare, print, record, pack, unpack, and compare2string, define them using trans_var in file memw_agent.tpl
-  // To exclude variables from compare, pack, and unpack methods, define them using trans_meta in file memw_agent.tpl
+  // To include variables in copy, compare, print, record, pack, unpack, and compare2string, define them using trans_var in file memw.tpl
+  // To exclude variables from compare, pack, and unpack methods, define them using trans_meta in file memw.tpl
 
   // Transaction variables
   logic[31:0] out_data_bus;
   logic[31:0] out_addr_bus;
   logic[31:0] out_data_bus_port2;
   logic[31:0] out_addr_bus_port2;
-  wire mem_rw;
+  logic mem_rw;
   logic[3:0] mem_wstrobe;
 
 
   extern function new(string name = "");
 
-  // You can remove do_copy/compare/print/record and convert2string method by setting trans_generate_methods_inside_class = no in file memw_agent.tpl
+  // You can remove do_copy/compare/print/record and convert2string method by setting trans_generate_methods_inside_class = no in file memw.tpl
   extern function void do_copy(uvm_object rhs);
   extern function bit  do_compare(uvm_object rhs, uvm_comparer comparer);
   extern function void do_print(uvm_printer printer);
@@ -45,7 +45,7 @@ class memw_obj extends uvm_sequence_item;
   extern function void do_unpack(uvm_packer packer);
   extern function string convert2string();
 
-  // You can insert code here by setting trans_inc_inside_class in file memw_agent.tpl
+  // You can insert code here by setting trans_inc_inside_class in file memw.tpl
 
 endclass : memw_obj 
 
@@ -55,7 +55,7 @@ function memw_obj::new(string name = "");
 endfunction : new
 
 
-// You can remove do_copy/compare/print/record and convert2string method by setting trans_generate_methods_after_class = no in file memw_agent.tpl
+// You can remove do_copy/compare/print/record and convert2string method by setting trans_generate_methods_after_class = no in file memw.tpl
 
 function void memw_obj::do_copy(uvm_object rhs);
   memw_obj rhs_;
@@ -144,7 +144,7 @@ function string memw_obj::convert2string();
 endfunction : convert2string
 
 
-// You can insert code here by setting trans_inc_after_class in file memw_agent.tpl
+// You can insert code here by setting trans_inc_after_class in file memw.tpl
 
 `endif // MEMW_SEQ_ITEM_SV
 

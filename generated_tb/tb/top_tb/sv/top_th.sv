@@ -8,7 +8,7 @@
 //
 // Version:   1.0
 //
-// Code created by Easier UVM Code Generator version 2017-01-19 on Fri Jul 24 04:12:53 2020
+// Code created by Easier UVM Code Generator version 2017-01-19 on Fri Jul 24 10:11:19 2020
 //=============================================================================
 // Description: Test Harness
 //=============================================================================
@@ -45,12 +45,12 @@ module top_th;
   soc_top uut (
     .instr_bus         (insgen_if_0.instr_bus),
     .adc_in            (insgen_if_0.adc_in),
-    .mem_rw            (memw_agent_if.mem_rw),
-    .mem_wstrobe       (memw_agent_if.mem_wstrobe),
-    .out_data_bus      (memw_agent_if.out_data_bus),
-    .out_addr_bus      (memw_agent_if.out_addr_bus),
-    .out_data_bus_port2(memw_agent_if.out_data_bus_port2),
-    .out_addr_bus_port2(memw_agent_if.out_addr_bus_port2),
+    .mem_rw            (memw_if_0.mem_rw),
+    .mem_wstrobe       (memw_if_0.mem_wstrobe),
+    .out_data_bus      (memw_if_0.out_data_bus),
+    .out_addr_bus      (memw_if_0.out_addr_bus),
+    .out_data_bus_port2(memw_if_0.out_data_bus_port2),
+    .out_addr_bus_port2(memw_if_0.out_addr_bus_port2),
     .clk               (clk),
     .nreset            (nreset)
   );

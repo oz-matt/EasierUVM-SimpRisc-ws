@@ -8,7 +8,7 @@
 //
 // Version:   1.0
 //
-// Code created by Easier UVM Code Generator version 2017-01-19 on Fri Jul 24 04:12:53 2020
+// Code created by Easier UVM Code Generator version 2017-01-19 on Fri Jul 24 10:11:19 2020
 //=============================================================================
 // Description: Sequence for agent memw
 //=============================================================================
@@ -64,7 +64,7 @@ endfunction: set_starting_phase
 `endif
 
 
-// You can insert code here by setting agent_seq_inc in file memw_agent.tpl
+// You can insert code here by setting agent_seq_inc in file memw.tpl
 
 `endif // MEMW_SEQ_LIB_SV
 

@@ -8,7 +8,7 @@
 //
 // Version:   1.0
 //
-// Code created by Easier UVM Code Generator version 2017-01-19 on Fri Jul 24 04:12:53 2020
+// Code created by Easier UVM Code Generator version 2017-01-19 on Fri Jul 24 10:11:19 2020
 //=============================================================================
 // Description: Coverage for agent memw
 //=============================================================================
@@ -16,7 +16,7 @@
 `ifndef MEMW_COVERAGE_SV
 `define MEMW_COVERAGE_SV
 
-// You can insert code here by setting agent_cover_inc_before_class in file memw_agent.tpl
+// You can insert code here by setting agent_cover_inc_before_class in file memw.tpl
 
 class memw_coverage extends uvm_subscriber #(memw_obj);
 
@@ -26,8 +26,8 @@ class memw_coverage extends uvm_subscriber #(memw_obj);
   bit         m_is_covered;
   memw_obj    m_item;
      
-  // You can replace covergroup m_cov by setting agent_cover_inc in file memw_agent.tpl
-  // or remove covergroup m_cov by setting agent_cover_generate_methods_inside_class = no in file memw_agent.tpl
+  // You can replace covergroup m_cov by setting agent_cover_inc in file memw.tpl
+  // or remove covergroup m_cov by setting agent_cover_generate_methods_inside_class = no in file memw.tpl
 
   covergroup m_cov;
     option.per_instance = 1;
@@ -53,19 +53,19 @@ class memw_coverage extends uvm_subscriber #(memw_obj);
 
   endgroup
 
-  // You can remove new, write, and report_phase by setting agent_cover_generate_methods_inside_class = no in file memw_agent.tpl
+  // You can remove new, write, and report_phase by setting agent_cover_generate_methods_inside_class = no in file memw.tpl
 
   extern function new(string name, uvm_component parent);
   extern function void write(input memw_obj t);
   extern function void build_phase(uvm_phase phase);
   extern function void report_phase(uvm_phase phase);
 
-  // You can insert code here by setting agent_cover_inc_inside_class in file memw_agent.tpl
+  // You can insert code here by setting agent_cover_inc_inside_class in file memw.tpl
 
 endclass : memw_coverage 
 
 
-// You can remove new, write, and report_phase by setting agent_cover_generate_methods_after_class = no in file memw_agent.tpl
+// You can remove new, write, and report_phase by setting agent_cover_generate_methods_after_class = no in file memw.tpl
 
 function memw_coverage::new(string name, uvm_component parent);
   super.new(name, parent);
@@ -99,7 +99,7 @@ function void memw_coverage::report_phase(uvm_phase phase);
 endfunction : report_phase
 
 
-// You can insert code here by setting agent_cover_inc_after_class in file memw_agent.tpl
+// You can insert code here by setting agent_cover_inc_after_class in file memw.tpl
 
 `endif // MEMW_COVERAGE_SV
 
