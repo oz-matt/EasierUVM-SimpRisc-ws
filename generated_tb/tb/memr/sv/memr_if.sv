@@ -3,42 +3,38 @@
 //=============================================================================
 // Project  : generated_tb
 //
-// File Name: memw_if.sv
+// File Name: memr_if.sv
 //
 //
 // Version:   1.0
 //
-// Code created by Easier UVM Code Generator version 2017-01-19 on Fri Jul 24 23:14:32 2020
+// Code created by Easier UVM Code Generator version 2017-01-19 on Fri Jul 24 23:06:54 2020
 //=============================================================================
-// Description: Signal interface for agent memw
+// Description: Signal interface for agent memr
 //=============================================================================
 
-`ifndef MEMW_IF_SV
-`define MEMW_IF_SV
+`ifndef MEMR_IF_SV
+`define MEMR_IF_SV
 
-interface memw_if(); 
+interface memr_if(); 
 
   timeunit      1ns;
   timeprecision 1ps;
 
   import verif_pkg::*;
-  import memw_pkg::*;
+  import memr_pkg::*;
 
   logic clk;
   logic nreset;
   logic mem_rw;
-  logic[3:0] mem_wstrobe;
-  logic[31:0] out_data_bus;
   logic[31:0] out_addr_bus;
-  logic[31:0] out_data_bus_port2;
-  logic[31:0] out_addr_bus_port2;
   logic[31:0] in_data_bus;
 
   // You can insert properties and assertions here
 
-  // You can insert code here by setting if_inc_inside_interface in file memw.tpl
+  // You can insert code here by setting if_inc_inside_interface in file memr.tpl
 
-endinterface : memw_if
+endinterface : memr_if
 
-`endif // MEMW_IF_SV
+`endif // MEMR_IF_SV
 

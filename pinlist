@@ -1,5 +1,6 @@
 !insgen_if
 instr_bus instr_bus
+pc_out pc_out
 adc_in adc_in
 
 !memw_if
@@ -9,6 +10,7 @@ out_data_bus out_data_bus
 out_addr_bus out_addr_bus
 out_data_bus_port2 out_data_bus_port2
 out_addr_bus_port2 out_addr_bus_port2
+in_data_bus in_data_bus
 
 !
 clk  clk

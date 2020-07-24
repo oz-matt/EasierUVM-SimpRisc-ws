@@ -3,24 +3,24 @@
 //=============================================================================
 // Project  : generated_tb
 //
-// File Name: memw_seq_lib.sv
+// File Name: memr_seq_lib.sv
 //
 //
 // Version:   1.0
 //
-// Code created by Easier UVM Code Generator version 2017-01-19 on Fri Jul 24 23:14:32 2020
+// Code created by Easier UVM Code Generator version 2017-01-19 on Fri Jul 24 23:06:54 2020
 //=============================================================================
-// Description: Sequence for agent memw
+// Description: Sequence for agent memr
 //=============================================================================
 
-`ifndef MEMW_SEQ_LIB_SV
-`define MEMW_SEQ_LIB_SV
+`ifndef MEMR_SEQ_LIB_SV
+`define MEMR_SEQ_LIB_SV
 
-class memw_default_seq extends uvm_sequence #(memw_obj);
+class memr_default_seq extends uvm_sequence #(memr_obj);
 
-  `uvm_object_utils(memw_default_seq)
+  `uvm_object_utils(memr_default_seq)
 
-  memw_config  m_config;
+  memr_config  m_config;
 
   extern function new(string name = "");
   extern task body();
@@ -31,18 +31,18 @@ class memw_default_seq extends uvm_sequence #(memw_obj);
   extern function void set_starting_phase(uvm_phase phase);
 `endif
 
-endclass : memw_default_seq
+endclass : memr_default_seq
 
 
-function memw_default_seq::new(string name = "");
+function memr_default_seq::new(string name = "");
   super.new(name);
 endfunction : new
 
 
-task memw_default_seq::body();
+task memr_default_seq::body();
   `uvm_info(get_type_name(), "Default sequence starting", UVM_HIGH)
 
-  req = memw_obj::type_id::create("req");
+  req = memr_obj::type_id::create("req");
   start_item(req); 
   if ( !req.randomize() )
     `uvm_error(get_type_name(), "Failed to randomize transaction")
@@ -53,18 +53,18 @@ endtask : body
 
 
 `ifndef UVM_POST_VERSION_1_1
-function uvm_phase memw_default_seq::get_starting_phase();
+function uvm_phase memr_default_seq::get_starting_phase();
   return starting_phase;
 endfunction: get_starting_phase
 
 
-function void memw_default_seq::set_starting_phase(uvm_phase phase);
+function void memr_default_seq::set_starting_phase(uvm_phase phase);
   starting_phase = phase;
 endfunction: set_starting_phase
 `endif
 
 
-// You can insert code here by setting agent_seq_inc in file memw.tpl
+// You can insert code here by setting agent_seq_inc in file memr.tpl
 
-`endif // MEMW_SEQ_LIB_SV
+`endif // MEMR_SEQ_LIB_SV
 

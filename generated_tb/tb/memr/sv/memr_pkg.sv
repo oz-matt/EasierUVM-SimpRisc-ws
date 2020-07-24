@@ -3,33 +3,31 @@
 //=============================================================================
 // Project  : generated_tb
 //
-// File Name: top_test_pkg.sv
+// File Name: memr_pkg.sv
 //
 //
 // Version:   1.0
 //
-// Code created by Easier UVM Code Generator version 2017-01-19 on Fri Jul 24 23:14:32 2020
+// Code created by Easier UVM Code Generator version 2017-01-19 on Fri Jul 24 23:06:54 2020
 //=============================================================================
-// Description: Test package for top
+// Description: Package for agent memr
 //=============================================================================
 
-`ifndef TOP_TEST_PKG_SV
-`define TOP_TEST_PKG_SV
-
-package top_test_pkg;
+package memr_pkg;
 
   `include "uvm_macros.svh"
 
   import uvm_pkg::*;
 
   import verif_pkg::*;
-  import insgen_pkg::*;
-  import memw_pkg::*;
-  import top_pkg::*;
 
-  `include "top_test.sv"
+  `include "memr_memr_obj.sv"
+  `include "memr_config.sv"
+  `include "memr_driver.sv"
+  `include "memr_monitor.sv"
+  `include "memr_sequencer.sv"
+  `include "memr_coverage.sv"
+  `include "memr_agent.sv"
+  `include "memr_seq_lib.sv"
 
-endpackage : top_test_pkg
-
-`endif // TOP_TEST_PKG_SV
-
+endpackage : memr_pkg

@@ -1,13 +1,13 @@
-  logic clock = 0;
-  logic reset;
+	logic clk = 0;
+	logic nreset;
 
-  always #10 clock = ~clock;
+	always #10 clk = ~clk;
 
-  initial
-  begin
-    reset = 0;         // Active low reset in this example
-    #75 reset = 1;
-  end
+	initial
+	begin
+		nreset = 0;         // Active low reset in this example
+		#75 nreset = 1;
+	end
 
-  assign insgen_if_0.clk = clock;
-  assign insgen_if_0.nreset = reset;
+	assign insgen_if_0.clk = clk;
+	assign insgen_if_0.nreset = nreset;

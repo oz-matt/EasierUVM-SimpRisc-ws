@@ -7,8 +7,10 @@ trans_var = instruction_base_si ibsi;
 if_port    = logic clk;
 if_port    = logic nreset;
 if_port    = logic[31:0] instr_bus;
+if_port    = logic[31:0] pc_out;
 if_port    = logic[31:0] adc_in;
 if_clock   = clk
+if_reset   = nreset
 
 monitor_inc = inlines/insgen_monitor_inc.sv inline
 agent_cover_inc   = inlines/insgen_cover_inc.sv  inline

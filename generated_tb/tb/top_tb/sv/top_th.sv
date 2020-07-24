@@ -8,7 +8,7 @@
 //
 // Version:   1.0
 //
-// Code created by Easier UVM Code Generator version 2017-01-19 on Fri Jul 24 10:11:19 2020
+// Code created by Easier UVM Code Generator version 2017-01-19 on Fri Jul 24 23:14:32 2020
 //=============================================================================
 // Description: Test Harness
 //=============================================================================
@@ -21,19 +21,19 @@ module top_th;
   import verif_pkg::*;
 
   // Start of inlined include file generated_tb/tb/include/inlines/th_define_clk_and_nreset.sv
-    logic clock = 0;
-    logic reset;
+  	logic clk = 0;
+  	logic nreset;
   
-    always #10 clock = ~clock;
+  	always #10 clk = ~clk;
   
-    initial
-    begin
-      reset = 0;         // Active low reset in this example
-      #75 reset = 1;
-    end
+  	initial
+  	begin
+  		nreset = 0;         // Active low reset in this example
+  		#75 nreset = 1;
+  	end
   
-    assign insgen_if_0.clk = clock;
-    assign insgen_if_0.nreset = reset;
+  	assign insgen_if_0.clk = clk;
+  	assign insgen_if_0.nreset = nreset;
   // End of inlined include file
 
   // Pin-level interfaces connected to DUT
@@ -44,6 +44,7 @@ module top_th;
 
   soc_top uut (
     .instr_bus         (insgen_if_0.instr_bus),
+    .pc_out            (insgen_if_0.pc_out),
     .adc_in            (insgen_if_0.adc_in),
     .mem_rw            (memw_if_0.mem_rw),
     .mem_wstrobe       (memw_if_0.mem_wstrobe),
@@ -51,6 +52,7 @@ module top_th;
     .out_addr_bus      (memw_if_0.out_addr_bus),
     .out_data_bus_port2(memw_if_0.out_data_bus_port2),
     .out_addr_bus_port2(memw_if_0.out_addr_bus_port2),
+    .in_data_bus       (memw_if_0.in_data_bus),
     .clk               (clk),
     .nreset            (nreset)
   );
