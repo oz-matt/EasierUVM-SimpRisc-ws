@@ -18,4 +18,5 @@ vcs -sverilog -cm line+cond+fsm -covg_dump_range +acc +vpi +error+20 -timescale=
 ../tb/top_test/sv/top_test_pkg.sv \
 ../tb/top_tb/sv/top_th.sv \
 ../tb/top_tb/sv/top_tb.sv \
--R +UVM_TESTNAME=top_test $* 
+-R +UVM_TESTNAME=top_test \
++UVM_VERBOSITY=UVM_HIGH $* 

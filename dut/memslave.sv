@@ -69,11 +69,18 @@ module memslave(axilite_int.slave io, aximem.axim memaxi);
 			io.AXI_RDATA <= 0;
 	end
 
-	always_ff @(posedge write_request_permitted) begin
-	mem[io.AXI_AWADDR] <= io.AXI_WDATA;
+	always_ff @(posedge write_request_permitted  or negedge io.AXI_ARESETN) begin
+		if (!io.AXI_ARESETN) begin
+		memaxi.axi_mem_w <= 0;
+		memaxi.axi_mem_addr <= 0;
+		memaxi.axi_mem_data <= 0;
+		end
+		else begin 
+			mem[io.AXI_AWADDR] <= io.AXI_WDATA;
 		memaxi.axi_mem_w <= 1;
 		memaxi.axi_mem_addr <= io.AXI_AWADDR;
 		memaxi.axi_mem_data <= io.AXI_WDATA;
+		end
 	end
 
 endmodule

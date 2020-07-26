@@ -7,6 +7,7 @@ module dut_top(
 	output logic[31:0] pc_out,
 	output logic mem_rw,
 	output logic[3:0] mem_wstrobe,
+	output logic memclk,
 	input logic[31:0] adc_in,
 	output logic[31:0] out_data_bus,
 	output logic[31:0] out_addr_bus,

@@ -8,7 +8,7 @@
 //
 // Version:   1.0
 //
-// Code created by Easier UVM Code Generator version 2017-01-19 on Fri Jul 24 23:14:32 2020
+// Code created by Easier UVM Code Generator version 2017-01-19 on Mon Jul 27 03:28:28 2020
 //=============================================================================
 // Description: Signal interface for agent memw
 //=============================================================================
@@ -27,6 +27,7 @@ interface memw_if();
   logic clk;
   logic nreset;
   logic mem_rw;
+  logic memclk;
   logic[3:0] mem_wstrobe;
   logic[31:0] out_data_bus;
   logic[31:0] out_addr_bus;
@@ -36,7 +37,9 @@ interface memw_if();
 
   // You can insert properties and assertions here
 
-  // You can insert code here by setting if_inc_inside_interface in file memw.tpl
+  // Start of inlined include file generated_tb/tb/include/inlines/memw_if_inc_inside_interface.sv
+  
+  initial in_data_bus = 0;  // End of inlined include file
 
 endinterface : memw_if
 

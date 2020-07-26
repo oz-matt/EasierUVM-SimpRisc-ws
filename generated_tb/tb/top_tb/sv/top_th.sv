@@ -8,7 +8,7 @@
 //
 // Version:   1.0
 //
-// Code created by Easier UVM Code Generator version 2017-01-19 on Fri Jul 24 23:14:32 2020
+// Code created by Easier UVM Code Generator version 2017-01-19 on Mon Jul 27 03:28:28 2020
 //=============================================================================
 // Description: Test Harness
 //=============================================================================
@@ -29,7 +29,7 @@ module top_th;
   	initial
   	begin
   		nreset = 0;         // Active low reset in this example
-  		#75 nreset = 1;
+  		#15 nreset = 1;
   	end
   
   	assign insgen_if_0.clk = clk;
@@ -47,6 +47,7 @@ module top_th;
     .pc_out            (insgen_if_0.pc_out),
     .adc_in            (insgen_if_0.adc_in),
     .mem_rw            (memw_if_0.mem_rw),
+    .memclk            (memw_if_0.memclk),
     .mem_wstrobe       (memw_if_0.mem_wstrobe),
     .out_data_bus      (memw_if_0.out_data_bus),
     .out_addr_bus      (memw_if_0.out_addr_bus),

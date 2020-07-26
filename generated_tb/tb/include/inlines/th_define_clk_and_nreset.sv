@@ -6,7 +6,7 @@
 	initial
 	begin
 		nreset = 0;         // Active low reset in this example
-		#75 nreset = 1;
+		#15 nreset = 1;
 	end
 
 	assign insgen_if_0.clk = clk;

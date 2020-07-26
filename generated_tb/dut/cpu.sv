@@ -6,6 +6,7 @@ module cpu (
 	input logic[31:0] in_data_bus,
 	output logic mem_rw,
 	output logic[3:0] mem_wstrobe,
+	output logic memclk,
 	output logic[31:0] pc_out,
 	output logic[31:0] out_data_bus,
 	output logic[31:0] out_addr_bus,
@@ -116,6 +117,9 @@ module cpu (
 		if(!mif.nreset) begin
 			out_addr_bus = 0;
 			jump = 1;
+			out_data_bus = 0;
+			mem_wstrobe = 0;
+			mif.mem_rw = 0;
 		end
 		else begin
 			case (instruction.name)

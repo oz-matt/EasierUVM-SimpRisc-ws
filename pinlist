@@ -5,6 +5,7 @@ adc_in adc_in
 
 !memw_if
 mem_rw mem_rw
+memclk memclk
 mem_wstrobe mem_wstrobe
 out_data_bus out_data_bus
 out_addr_bus out_addr_bus

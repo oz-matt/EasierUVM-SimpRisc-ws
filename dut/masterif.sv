@@ -2,8 +2,8 @@ interface masterif (
 	input logic clk,
 	input logic nreset,
 	output logic[31:0] out_data_bus_port2,
-	output logic[31:0] out_addr_bus_port2
-	
+	output logic[31:0] out_addr_bus_port2,
+	output logic memclk	
 );
 	
 	logic[31:0] rx [31:0];
@@ -13,6 +13,8 @@ interface masterif (
 	assign rx1 = rx[1];
 	assign rx2 = rx[2];
 	assign rx3 = rx[3];
+	
+	assign memclk = clk;
 	
 	//logic[31:0] instruction;
 	

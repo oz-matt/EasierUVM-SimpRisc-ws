@@ -4,10 +4,10 @@ module umem(masterif.umem io,
 						wire logic[2:0] insf3);
 	
 	//byte imemory[int]; //memory space
-  
-  logic[31:0] odb, odb2;
-  //assign io.out_data_bus = odb;
-  assign io.out_data_bus_port2 = odb2;
+	
+	logic[31:0] odb = 0, odb2 = 0;
+	//assign io.out_data_bus = odb;
+	assign io.out_data_bus_port2 = odb2;
 	
 	
 	//initial begin
@@ -15,23 +15,21 @@ module umem(masterif.umem io,
 	//end
 	
 	always @* begin
-		if(io.mem_rw) begin
 			case (insf3)
 				
 				3'b010: begin
-					odb = io.mem_wdata;
+					odb = io.mem_rw ? io.mem_wdata : 0;
 				end
 				
 				3'b001: begin
-					odb = {16'h0000, io.mem_wdata[15:0]};
+					odb = io.mem_rw ? {16'h0000, io.mem_wdata[15:0]} : 0;
 				end
 				
 				3'b000: begin
-					odb = {24'h000000, io.mem_wdata[7:0]};
+					odb = io.mem_rw ? {24'h000000, io.mem_wdata[7:0]} : 0;
 				end
 			
 			endcase
-		end
 	end
 	
 	always @* begin
@@ -72,11 +70,9 @@ module umem(masterif.umem io,
 	end  
 	
 	always @* begin
-		if(mem.axi_mem_w) begin
-			odb2 = mem.axi_mem_data;
-		end
+			odb2 = mem.axi_mem_w ? mem.axi_mem_data : 0;
 	end
-  
-  assign io.out_addr_bus_port2 = mem.axi_mem_addr;
+	
+	assign io.out_addr_bus_port2 = mem.axi_mem_addr;
 	
 endmodule

@@ -8,7 +8,7 @@
 //
 // Version:   1.0
 //
-// Code created by Easier UVM Code Generator version 2017-01-19 on Fri Jul 24 23:14:32 2020
+// Code created by Easier UVM Code Generator version 2017-01-19 on Mon Jul 27 03:28:28 2020
 //=============================================================================
 // Description: Coverage for agent memw
 //=============================================================================
@@ -49,6 +49,9 @@ class memw_coverage extends uvm_subscriber #(memw_obj);
     //  Add bins here if required
 
     cp_mem_rw: coverpoint m_item.mem_rw;
+    //  Add bins here if required
+
+    cp_memclk: coverpoint m_item.memclk;
     //  Add bins here if required
 
     cp_mem_wstrobe: coverpoint m_item.mem_wstrobe;
