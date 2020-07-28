@@ -1,0 +1,86 @@
+@verdi rc file Version 1.0
+[General]
+VerdiVersion = Verdi3_L-2016.06-1
+[KeyNote]
+Line1 = Automatic Backup 0
+[TestBench]
+ConstrViewShow = 0
+InherViewShow = 0
+FSDBMsgShow = 0
+AnnotationShow = 0
+powerDumped = 0
+[Verdi_1]
+workMode = hardwareDebug
+[evdpColumnConfigDialog]
+FsdbFile0 = /home/disk/EasierUVM-SimpRisc-ws/generated_tb/sim/inter.fsdb
+SessionFile0 = /home/disk/EasierUVM-SimpRisc-ws/generated_tb/sim/verdiLog/novas_autosave.ses.evdpColumnConfigDialog0
+[hb]
+postSimFile = /home/disk/EasierUVM-SimpRisc-ws/generated_tb/sim/inter.fsdb
+syncTime = 10000
+viewport = 0 25 1916 851 633 305 344 1914
+activeNode = "top_tb.th"
+activeScope = "top_tb.th"
+activeFile = "../tb/top_tb/sv/top_th.sv"
+interactiveMode = False
+viewType = Source
+simulatorMode = False
+sourceBeginLine = 17
+baMode = False
+srcLineNum = True
+syncSignal = False
+traceMode = Hierarchical
+showTraceInSchema = True
+paMode = False
+funcMode = False
+traceCrossHier = True
+DnDtraceCrossHierOnly = True
+traceIncTopPort = False
+leadingZero = False
+signalPane = False
+Scope1 = "top_tb.th"
+Scope2 = "uvm_custom_install_recording.unnamed$$_0._vcs_catcher.m_modified_report_message._report_server.get_server.cs.inst._visitor.node.new.top.run_test"
+Scope3 = "top_tb.th.uut"
+Scope4 = "uvm_custom_install_recording"
+multipleSelection = 2 26 7 0 0 26 12 0 0
+sdfCheckUndef = FALSE
+simFlow = FALSE
+[hb.sourceTab.1]
+scope = top_tb.th
+File = /home/disk/EasierUVM-SimpRisc-ws/generated_tb/tb/top_tb/sv/top_th.sv
+Line = 18
+[imp.design1]
+dbEnum =  oh
+invokeDir = /home/disk/EasierUVM-SimpRisc-ws/generated_tb/sim
+design = DebussyLib
+hostCommand = hostCommand -elab ./simv.daidir/kdb.elab++ +UVM_TESTNAME=top_test
+topName = uvm_custom_install_recording uvm_custom_install_verdi_recording top_tb 
+fromLibrary = TRUE
+[nMemoryManager]
+FsdbFile = /home/disk/EasierUVM-SimpRisc-ws/generated_tb/sim/inter.fsdb
+UserActionNum = 0
+nMemWindowNum = 0
+[tAnalyzer.0]
+viewport = 0 28 1916 304
+fsdb = /home/disk/EasierUVM-SimpRisc-ws/generated_tb/sim/inter.fsdb
+[tRelation.0]
+viewport = 0 28 1916 304
+transaction0 = -1
+activeTransaction = -1
+[wave.0]
+viewPort = 0 28 1912 536 100 65
+SessionFile = /home/disk/EasierUVM-SimpRisc-ws/generated_tb/sim/verdiLog/novas_autosave.ses.wave.0
+displayGrid = FALSE
+hierarchicalName = FALSE
+snap = TRUE
+displayLeadingZeros = FALSE
+fixDelta = FALSE
+displayCursorMarker = FALSE
+autoUpdate = FALSE
+highlightGlitchs = FALSE
+waveformSync = FALSE
+displayErrors = TRUE
+displayMsgSymbols = TRUE
+showMsgDescriptions = TRUE
+autoFit = FALSE
+displayDeltaY = FALSE
+centerCursor = FALSE

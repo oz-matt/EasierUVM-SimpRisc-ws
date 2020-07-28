@@ -1,2 +1,5 @@
-$dumpfile("dump.vcd");
-$dumpvars;
+$fsdbDumpfile("novas.fsdb");
+$fsdbDumpvars();
+$fsdbDumpon;
+//$dumpfile("dump.vcd");
+//$dumpvars;

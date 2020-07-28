@@ -1,7 +1,11 @@
 #!/bin/sh
 cd ../generated_tb/sim;
 rm -rf csrc/ simv.vdb/ simv.daidir/ simv;
-vcs -sverilog -cm line+cond+fsm -covg_dump_range +acc +vpi +error+20 -l comp.log -timescale=1ns/1ps -ntb_opts uvm-1.2 \
+vcs -sverilog -lca -debug_access+all -assert enable_diag \
+		+define+ASSERT_ON -y $VCS_HOME/packages/sva +libext+.v \
+		+incdir+$VCS_HOME/packages/sva -P /home/disk/Verdi3_L-2016.06-1/share/PLI/VCS/LINUX64/novas.tab \
+								 /home/disk/Verdi3_L-2016.06-1/share/PLI/VCS/LINUX64/pli.a -full64 +libext+.v+.h+.vh+.vlib \
+		-kdb +vcs+vcdpluson -l comp.log -timescale=1ns/1ps -ntb_opts uvm-1.2 \
 +incdir+../tb/include \
 +incdir+../tb/insgen/sv \
 +incdir+../tb/memw/sv \

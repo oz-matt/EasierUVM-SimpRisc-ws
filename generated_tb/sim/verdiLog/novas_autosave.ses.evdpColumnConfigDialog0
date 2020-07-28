@@ -1,0 +1,53 @@
+; -file event_file_name
+-file /home/disk/EasierUVM-SimpRisc-ws/generated_tb/sim/inter.fsdb
+
+; -name attr_name [-id attr_id] -invisible|-visible [-packIdx idx]
+-name $stream -invisible 
+-name $time -invisible 
+-name $tag -invisible 
+-name $Relationship -invisible 
+-name $label -visible 
+-name $beginTime -visible 
+-name $endTime -visible 
+-name $type -visible 
+-name Msg -id 256 -visible 
+-name Severity -id 257 -visible 
+-name scope_name -id 258 -visible 
+-name field_name -id 259 -visible 
+-name type_name -id 260 -visible 
+-name action -id 261 -visible 
+-name accessor -id 262 -visible 
+-name resource -id 263 -visible 
+-name uvm_severity -id 266 -visible 
+-name uvm_verbosity -id 269 -visible 
+-name file_name -id 270 -visible 
+-name line_num -id 271 -visible 
+-name name -id 331 -visible 
+-name full_name -id 332 -visible 
+-name full_type_name -id 333 -visible 
+-name instance -id 334 -visible 
+-name original_type -id 335 -visible 
+-name override_type -id 336 -visible 
+-name schedule -id 337 -visible 
+-name inst_id -id 338 -visible 
+-name phase -id 339 -visible 
+-name domain -id 340 -visible 
+-name caller_name -id 341 -visible 
+-name provider_name -id 342 -visible 
+-name component_objId -id 343 -visible 
+-name component_class -id 344 -visible 
+-name port_objId -id 345 -visible 
+-name port_class -id 346 -visible 
+-name component_name -id 347 -visible 
+-name component_class_name -id 348 -visible 
+-name vif_objId -id 349 -visible 
+-name virtual_interface_declaration -id 350 -visible 
+-name vif_declaration_filelineno -id 351 -visible 
+-name interface_definition -id 352 -visible 
+-name interface_declaration_filelineno -id 353 -visible 
+-name interface_path -id 354 -visible 
+-name source -id 355 -visible 
+-name total -id 356 -visible 
+-name count -id 357 -visible 
+-name description -id 358 -visible 
+-name label -id 363 -visible 
