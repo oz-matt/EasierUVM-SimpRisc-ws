@@ -16,7 +16,7 @@ FsdbFile0 = /home/disk/EasierUVM-SimpRisc-ws/generated_tb/sim/inter.fsdb
 SessionFile0 = /home/disk/EasierUVM-SimpRisc-ws/generated_tb/sim/verdiLog/novas_autosave.ses.evdpColumnConfigDialog0
 [hb]
 postSimFile = /home/disk/EasierUVM-SimpRisc-ws/generated_tb/sim/inter.fsdb
-syncTime = 10000
+syncTime = 30000
 viewport = 0 25 1916 851 633 305 344 1914
 activeNode = "top_tb.th"
 activeScope = "top_tb.th"

@@ -113,6 +113,15 @@ wvSetCursor -win $_nWave3 20000.000000
 wvSetCursor -win $_nWave3 16254.028337
 wvSetCursor -win $_nWave3 16254.028337
 wvSetCursor -win $_nWave3 14122.736437 -snap {("G1" 1)}
+wvSetCursor -win $_nWave3 30043.018515 -snap {("G1" 1)}
+evbSelect -win $_evbWnd4 -streamId 4 -id 12
+evbHierTree -win $_evbWnd4 -select \
+           "\$trans_root/uvm_test_top/m_env/m_memw_agent/m_monitor"
+evbHierTree -win $_evbWnd4 -click2
+evbSelect -win $_evbWnd4 -streamId 6 -id 7
+evbSelect -win $_evbWnd4 -streamId 6 -id 13
+evbSelect -win $_evbWnd4 -streamId 6 -id 20
+evbSelect -win $_evbWnd4 -streamId 6 -id 27
 evbExitWindow -win $_evbWnd4
 nsMsgSwitchTab -tab general
 debExit

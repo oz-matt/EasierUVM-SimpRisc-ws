@@ -8,7 +8,7 @@
 //
 // Version:   1.0
 //
-// Code created by Easier UVM Code Generator version 2017-01-19 on Tue Jul 28 09:49:53 2020
+// Code created by Easier UVM Code Generator version 2017-01-19 on Wed Jul 29 08:14:13 2020
 //=============================================================================
 // Description: Sequence for agent insgen
 //=============================================================================
@@ -92,7 +92,7 @@ endtask : pre_start
 function void insgen_prand_ins_seq::mid_do(uvm_sequence_item this_item);
 	trans_rand_ins pkt;
 	$cast(pkt, this_item);
-	if (m_config.init_cpu_regs_ctr < 32) begin
+	if ((m_config.init_cpu_regs_ctr < 32) && (m_config.init_cpu_regs_with_rand_vals == true)) begin
 		
 		// For each of the 32 cpu registers, generate and insert a random value
 		// using LUI and ADDI instruction pairs

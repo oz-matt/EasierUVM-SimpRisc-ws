@@ -1,6 +1,7 @@
 task memw_monitor::do_mon;
 	forever @(posedge vif.memclk)
 	begin
+		//if (vif.nreset) begin
 		m_trans.out_data_bus = vif.out_data_bus;
 		m_trans.out_data_bus_port2 = vif.out_data_bus_port2;
 		m_trans.out_addr_bus_port2 = vif.out_addr_bus_port2;
@@ -22,6 +23,6 @@ task memw_monitor::do_mon;
 		m_trans.mem_wstrobe), UVM_MEDIUM)
 			
 		analysis_port.write(m_trans);
-	
+	//end
 	end
 endtask

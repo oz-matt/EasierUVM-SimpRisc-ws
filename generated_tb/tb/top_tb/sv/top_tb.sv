@@ -8,7 +8,7 @@
 //
 // Version:   1.0
 //
-// Code created by Easier UVM Code Generator version 2017-01-19 on Tue Jul 28 09:49:53 2020
+// Code created by Easier UVM Code Generator version 2017-01-19 on Wed Jul 29 08:14:13 2020
 //=============================================================================
 // Description: Testbench
 //=============================================================================
@@ -39,11 +39,11 @@ module top_tb;
   initial
   begin
     // Start of inlined include file generated_tb/tb/include/inlines/tb_incs.sv
-    $fsdbDumpfile("novas.fsdb");
-    $fsdbDumpvars();
-    $fsdbDumpon;
-    //$dumpfile("dump.vcd");
-    //$dumpvars;    // End of inlined include file
+    //$fsdbDumpfile("novas.fsdb");
+    //$fsdbDumpvars();
+    //$fsdbDumpon;
+    $dumpfile("dump.vcd");
+    $dumpvars;    // End of inlined include file
 
     // Create and populate top-level configuration object
     top_env_config = new("top_env_config");

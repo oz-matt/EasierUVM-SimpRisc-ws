@@ -1,3 +1,3 @@
-instr_category_bm ibm = instr_category_bm'(LOAD | STORE | ARITHMETIC);
+instr_category_bm ibm = instr_category_bm'(STORE);
 
-m_insgen_config.init_params(true, ibm);
+m_insgen_config.init_params(false, ibm);

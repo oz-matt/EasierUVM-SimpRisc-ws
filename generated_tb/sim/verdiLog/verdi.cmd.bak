@@ -113,6 +113,7 @@ wvSetCursor -win $_nWave3 20000.000000
 wvSetCursor -win $_nWave3 16254.028337
 wvSetCursor -win $_nWave3 16254.028337
 wvSetCursor -win $_nWave3 14122.736437 -snap {("G1" 1)}
-evbExitWindow -win $_evbWnd4
+evbSelect -win $_evbWnd4 -streamId 0 -id 11
+wvSetCursor -win $_nWave3 15001.016066 -snap {("G1" 2)}
 nsMsgSwitchTab -tab general
 debExit

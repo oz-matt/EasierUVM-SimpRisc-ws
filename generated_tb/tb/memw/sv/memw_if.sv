@@ -8,7 +8,7 @@
 //
 // Version:   1.0
 //
-// Code created by Easier UVM Code Generator version 2017-01-19 on Tue Jul 28 09:49:53 2020
+// Code created by Easier UVM Code Generator version 2017-01-19 on Wed Jul 29 08:14:13 2020
 //=============================================================================
 // Description: Signal interface for agent memw
 //=============================================================================
@@ -39,7 +39,12 @@ interface memw_if();
 
   // Start of inlined include file generated_tb/tb/include/inlines/memw_if_inc_inside_interface.sv
   
-  initial in_data_bus = 0;  // End of inlined include file
+  initial in_data_bus = 0;
+  
+  /*clocking cb @(posedge clk);
+  	default input #2 output #2
+  	
+  endclocking*/  // End of inlined include file
 
 endinterface : memw_if
 

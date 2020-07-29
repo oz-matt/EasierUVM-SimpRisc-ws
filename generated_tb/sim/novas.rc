@@ -216,7 +216,7 @@ prefKey_Link-LineWidth = 1
 Selection-LineColor = ID_BLUE2
 Selection-LineWidth = 1
 [FSM_Dlg-Print]
-Orientation = Landscape    
+Orientation = Landscape 
 [Form]
 version = Verdi3_L-2016.06-1
 openfile.fm = 102,126,723,532
@@ -363,8 +363,8 @@ qWaveSignalDialog = 558,204,800,479
 QwQuestionMsgDlg = 796,406,324,114
 importDesignForm = 846,232,634,611
 QwFileDialogT = 667,366,590,325
-QwWarnMsgDlg = 680,624,600,250
-QwUserAskDlg = 810,571,324,134
+QwWarnMsgDlg = 682,648,600,250
+QwUserAskDlg = 816,649,324,134
 [Relationship]
 hideRecursiceNode = FALSE
 [Session Cache]
@@ -1155,7 +1155,7 @@ AddImportArgument = TRUE
 LineBreakWithScope = TRUE
 StopAfterCompileOption = -tcl
 [turboSchema_Printer_Options]
-Orientation = Landscape    
+Orientation = Landscape 
 [turbo_library]
 bdb_load_scope
 [verisity]
