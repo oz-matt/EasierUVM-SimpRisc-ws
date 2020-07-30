@@ -171,6 +171,7 @@ module cpu (
 					mif.mem_rw = 1; //umem controller uses instruction.funct3 to determine write width
 					out_addr_bus = mif.rx[instruction.rs1] + `SIGN_EXTEND32(12, instruction.s_imm);
 					gbuf = mif.rx[instruction.rs2];
+					$display("rs2:%b rx:%b", instruction.rs2, mif.rx[instruction.rs2]);
 									mem_wstrobe = 4'b0001;
 									out_data_bus = {24'h000000, gbuf[7:0]};
 				end
@@ -319,16 +320,18 @@ module cpu (
 		end
 	end
 	
+	
 	always @(posedge clk or negedge mif.nreset) begin
 		if(!mif.nreset) begin
-			//mif.rx = '{default:32'h00000000};
-			mif.rx[0] = 0;
+			mif.rx <= '{default:32'h39393939};
+			/*mif.rx[0] = 0;
 					mif.rx[1] = 256;
 			mif.rx[2] = 4;
 			mif.rx[3] = 44;
-			mif.rx[4] = 'hfffffffe;
+			mif.rx[4] = 'hfffffffe;*/
 		end
 		else begin
+			//$display("\r\r\n\n%p\r\r\n\n", mif.rx);
 			if(rd_w_en)
 				mif.rx[instruction.rd] <= rdbuffer;      
 		end
