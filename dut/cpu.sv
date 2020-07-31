@@ -126,30 +126,35 @@ module cpu (
 				
 				LW: begin //Load 32-bit val at umem[rx[rs1] + imm] into rd
 					mif.mem_rw = 0;
+					mem_wstrobe = 4'b1111;
 					out_addr_bus = mif.rx[instruction.rs1] + `SIGN_EXTEND32(12, instruction.i_imm);
 					rdbuffer = in_data_bus;
 				end
 				
 				LH: begin //Load 16-bit val (sign extended to 32-bits) at umem[rx[rs1] + imm] into rd
 					mif.mem_rw = 0;
+					mem_wstrobe = 4'b0011;
 					out_addr_bus = mif.rx[instruction.rs1] + `SIGN_EXTEND32(12, instruction.i_imm);
 					rdbuffer = `SIGN_EXTEND32(16, in_data_bus);
 				end
 				
 				LHU: begin //Load 16-bit val (zero extended to 32-bits) at umem[rx[rs1] + imm] into rd
 					mif.mem_rw = 0;
+					mem_wstrobe = 4'b0011;
 					out_addr_bus = mif.rx[instruction.rs1] + `SIGN_EXTEND32(12, instruction.i_imm);
 					rdbuffer = {16'h0000, in_data_bus[15:0]};
 				end
 				
 				LB: begin //Load 8-bit val (sign extended to 32-bits) at umem[rx[rs1] + imm] into rd
 					mif.mem_rw = 0;
+					mem_wstrobe = 4'b0001;
 					out_addr_bus = mif.rx[instruction.rs1] + `SIGN_EXTEND32(12, instruction.i_imm);
 					rdbuffer = `SIGN_EXTEND32(8, in_data_bus);
 				end
 				
 				LBU: begin //Load 8-bit val (zero extended to 32-bits) at umem[rx[rs1] + imm] into rd
 					mif.mem_rw = 0;
+					mem_wstrobe = 4'b0001;
 					out_addr_bus = mif.rx[instruction.rs1] + `SIGN_EXTEND32(12, instruction.i_imm);
 					rdbuffer = {24'h000000, in_data_bus[7:0]};
 				end
@@ -171,7 +176,6 @@ module cpu (
 					mif.mem_rw = 1; //umem controller uses instruction.funct3 to determine write width
 					out_addr_bus = mif.rx[instruction.rs1] + `SIGN_EXTEND32(12, instruction.s_imm);
 					gbuf = mif.rx[instruction.rs2];
-					$display("rs2:%b rx:%b", instruction.rs2, mif.rx[instruction.rs2]);
 									mem_wstrobe = 4'b0001;
 									out_data_bus = {24'h000000, gbuf[7:0]};
 				end
