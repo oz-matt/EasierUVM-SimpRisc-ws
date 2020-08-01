@@ -363,8 +363,8 @@ qWaveSignalDialog = 558,204,800,479
 QwQuestionMsgDlg = 796,406,324,114
 importDesignForm = 846,232,634,611
 QwFileDialogT = 667,366,590,325
-QwWarnMsgDlg = 684,648,600,250
-QwUserAskDlg = 818,675,324,134
+QwWarnMsgDlg = 686,648,600,250
+QwUserAskDlg = 822,727,324,134
 [Relationship]
 hideRecursiceNode = FALSE
 [Session Cache]

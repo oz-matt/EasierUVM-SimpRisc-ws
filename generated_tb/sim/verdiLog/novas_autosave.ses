@@ -12,7 +12,7 @@ powerDumped = 0
 [Verdi_1]
 workMode = hardwareDebug
 [eBrowser.0]
-viewport = 0 551 1912 357
+viewport = 12 559 1912 357
 fsdb = /home/disk/EasierUVM-SimpRisc-ws/generated_tb/sim/novas.fsdb
 stream1 = $trans_root/uvm_test_top/m_env/m_insgen_agent/m_sequencer 30
 stream2 = $trans_root/uvm_test_top/m_env/m_insgen_coverage 30
@@ -24,16 +24,16 @@ selectStream = $trans_root/uvm_test_top/m_env/m_insgen_agent/m_monitor
 startStream = $trans_root/uvm_test_top/m_env/m_insgen_agent/m_sequencer
 timeRatio = 1.000000
 stratX = 0
-selectTrans = $trans_root/uvm_test_top/m_env/m_insgen_agent/m_monitor 19
-mainMarker = 30.0n
+selectTrans = $trans_root/uvm_test_top/m_env/m_insgen_agent/m_monitor 13
+mainMarker = 70.0n
 [evdpColumnConfigDialog]
-FsdbFile0 = /home/disk/EasierUVM-SimpRisc-ws/generated_tb/sim/novas.fsdb
+FsdbFile0 = /home/disk/EasierUVM-SimpRisc-ws/generated_tb/sim/inter.fsdb
 SessionFile0 = /home/disk/EasierUVM-SimpRisc-ws/generated_tb/sim/verdiLog/novas_autosave.ses.evdpColumnConfigDialog0
-FsdbFile1 = /home/disk/EasierUVM-SimpRisc-ws/generated_tb/sim/inter.fsdb
+FsdbFile1 = /home/disk/EasierUVM-SimpRisc-ws/generated_tb/sim/novas.fsdb
 SessionFile1 = /home/disk/EasierUVM-SimpRisc-ws/generated_tb/sim/verdiLog/novas_autosave.ses.evdpColumnConfigDialog1
 [hb]
 postSimFile = /home/disk/EasierUVM-SimpRisc-ws/generated_tb/sim/inter.fsdb
-syncTime = 30000
+syncTime = 70000
 viewport = 0 25 1916 851 633 305 344 1914
 activeNode = "top_tb.th"
 activeScope = "top_tb.th"
@@ -41,7 +41,7 @@ activeFile = "../tb/top_tb/sv/top_th.sv"
 interactiveMode = False
 viewType = Source
 simulatorMode = False
-sourceBeginLine = 17
+sourceBeginLine = 19
 baMode = False
 srcLineNum = True
 syncSignal = False
@@ -55,16 +55,16 @@ traceIncTopPort = False
 leadingZero = False
 signalPane = False
 Scope1 = "top_tb.th"
-Scope2 = "uvm_custom_install_recording.unnamed$$_0._vcs_catcher.m_modified_report_message._report_server.get_server.cs.inst._visitor.node.new.top.run_test"
+Scope2 = "top_test.m_env.m_insgen_agent.m_driver.do_drive"
 Scope3 = "top_tb.th.uut"
 Scope4 = "uvm_custom_install_recording"
-multipleSelection = 2 26 7 0 0 26 12 0 0
+multipleSelection = 2 28 7 0 0 28 12 0 0
 sdfCheckUndef = FALSE
 simFlow = FALSE
 [hb.sourceTab.1]
 scope = top_tb.th
 File = /home/disk/EasierUVM-SimpRisc-ws/generated_tb/tb/top_tb/sv/top_th.sv
-Line = 18
+Line = 20
 [imp.design1]
 dbEnum =  oh
 invokeDir = /home/disk/EasierUVM-SimpRisc-ws/generated_tb/sim

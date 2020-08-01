@@ -8,7 +8,7 @@
 //
 // Version:   1.0
 //
-// Code created by Easier UVM Code Generator version 2017-01-19 on Fri Jul 31 21:34:11 2020
+// Code created by Easier UVM Code Generator version 2017-01-19 on Sun Aug  2 05:55:29 2020
 //=============================================================================
 // Description: Test class for top (included in package top_test_pkg)
 //=============================================================================
@@ -30,7 +30,8 @@ class top_test extends uvm_test;
 
   extern function void build_phase(uvm_phase phase);
 
-  // You can insert code here by setting test_inc_inside_class in file common.tpl
+  // Start of inlined include file generated_tb/tb/include/inlines/test_insert_config_afterc.sv
+  extern function void start_of_simulation_phase(uvm_phase phase);  // End of inlined include file
 
 endclass : top_test
 
@@ -49,7 +50,7 @@ function void top_test::build_phase(uvm_phase phase);
   // You could modify any test-specific configuration object variables here
 
 
-  insgen_default_seq::type_id::set_type_override(insgen_prand_ins_seq::get_type());
+  insgen_default_seq::type_id::set_type_override(insgen_prand_inorder_ins_seq::get_type());
 
   m_env = top_env::type_id::create("m_env", this);
 
@@ -58,7 +59,27 @@ function void top_test::build_phase(uvm_phase phase);
 endfunction : build_phase
 
 
-// You can insert code here by setting test_inc_after_class in file common.tpl
+// Start of inlined include file generated_tb/tb/include/inlines/test_insert_config.sv
+function void top_test::start_of_simulation_phase(uvm_phase phase);
+
+	instruction_base_si isi[$];
+raw_instruction_si r1 = new();
+li_instruction_t liit = asmutils::get_rand_li_pseudo(1);
+
+
+isi.push_back(liit.l);
+isi.push_back(liit.a);
+
+r1.set_raw_bits(32'h001120A3);
+
+isi.push_back(r1);
+
+foreach(isi[j])
+	m_env.m_insgen_agent.m_config.ic.push_back(isi[j]);
+
+endfunction
+
+// End of inlined include file
 
 `endif // TOP_TEST_SV
 

@@ -9,10 +9,12 @@ package verif_pkg;
 	`include "seq_items/arithmetic_instruction_si.sv"
 	`include "seq_items/store_instruction_si.sv"
 	`include "seq_items/load_instruction_si.sv"
+	`include "seq_items/raw_instruction_si.sv"
 	`include "pseudo.sv"
 	`include "seq_items/asmutils.sv"
 	
 	`include "rand_ins_gen.sv"
+	`include "inorder_ins_c.sv"
 
 	
 endpackage : verif_pkg
