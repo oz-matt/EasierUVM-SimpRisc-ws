@@ -5,6 +5,7 @@ vcs -sverilog -cm line+cond+fsm -covg_dump_range +acc +vpi +error+20 -l comp.log
 +incdir+../tb/include \
 +incdir+../tb/insgen/sv \
 +incdir+../tb/memw/sv \
++incdir+../../uvm_syoscb/src \
 +incdir+../tb/top/sv \
 +incdir+../tb/top_test/sv \
 +incdir+../tb/top_tb/sv \
@@ -14,6 +15,7 @@ vcs -sverilog -cm line+cond+fsm -covg_dump_range +acc +vpi +error+20 -l comp.log
 ../tb/insgen/sv/insgen_if.sv \
 ../tb/memw/sv/memw_pkg.sv \
 ../tb/memw/sv/memw_if.sv \
+../../uvm_syoscb/src/pk_syoscb.sv \
 ../tb/top/sv/top_pkg.sv \
 ../tb/top_test/sv/top_test_pkg.sv \
 ../tb/top_tb/sv/top_th.sv \

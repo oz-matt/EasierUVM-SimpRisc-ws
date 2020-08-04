@@ -8,7 +8,7 @@
 //
 // Version:   1.0
 //
-// Code created by Easier UVM Code Generator version 2017-01-19 on Tue Aug  4 08:45:22 2020
+// Code created by Easier UVM Code Generator version 2017-01-19 on Tue Aug  4 23:34:09 2020
 //=============================================================================
 // Description: Reference model for use with Syosil scoreboard
 //=============================================================================
@@ -47,9 +47,10 @@ endfunction : new
 // Start of inlined include file generated_tb/tb/include/reference_inc_after_class.sv
 function void reference::write_reference_0(trans_rand_ins t);
 	memw_obj m;
+	m= memw_obj::type_id::create("m");
 	m.out_data_bus = 32'hEEFFEEFF;
 	analysis_port_0.write(m);
-	`uvm_warning("P", $sformatf("In Ref!!: %s", t.ibsi.get_asm_string()))
+	`uvm_warning("P", $sformatf("In Ref!!: %X", t.rand_instruction))
 endfunction// End of inlined include file
 
 `endif // REFERENCE_SV
