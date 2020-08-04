@@ -8,7 +8,7 @@
 //
 // Version:   1.0
 //
-// Code created by Easier UVM Code Generator version 2017-01-19 on Sun Aug  2 05:55:29 2020
+// Code created by Easier UVM Code Generator version 2017-01-19 on Tue Aug  4 08:45:22 2020
 //=============================================================================
 // Description: Environment for top
 //=============================================================================
@@ -18,12 +18,22 @@
 
 // You can insert code here by setting top_env_inc_before_class in file common.tpl
 
+import pk_syoscb::*;
+
 class top_env extends uvm_env;
 
   `uvm_component_utils(top_env)
 
   extern function new(string name, uvm_component parent);
 
+  // Reference model and Syosil scoreboard
+  typedef port_converter #(memw_obj) converter_m_memw_agent_t;
+
+  converter_m_memw_agent_t m_converter_m_memw_agent;
+
+  reference                m_reference;             
+  cl_syoscb                m_reference_scoreboard;  
+  cl_syoscb_cfg            m_reference_config;      
 
   // Child agents
   insgen_config    m_insgen_config;  
@@ -81,6 +91,32 @@ function void top_env::build_phase(uvm_phase phase);
     uvm_config_db #(memw_config)::set(this, "m_memw_agent.m_sequencer", "config", m_memw_config);
   uvm_config_db #(memw_config)::set(this, "m_memw_coverage", "config", m_memw_config);
 
+  // Default factory overrides for Syosil scoreboard
+  cl_syoscb_queue::type_id::set_type_override(cl_syoscb_queue_std::type_id::get());
+
+  begin
+    bit ok;
+    uvm_factory factory = uvm_factory::get();
+
+    if (factory.find_override_by_type(cl_syoscb_compare_base::type_id::get(), "*") == cl_syoscb_compare_base::type_id::get())
+      cl_syoscb_compare_base::type_id::set_inst_override(cl_syoscb_compare_iop::type_id::get(), "m_reference_scoreboard.*", this);
+
+    // Configuration object for Syosil scoreboard
+    m_reference_config = cl_syoscb_cfg::type_id::create("m_reference_config");
+    m_reference_config.set_queues( {"DUT", "REF"} );
+    ok = m_reference_config.set_primary_queue("DUT");
+    assert(ok);
+    ok = m_reference_config.set_producer("m_memw_agent", {"DUT", "REF"} );
+    assert(ok);
+
+    uvm_config_db#(cl_syoscb_cfg)::set(this, "m_reference_scoreboard", "cfg", m_reference_config);
+
+    // Instantiate reference model and Syosil scoreboard
+    m_reference              = reference               ::type_id::create("m_reference", this);
+    m_converter_m_memw_agent = converter_m_memw_agent_t::type_id::create("m_converter_m_memw_agent", this);
+    m_reference_scoreboard   = cl_syoscb               ::type_id::create("m_reference_scoreboard", this);
+  end
+
 
   m_insgen_agent    = insgen_agent   ::type_id::create("m_insgen_agent", this);
   m_insgen_coverage = insgen_coverage::type_id::create("m_insgen_coverage", this);
@@ -100,6 +136,19 @@ function void top_env::connect_phase(uvm_phase phase);
 
   m_memw_agent.analysis_port.connect(m_memw_coverage.analysis_export);
 
+  begin
+    // Connect reference model and Syosil scoreboard
+    cl_syoscb_subscriber subscriber;
+
+    m_insgen_agent.analysis_port.connect(m_reference.analysis_export_0);
+
+    subscriber = m_reference_scoreboard.get_subscriber("REF", "m_memw_agent");
+    m_reference.analysis_port_0.connect(subscriber.analysis_export);
+
+    subscriber = m_reference_scoreboard.get_subscriber("DUT", "m_memw_agent");
+    m_memw_agent.analysis_port.connect(m_converter_m_memw_agent.analysis_export);
+    m_converter_m_memw_agent.analysis_port.connect(subscriber.analysis_export);
+  end
 
   // You can insert code here by setting top_env_append_to_connect_phase in file common.tpl
 

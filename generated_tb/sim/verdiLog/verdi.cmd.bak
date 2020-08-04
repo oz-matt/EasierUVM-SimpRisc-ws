@@ -113,16 +113,6 @@ wvSetCursor -win $_nWave3 20000.000000
 wvSetCursor -win $_nWave3 16254.028337
 wvSetCursor -win $_nWave3 16254.028337
 wvSetCursor -win $_nWave3 14122.736437 -snap {("G1" 1)}
-evbSelect -win $_evbWnd4 -streamId 0 -id 10
-wvSetCursor -win $_nWave3 29892.793795 -snap {("G1" 1)}
-wvSetCursor -win $_nWave3 9984.558416 -snap {("G1" 1)}
-evbSelect -win $_evbWnd4 -streamId 1 -id 11
-evbSelect -win $_evbWnd4 -streamId 4 -id 12
-evbSelect -win $_evbWnd4 -streamId 4 -id 19
-evbSelect -win $_evbWnd4 -streamId 4 -id 12
-evbSelect -win $_evbWnd4 -streamId 1 -id 11
-wvSetCursor -win $_nWave3 29953.675249 -snap {("G1" 2)}
-wvSetCursor -win $_nWave3 29771.030888 -snap {("G1" 1)}
 wvScrollDown -win $_nWave3 1
 wvScrollDown -win $_nWave3 1
 wvScrollDown -win $_nWave3 1
@@ -140,6 +130,8 @@ wvScrollDown -win $_nWave3 0
 wvScrollDown -win $_nWave3 0
 wvScrollDown -win $_nWave3 0
 wvScrollDown -win $_nWave3 0
+wvScrollDown -win $_nWave3 0
+wvScrollDown -win $_nWave3 0
 wvScrollUp -win $_nWave3 1
 wvScrollUp -win $_nWave3 1
 wvScrollUp -win $_nWave3 1
@@ -149,6 +141,59 @@ wvScrollUp -win $_nWave3 1
 wvScrollUp -win $_nWave3 1
 wvScrollUp -win $_nWave3 1
 wvScrollUp -win $_nWave3 1
+wvScrollDown -win $_nWave3 0
+wvScrollDown -win $_nWave3 0
+wvScrollDown -win $_nWave3 0
+wvScrollDown -win $_nWave3 0
+wvScrollDown -win $_nWave3 0
+wvScrollDown -win $_nWave3 0
+wvScrollDown -win $_nWave3 0
+wvScrollDown -win $_nWave3 0
+wvSetCursor -win $_nWave3 29710.149434 -snap {("G1" 1)}
+evbSelect -win $_evbWnd4 -streamId 4 -id 8
+evbSelect -win $_evbWnd4 -streamId 5 -id 13
+evbSelect -win $_evbWnd4 -streamId 4 -id 8
+evbSelect -win $_evbWnd4 -streamId 4 -id 15
+wvSetCursor -win $_nWave3 49861.910628 -snap {("G1" 1)}
+wvSetCursor -win $_nWave3 70013.671822 -snap {("G1" 1)}
+evbSelect -win $_evbWnd4 -streamId 4 -id 22
+evbSelect -win $_evbWnd4 -streamId 4 -id 29
+evbSelect -win $_evbWnd4 -streamId 4 -id 36
+evbSelect -win $_evbWnd4 -streamId 5 -id 34
+evbSelect -win $_evbWnd4 -streamId 5 -id 27
+evbSelect -win $_evbWnd4 -streamId 5 -id 20
+evbSelect -win $_evbWnd4 -streamId 5 -id 13
+wvScrollDown -win $_nWave3 0
+wvScrollDown -win $_nWave3 0
+wvScrollDown -win $_nWave3 0
+wvScrollDown -win $_nWave3 0
+wvScrollDown -win $_nWave3 0
+wvScrollDown -win $_nWave3 0
+wvSetCursor -win $_nWave3 77197.683366 -snap {("G1" 12)}
+wvScrollDown -win $_nWave3 0
+wvScrollDown -win $_nWave3 0
+wvScrollDown -win $_nWave3 0
+wvScrollDown -win $_nWave3 0
+wvScrollDown -win $_nWave3 0
+wvScrollDown -win $_nWave3 0
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollDown -win $_nWave3 0
+wvScrollDown -win $_nWave3 0
+wvScrollDown -win $_nWave3 0
+wvScrollDown -win $_nWave3 0
 wvScrollDown -win $_nWave3 0
 wvScrollDown -win $_nWave3 1
 wvScrollDown -win $_nWave3 1
@@ -163,54 +208,33 @@ wvScrollDown -win $_nWave3 0
 wvScrollDown -win $_nWave3 0
 wvScrollDown -win $_nWave3 0
 wvScrollDown -win $_nWave3 0
-wvScrollUp -win $_nWave3 1
-wvScrollUp -win $_nWave3 1
-wvScrollDown -win $_nWave3 1
-wvScrollDown -win $_nWave3 1
-wvScrollUp -win $_nWave3 1
-wvScrollUp -win $_nWave3 1
-wvScrollUp -win $_nWave3 1
-wvScrollUp -win $_nWave3 1
-wvScrollUp -win $_nWave3 1
-wvScrollUp -win $_nWave3 1
-wvScrollUp -win $_nWave3 1
-wvScrollUp -win $_nWave3 1
-wvScrollUp -win $_nWave3 1
 wvScrollDown -win $_nWave3 0
 wvScrollDown -win $_nWave3 0
 wvScrollDown -win $_nWave3 0
-wvScrollDown -win $_nWave3 1
-wvScrollDown -win $_nWave3 1
-wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 0
+wvScrollDown -win $_nWave3 0
+wvScrollDown -win $_nWave3 0
+wvScrollDown -win $_nWave3 0
+wvScrollDown -win $_nWave3 0
+wvScrollDown -win $_nWave3 0
+wvScrollDown -win $_nWave3 0
+wvScrollDown -win $_nWave3 0
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
 wvScrollDown -win $_nWave3 1
 wvScrollDown -win $_nWave3 1
 wvScrollDown -win $_nWave3 1
 wvScrollDown -win $_nWave3 1
 wvScrollDown -win $_nWave3 1
-wvScrollDown -win $_nWave3 1
 wvScrollDown -win $_nWave3 0
 wvScrollDown -win $_nWave3 0
 wvScrollDown -win $_nWave3 0
 wvScrollDown -win $_nWave3 0
 wvScrollDown -win $_nWave3 0
 wvScrollDown -win $_nWave3 0
-wvScrollUp -win $_nWave3 1
-wvScrollUp -win $_nWave3 1
-wvScrollUp -win $_nWave3 1
-wvScrollUp -win $_nWave3 1
-wvScrollUp -win $_nWave3 1
-wvScrollUp -win $_nWave3 1
-wvScrollUp -win $_nWave3 1
-wvScrollUp -win $_nWave3 1
-wvScrollUp -win $_nWave3 1
-wvScrollDown -win $_nWave3 0
-wvScrollDown -win $_nWave3 0
-wvScrollDown -win $_nWave3 0
-wvScrollDown -win $_nWave3 0
-wvScrollDown -win $_nWave3 0
-wvScrollDown -win $_nWave3 0
-wvScrollDown -win $_nWave3 0
-wvScrollDown -win $_nWave3 0
-wvScrollDown -win $_nWave3 0
+wvSelectSignal -win $_nWave3 {( "G1" 24 )} 
 nsMsgSwitchTab -tab general
 debExit

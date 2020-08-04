@@ -18,6 +18,7 @@ class instruction_base_si extends uvm_sequence_item;
 	endfunction
 
 	virtual function string get_asm_string();
+		return "get_asm_string unimplemented";
 	endfunction
 		
 	function bit [6:0] get_opcode(riscv_instr_name_t instr_name);
