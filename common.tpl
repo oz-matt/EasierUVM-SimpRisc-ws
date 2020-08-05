@@ -8,12 +8,13 @@ top_default_seq_count = 5
 
 syosil_scoreboard_src_path = uvm_syoscb/src
 
-ref_model_compare_method    = reference iop
+ref_model_compare_method    = reference io
 
 ref_model_input  = reference m_insgen_agent
 
 ref_model_output = reference m_memw_agent
 
+ref_model_inc_before_class = reference reference_inc_before_class.sv  inline
 ref_model_inc_inside_class  = reference reference_inc_inside_class.sv  inline
 ref_model_inc_after_class   = reference reference_inc_after_class.sv   inline
 

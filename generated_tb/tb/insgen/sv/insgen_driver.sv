@@ -8,7 +8,7 @@
 //
 // Version:   1.0
 //
-// Code created by Easier UVM Code Generator version 2017-01-19 on Tue Aug  4 23:34:09 2020
+// Code created by Easier UVM Code Generator version 2017-01-19 on Thu Aug  6 05:55:36 2020
 //=============================================================================
 // Description: Driver for insgen
 //=============================================================================
@@ -58,7 +58,7 @@ endtask : run_phase
 // Start of inlined include file generated_tb/tb/include/inlines/insgen_driver_inc.sv
 task insgen_driver::do_drive();
 	wait (vif.nreset);
-	@(posedge vif.clk)
+	@(posedge vif.clk);
 	if(vif.nreset) begin
 		vif.instr_bus <= req.ibsi.get_raw_bits();
 		`uvm_info(get_type_name(), $sformatf("instr: %s", req.ibsi.get_asm_string()), UVM_LOW);

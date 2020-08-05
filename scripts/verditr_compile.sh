@@ -13,6 +13,7 @@ vcs -sverilog -lca -debug_access+all -assert enable_diag \
 +incdir+../tb/top/sv \
 +incdir+../tb/top_test/sv \
 +incdir+../tb/top_tb/sv \
++incdir+../ref_model_cpp/ \
 -F ../dut/files.f \
 ../tb/include/verif_pkg.sv \
 ../tb/insgen/sv/insgen_pkg.sv \
@@ -24,4 +25,5 @@ vcs -sverilog -lca -debug_access+all -assert enable_diag \
 ../tb/top_test/sv/top_test_pkg.sv \
 ../tb/top_tb/sv/top_th.sv \
 ../tb/top_tb/sv/top_tb.sv \
+../tb/include/ref_model_cpp/ref.cpp \
 -R +UVM_TESTNAME=top_test $* 

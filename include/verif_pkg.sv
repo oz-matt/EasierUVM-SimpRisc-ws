@@ -16,5 +16,4 @@ package verif_pkg;
 	`include "rand_ins_gen.sv"
 	`include "inorder_ins_c.sv"
 
-	
 endpackage : verif_pkg

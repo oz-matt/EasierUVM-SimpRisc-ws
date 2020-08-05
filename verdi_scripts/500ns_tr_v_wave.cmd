@@ -65,7 +65,7 @@ srcAddSelectedToWave -win $_nTrace1
 srcDeselectAll -win $_nTrace1
 srcSelect -signal "out_addr_bus_port2" -win $_nTrace1
 srcAddSelectedToWave -win $_nTrace1
-srcTBRunSim -opt {100ns}
+srcTBRunSim -opt {500ns}
 verdiWindowWorkMode -win $_Verdi_1 -transactionDebug
 evbHierTree -win $_evbWnd4 -select \
            "\$trans_root/uvm_test_top/m_env/m_insgen_agent/m_sequencer"
@@ -113,66 +113,3 @@ wvSetCursor -win $_nWave3 20000.000000
 wvSetCursor -win $_nWave3 16254.028337
 wvSetCursor -win $_nWave3 16254.028337
 wvSetCursor -win $_nWave3 14122.736437 -snap {("G1" 1)}
-srcTBSimReset
-srcTBRunSim -opt {500ns}
-evbHierTree -win $_evbWnd4 -hier -select \
-           "\$trans_root/uvm_test_top/m_env/m_reference_scoreboard"
-evbHierTree -win $_evbWnd4 -click2
-evbHierTree -win $_evbWnd4 -select \
-           "\$trans_root/uvm_test_top/m_env/m_reference_scoreboard/DUT"
-evbHierTree -win $_evbWnd4 -click2
-evbHierTree -win $_evbWnd4 -select \
-           "\$trans_root/uvm_test_top/m_env/m_reference_scoreboard/REF"
-evbHierTree -win $_evbWnd4 -click2
-evbSelect -win $_evbWnd4 -streamId 6 -id 213
-evbSelect -win $_evbWnd4 -streamId 7 -id 217
-evbSelect -win $_evbWnd4 -streamId 9 -id 218
-evbSelect -win $_evbWnd4 -streamId 7 -id 217
-evbSelect -win $_evbWnd4 -streamId 8 -id 214
-evbSelect -win $_evbWnd4 -streamId 9 -id 218
-evbSelect -win $_evbWnd4 -streamId 8 -id 214
-evbSelect -win $_evbWnd4 -streamId 6 -id 213
-wvScrollDown -win $_nWave3 1
-wvScrollDown -win $_nWave3 1
-wvScrollDown -win $_nWave3 1
-wvScrollDown -win $_nWave3 1
-wvScrollDown -win $_nWave3 1
-wvScrollDown -win $_nWave3 1
-wvScrollDown -win $_nWave3 1
-wvScrollDown -win $_nWave3 1
-wvScrollDown -win $_nWave3 0
-wvScrollDown -win $_nWave3 0
-wvScrollDown -win $_nWave3 0
-wvScrollDown -win $_nWave3 0
-wvScrollDown -win $_nWave3 0
-wvScrollDown -win $_nWave3 0
-wvScrollDown -win $_nWave3 0
-wvScrollDown -win $_nWave3 0
-wvScrollDown -win $_nWave3 0
-wvScrollDown -win $_nWave3 0
-wvScrollDown -win $_nWave3 0
-wvScrollDown -win $_nWave3 0
-wvScrollDown -win $_nWave3 0
-wvScrollDown -win $_nWave3 0
-wvScrollDown -win $_nWave3 0
-wvScrollDown -win $_nWave3 0
-wvScrollDown -win $_nWave3 0
-wvScrollDown -win $_nWave3 0
-wvScrollDown -win $_nWave3 0
-wvScrollDown -win $_nWave3 0
-wvScrollUp -win $_nWave3 1
-wvScrollUp -win $_nWave3 1
-wvScrollUp -win $_nWave3 1
-wvScrollUp -win $_nWave3 1
-wvScrollDown -win $_nWave3 1
-wvScrollDown -win $_nWave3 1
-wvScrollDown -win $_nWave3 1
-wvScrollDown -win $_nWave3 1
-wvScrollDown -win $_nWave3 0
-wvScrollDown -win $_nWave3 0
-wvScrollDown -win $_nWave3 0
-wvScrollDown -win $_nWave3 0
-wvScrollDown -win $_nWave3 0
-evbExitWindow -win $_evbWnd4
-nsMsgSwitchTab -tab general
-debExit

@@ -1,0 +1,1 @@
+import "DPI-C" function int something(int d);

@@ -8,7 +8,7 @@
 //
 // Version:   1.0
 //
-// Code created by Easier UVM Code Generator version 2017-01-19 on Tue Aug  4 23:34:09 2020
+// Code created by Easier UVM Code Generator version 2017-01-19 on Thu Aug  6 05:55:36 2020
 //=============================================================================
 // Description: Environment for top
 //=============================================================================
@@ -99,7 +99,7 @@ function void top_env::build_phase(uvm_phase phase);
     uvm_factory factory = uvm_factory::get();
 
     if (factory.find_override_by_type(cl_syoscb_compare_base::type_id::get(), "*") == cl_syoscb_compare_base::type_id::get())
-      cl_syoscb_compare_base::type_id::set_inst_override(cl_syoscb_compare_iop::type_id::get(), "m_reference_scoreboard.*", this);
+      cl_syoscb_compare_base::type_id::set_inst_override(cl_syoscb_compare_io::type_id::get(), "m_reference_scoreboard.*", this);
 
     // Configuration object for Syosil scoreboard
     m_reference_config = cl_syoscb_cfg::type_id::create("m_reference_config");

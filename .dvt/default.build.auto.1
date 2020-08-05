@@ -1,7 +1,7 @@
 ################################################################################
 #                    DO NOT MANUALLY EDIT THIS FILE!                           #
 ################################################################################
-# This file contains the automatically generated build configuration (2020/07/31 20:22:10)
+# This file contains the automatically generated build configuration (2020/08/05 04:09:00)
 # requested at line 3 in /home/disk/EasierUVM-SimpRisc-ws/.dvt/default.build
 
 
@@ -29,12 +29,24 @@
 +incdir+generated_tb/tb/memw/sv
 +incdir+generated_tb/tb/top/sv
 +incdir+generated_tb/tb/top_test/sv
++incdir+uvm_syoscb/src
++incdir+uvm_syoscb/tb
++incdir+uvm_syoscb/tb/test
 
 # Available `ifdef / `ifndef controls:
+# +define+SYOSIL_APPLY_TLM_GP_CMP_WORKAROUND
 # +define+UVM_POST_VERSION_1_1
 
-generated_tb/tb/insgen/sv/insgen_trans.sv
+uvm_syoscb/src/pk_syoscb.sv
+uvm_syoscb/tb/pk_scbtest.sv
+uvm_syoscb/tb/test/cl_scbtest_test_tlmpar.svh
+uvm_syoscb/tb/test/cl_scbtest_test_ooo_tlm_ap.svh
+generated_tb/tb/include/scoreboard/sb_comparator.sv
+generated_tb/tb/include/scoreboard/tb_scoreboard.sv
 generated_tb/tb/include/verif_pkg.sv
+generated_tb/tb/include/reference_inc_after_class.sv
+generated_tb/tb/include/scoreboard/sb_predictor.sv
+uvm_syoscb/tb/scbtest_top.sv
 dut/axi_master_wrapper.sv
 dut/axi_mem.sv
 dut/design.sv
@@ -57,6 +69,8 @@ generated_tb/dut/sindrv.sv
 generated_tb/dut/soc_top.sv
 generated_tb/dut/testbench.sv
 generated_tb/dut/umem.sv
+generated_tb/tb/include/reference_inc_inside_class.sv
+generated_tb/tb/include/scoreboard/sb_calc_exp.sv
 dut/axil_int.sv
 dut/mdriver_int.sv
 generated_tb/dut/axil_int.sv

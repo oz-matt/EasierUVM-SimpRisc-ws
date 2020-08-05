@@ -8,7 +8,7 @@
 //
 // Version:   1.0
 //
-// Code created by Easier UVM Code Generator version 2017-01-19 on Tue Aug  4 23:34:09 2020
+// Code created by Easier UVM Code Generator version 2017-01-19 on Thu Aug  6 05:55:36 2020
 //=============================================================================
 // Description: Monitor for memw
 //=============================================================================
@@ -59,16 +59,16 @@ endtask : run_phase
 task memw_monitor::do_mon;
 	forever @(posedge vif.memclk)
 	begin
-		//if (vif.nreset) begin
+		//if (vif.nreset) bein
 		m_trans.out_data_bus = vif.out_data_bus;
-		m_trans.out_data_bus_port2 = vif.out_data_bus_port2;
-		m_trans.out_addr_bus_port2 = vif.out_addr_bus_port2;
+		//m_trans.out_data_bus_port2 = vif.out_data_bus_port2;
+		//m_trans.out_addr_bus_port2 = vif.out_addr_bus_port2;
 		m_trans.out_addr_bus = vif.out_addr_bus;
 		m_trans.in_data_bus = vif.in_data_bus;
-		m_trans.mem_rw = vif.mem_rw;
-		m_trans.mem_wstrobe = vif.mem_wstrobe;
+		//m_trans.mem_rw = vif.mem_rw;
+		//m_trans.mem_wstrobe = vif.mem_wstrobe;
 		
-		`uvm_info(get_type_name(), $sformatf({"\r\n\r\nout_data_bus: %X \r\n",
+		/*`uvm_info(get_type_name(), $sformatf({"\r\n\r\nout_data_bus: %X \r\n",
 			"out_data_bus_port2: %X  \r\n",
 			"out_addr_bus_port2: %X  \r\n",
 			"out_addr_bus: %X  \r\n",
@@ -79,7 +79,7 @@ task memw_monitor::do_mon;
 		m_trans.out_addr_bus_port2, m_trans.out_addr_bus,
 		m_trans.in_data_bus, m_trans.mem_rw, 
 		m_trans.mem_wstrobe), UVM_MEDIUM)
-			
+			*/
 		analysis_port.write(m_trans);
 	//end
 	end

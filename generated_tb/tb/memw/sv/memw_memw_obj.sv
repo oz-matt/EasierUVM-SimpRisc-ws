@@ -8,7 +8,7 @@
 //
 // Version:   1.0
 //
-// Code created by Easier UVM Code Generator version 2017-01-19 on Tue Aug  4 23:34:09 2020
+// Code created by Easier UVM Code Generator version 2017-01-19 on Thu Aug  6 05:55:36 2020
 //=============================================================================
 // Description: Sequence item for memw_sequencer
 //=============================================================================
@@ -28,12 +28,7 @@ class memw_obj extends uvm_sequence_item;
   // Transaction variables
   logic[31:0] out_data_bus;
   logic[31:0] out_addr_bus;
-  logic[31:0] out_data_bus_port2;
-  logic[31:0] out_addr_bus_port2;
   logic[31:0] in_data_bus;
-  logic mem_rw;
-  logic memclk;
-  logic[3:0] mem_wstrobe;
 
 
   extern function new(string name = "");
@@ -64,14 +59,9 @@ function void memw_obj::do_copy(uvm_object rhs);
   if (!$cast(rhs_, rhs))
     `uvm_fatal(get_type_name(), "Cast of rhs object failed")
   super.do_copy(rhs);
-  out_data_bus       = rhs_.out_data_bus;      
-  out_addr_bus       = rhs_.out_addr_bus;      
-  out_data_bus_port2 = rhs_.out_data_bus_port2;
-  out_addr_bus_port2 = rhs_.out_addr_bus_port2;
-  in_data_bus        = rhs_.in_data_bus;       
-  mem_rw             = rhs_.mem_rw;            
-  memclk             = rhs_.memclk;            
-  mem_wstrobe        = rhs_.mem_wstrobe;       
+  out_data_bus = rhs_.out_data_bus;
+  out_addr_bus = rhs_.out_addr_bus;
+  in_data_bus  = rhs_.in_data_bus; 
 endfunction : do_copy
 
 
@@ -81,14 +71,9 @@ function bit memw_obj::do_compare(uvm_object rhs, uvm_comparer comparer);
   if (!$cast(rhs_, rhs))
     `uvm_fatal(get_type_name(), "Cast of rhs object failed")
   result = super.do_compare(rhs, comparer);
-  result &= comparer.compare_field("out_data_bus", out_data_bus,             rhs_.out_data_bus,       $bits(out_data_bus));
-  result &= comparer.compare_field("out_addr_bus", out_addr_bus,             rhs_.out_addr_bus,       $bits(out_addr_bus));
-  result &= comparer.compare_field("out_data_bus_port2", out_data_bus_port2, rhs_.out_data_bus_port2, $bits(out_data_bus_port2));
-  result &= comparer.compare_field("out_addr_bus_port2", out_addr_bus_port2, rhs_.out_addr_bus_port2, $bits(out_addr_bus_port2));
-  result &= comparer.compare_field("in_data_bus", in_data_bus,               rhs_.in_data_bus,        $bits(in_data_bus));
-  result &= comparer.compare_field("mem_rw", mem_rw,                         rhs_.mem_rw,             $bits(mem_rw));
-  result &= comparer.compare_field("memclk", memclk,                         rhs_.memclk,             $bits(memclk));
-  result &= comparer.compare_field("mem_wstrobe", mem_wstrobe,               rhs_.mem_wstrobe,        $bits(mem_wstrobe));
+  result &= comparer.compare_field("out_data_bus", out_data_bus, rhs_.out_data_bus, $bits(out_data_bus));
+  result &= comparer.compare_field("out_addr_bus", out_addr_bus, rhs_.out_addr_bus, $bits(out_addr_bus));
+  result &= comparer.compare_field("in_data_bus", in_data_bus,   rhs_.in_data_bus,  $bits(in_data_bus));
   return result;
 endfunction : do_compare
 
@@ -104,40 +89,25 @@ endfunction : do_print
 function void memw_obj::do_record(uvm_recorder recorder);
   super.do_record(recorder);
   // Use the record macros to record the item fields:
-  `uvm_record_field("out_data_bus",       out_data_bus)      
-  `uvm_record_field("out_addr_bus",       out_addr_bus)      
-  `uvm_record_field("out_data_bus_port2", out_data_bus_port2)
-  `uvm_record_field("out_addr_bus_port2", out_addr_bus_port2)
-  `uvm_record_field("in_data_bus",        in_data_bus)       
-  `uvm_record_field("mem_rw",             mem_rw)            
-  `uvm_record_field("memclk",             memclk)            
-  `uvm_record_field("mem_wstrobe",        mem_wstrobe)       
+  `uvm_record_field("out_data_bus", out_data_bus)
+  `uvm_record_field("out_addr_bus", out_addr_bus)
+  `uvm_record_field("in_data_bus",  in_data_bus) 
 endfunction : do_record
 
 
 function void memw_obj::do_pack(uvm_packer packer);
   super.do_pack(packer);
-  `uvm_pack_int(out_data_bus)       
-  `uvm_pack_int(out_addr_bus)       
-  `uvm_pack_int(out_data_bus_port2) 
-  `uvm_pack_int(out_addr_bus_port2) 
-  `uvm_pack_int(in_data_bus)        
-  `uvm_pack_int(mem_rw)             
-  `uvm_pack_int(memclk)             
-  `uvm_pack_int(mem_wstrobe)        
+  `uvm_pack_int(out_data_bus) 
+  `uvm_pack_int(out_addr_bus) 
+  `uvm_pack_int(in_data_bus)  
 endfunction : do_pack
 
 
 function void memw_obj::do_unpack(uvm_packer packer);
   super.do_unpack(packer);
-  `uvm_unpack_int(out_data_bus)       
-  `uvm_unpack_int(out_addr_bus)       
-  `uvm_unpack_int(out_data_bus_port2) 
-  `uvm_unpack_int(out_addr_bus_port2) 
-  `uvm_unpack_int(in_data_bus)        
-  `uvm_unpack_int(mem_rw)             
-  `uvm_unpack_int(memclk)             
-  `uvm_unpack_int(mem_wstrobe)        
+  `uvm_unpack_int(out_data_bus) 
+  `uvm_unpack_int(out_addr_bus) 
+  `uvm_unpack_int(in_data_bus)  
 endfunction : do_unpack
 
 
@@ -145,15 +115,10 @@ function string memw_obj::convert2string();
   string s;
   $sformat(s, "%s\n", super.convert2string());
   $sformat(s, {"%s\n",
-    "out_data_bus       = 'h%0h  'd%0d\n", 
-    "out_addr_bus       = 'h%0h  'd%0d\n", 
-    "out_data_bus_port2 = 'h%0h  'd%0d\n", 
-    "out_addr_bus_port2 = 'h%0h  'd%0d\n", 
-    "in_data_bus        = 'h%0h  'd%0d\n", 
-    "mem_rw             = 'h%0h  'd%0d\n", 
-    "memclk             = 'h%0h  'd%0d\n", 
-    "mem_wstrobe        = 'h%0h  'd%0d\n"},
-    get_full_name(), out_data_bus, out_data_bus, out_addr_bus, out_addr_bus, out_data_bus_port2, out_data_bus_port2, out_addr_bus_port2, out_addr_bus_port2, in_data_bus, in_data_bus, mem_rw, mem_rw, memclk, memclk, mem_wstrobe, mem_wstrobe);
+    "out_data_bus = 'h%0h  'd%0d\n", 
+    "out_addr_bus = 'h%0h  'd%0d\n", 
+    "in_data_bus  = 'h%0h  'd%0d\n"},
+    get_full_name(), out_data_bus, out_data_bus, out_addr_bus, out_addr_bus, in_data_bus, in_data_bus);
   return s;
 endfunction : convert2string
 
