@@ -1,6 +1,6 @@
 #include "cref.h"
 
-int CRef::gg(int d) {
-		printf("somet555555hing\n");
-		return d-1;
+int CRef::gg(const insgen_pkt_t* ip)
+{
+		return ip->instruction-1;
 }

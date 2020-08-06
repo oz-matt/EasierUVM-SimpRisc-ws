@@ -1,1 +1,1 @@
-import "DPI-C" function int something(int d);
+import "DPI-C" function int something(insgen_pkt_t s);

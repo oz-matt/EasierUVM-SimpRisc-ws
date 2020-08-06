@@ -1,11 +1,12 @@
-#include <stdio.h>
+//#include <stdio.h>
 #include "svdpi.h"
-#include "cref.cpp"
+#include "cref.h"
 
 extern "C"
-int something(int d);
+int something(const insgen_pkt_t* ip);
 
-int something(int d) {
+int something(const insgen_pkt_t* ip) {
 		CRef cr;
-		return cr.gg(d);
+		return cr.gg(ip);
+		//return ip->instruction;
 }
