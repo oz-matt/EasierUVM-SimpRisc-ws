@@ -8,7 +8,7 @@
 //
 // Version:   1.0
 //
-// Code created by Easier UVM Code Generator version 2017-01-19 on Fri Aug  7 05:15:15 2020
+// Code created by Easier UVM Code Generator version 2017-01-19 on Fri Aug  7 16:53:51 2020
 //=============================================================================
 // Description: Reference model for use with Syosil scoreboard
 //=============================================================================
@@ -17,7 +17,8 @@
 `define REFERENCE_SV
 
 // Start of inlined include file generated_tb/tb/include/reference_inc_before_class.sv
-import "DPI-C" function int something(insgen_pkt_t s);// End of inlined include file
+import "DPI-C" function void somethin(insgen_pkt_t ip);
+export "DPI-C" function cpu_resolve;// End of inlined include file
 
 
 `uvm_analysis_imp_decl(_reference_0)
@@ -57,12 +58,18 @@ function void reference::write_reference_0(trans_rand_ins t);
 	
 	s.instruction = 5;
 	s.name = 1;
-	
 	analysis_port_0.write(m);
-	`uvm_warning("P", $sformatf("In Ref!!: %X", something(s)));
+	
+	somethin(s); // calls cpu_resolve when finished
+	
+	
+	//`uvm_warning("P", $sformatf("In Ref!!: %X, %X, %X", c.out_data_bus, c.out_addr_bus, c.in_data_bus));
 	`uvm_warning("P", $sformatf("In Ref!!: %X", n));
-endfunction// End of inlined include file// End of inlined include file
-// End of inlined include file
+endfunction
+
+function void cpu_resolve(int a, int b, int c);
+	`uvm_warning("P", $sformatf("disppp:%X, %X, %X", a, b, c));
+endfunction// End of inlined include file
 
 `endif // REFERENCE_SV
 

@@ -1,1 +1,2 @@
-import "DPI-C" function int something(insgen_pkt_t s);
+import "DPI-C" function void somethin(insgen_pkt_t ip);
+export "DPI-C" function cpu_resolve;

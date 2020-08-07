@@ -9,8 +9,15 @@ function void reference::write_reference_0(trans_rand_ins t);
 	
 	s.instruction = 5;
 	s.name = 1;
-	
 	analysis_port_0.write(m);
-	`uvm_warning("P", $sformatf("In Ref!!: %X", something(s)));
+	
+	somethin(s); // calls cpu_resolve when finished
+	
+	
+	//`uvm_warning("P", $sformatf("In Ref!!: %X, %X, %X", c.out_data_bus, c.out_addr_bus, c.in_data_bus));
 	`uvm_warning("P", $sformatf("In Ref!!: %X", n));
-endfunction// End of inlined include file// End of inlined include file
+endfunction
+
+function void cpu_resolve(int a, int b, int c);
+	`uvm_warning("P", $sformatf("disppp:%X, %X, %X", a, b, c));
+endfunction
