@@ -18,6 +18,6 @@ function void reference::write_reference_0(trans_rand_ins t);
 	`uvm_warning("P", $sformatf("In Ref!!: %X", n));
 endfunction
 
-function void cpu_resolve(int a, int b, int c);
-	`uvm_warning("P", $sformatf("disppp:%X, %X, %X", a, b, c));
+function void cpu_resolve(cpu_output_t t);
+	`uvm_warning("P", $sformatf("disppp:%X, %X, %X", t.out_data_bus, t.out_addr_bus, t.in_data_bus));
 endfunction

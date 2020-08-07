@@ -8,7 +8,7 @@
 //
 // Version:   1.0
 //
-// Code created by Easier UVM Code Generator version 2017-01-19 on Fri Aug  7 16:53:51 2020
+// Code created by Easier UVM Code Generator version 2017-01-19 on Fri Aug  7 20:32:05 2020
 //=============================================================================
 // Description: Reference model for use with Syosil scoreboard
 //=============================================================================
@@ -67,8 +67,8 @@ function void reference::write_reference_0(trans_rand_ins t);
 	`uvm_warning("P", $sformatf("In Ref!!: %X", n));
 endfunction
 
-function void cpu_resolve(int a, int b, int c);
-	`uvm_warning("P", $sformatf("disppp:%X, %X, %X", a, b, c));
+function void cpu_resolve(cpu_output_t t);
+	`uvm_warning("P", $sformatf("disppp:%X, %X, %X", t.out_data_bus, t.out_addr_bus, t.in_data_bus));
 endfunction// End of inlined include file
 
 `endif // REFERENCE_SV
