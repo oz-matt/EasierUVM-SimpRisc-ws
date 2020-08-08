@@ -8,7 +8,7 @@
 //
 // Version:   1.0
 //
-// Code created by Easier UVM Code Generator version 2017-01-19 on Sat Aug  8 02:59:39 2020
+// Code created by Easier UVM Code Generator version 2017-01-19 on Sat Aug  8 05:10:51 2020
 //=============================================================================
 // Description: Reference model for use with Syosil scoreboard
 //=============================================================================
@@ -17,7 +17,7 @@
 `define REFERENCE_SV
 
 // Start of inlined include file generated_tb/tb/include/reference_inc_before_class.sv
-import "DPI-C" function void somethin(insgen_pkt_t ip);
+import "DPI-C" function void get_reference_output(insgen_pkt_t ip);
 export "DPI-C" function cpu_resolve;// End of inlined include file
 
 
@@ -61,17 +61,16 @@ function void reference::write_reference_0(trans_rand_ins t);
 	s.name = 1;
 	analysis_port_0.write(m);
 	
-	somethin(s); // calls cpu_resolve when finished
+	get_reference_output(s); // calls cpu_resolve when finished
 	
-	uvm_config_db#(cpu_output_t)::get(null, "", "cpu_output", c);
+	if(!uvm_config_db#(cpu_output_t)::get(null, "", "cpu_output", c))
+		`uvm_fatal("REF", "Failed to get reference output");
 	
-	`uvm_warning("P", $sformatf("In Ref!!: %X, %X, %X", c.out_data_bus, c.out_addr_bus, c.in_data_bus));
-	`uvm_warning("P", $sformatf("In Ref!!: %X", n));
+	
 endfunction
 
 function void cpu_resolve(cpu_output_t t);
 	uvm_config_db#(cpu_output_t)::set(null, "*", "cpu_output", t);
-	`uvm_warning("P", $sformatf("disppp:%X, %X, %X", t.out_data_bus, t.out_addr_bus, t.in_data_bus));
 endfunction// End of inlined include file
 
 `endif // REFERENCE_SV

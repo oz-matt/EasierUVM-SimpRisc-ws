@@ -26,4 +26,5 @@ vcs -sverilog -lca -debug_access+all -assert enable_diag \
 ../tb/top_tb/sv/top_th.sv \
 ../tb/top_tb/sv/top_tb.sv \
 ../tb/include/ref_model_cpp/ref.cpp \
+../tb/include/ref_model_cpp/cref.cpp \
 -R +UVM_TESTNAME=top_test $* 

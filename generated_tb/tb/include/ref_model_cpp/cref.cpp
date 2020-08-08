@@ -2,7 +2,12 @@
 
 CRef::CRef()
 {
-	c = new();
+	c = new cpu_output_t;
+}
+
+const cpu_output_t* CRef::get_cpu_output()
+{
+	return (const cpu_output_t*)c;
 }
 
 void CRef::gg(const insgen_pkt_t* ip)
