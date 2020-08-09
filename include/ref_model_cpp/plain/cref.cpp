@@ -19,7 +19,7 @@ void CRef::gg(const insgen_pkt_t* ip)
 {
 	Ipkt* i = new Ipkt(0x0040A003);
 	Ibase* k = i->get_derived_instruction_obj(i->get_instruction_name(0x0040A003));
-	std::cout << k->imm << std::endl;
+	std::cout << k->get_imm() << std::endl;
 	c->out_data_bus = 2;
 	c->out_addr_bus = 9;
 	c->in_data_bus = ip->instruction-1;
