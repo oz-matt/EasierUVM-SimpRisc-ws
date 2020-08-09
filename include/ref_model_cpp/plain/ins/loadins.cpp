@@ -2,7 +2,7 @@
 #include "loadins.h"
 #include "ibase.h"
 
-LoadIns::LoadIns(instruction_type_t n) : Ibase(n)
+LoadIns::LoadIns(int instruction, instruction_type_t n) : Ibase(instruction, n)
 {
   imm = 777;
 }

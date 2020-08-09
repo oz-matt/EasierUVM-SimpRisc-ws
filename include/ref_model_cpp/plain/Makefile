@@ -1,2 +1,2 @@
 all:
-	g++ -o main *.cpp
+	g++ -o main *.cpp ins/*.cpp

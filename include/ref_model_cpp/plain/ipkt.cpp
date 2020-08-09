@@ -1,7 +1,7 @@
 
 #include "ipkt.h"
-#include "ibase.h"
-#include "loadins.h"
+#include "ins/ibase.h"
+#include "ins/loadins.h"
 #include <string>
 
 Ipkt::Ipkt(int instruction)
@@ -11,14 +11,16 @@ Ipkt::Ipkt(int instruction)
   //ib = new Ibase(n);
 }
 
-Ibase* Ipkt::get_derived_instruction_obj(instruction_type_t name)
+Ibase* Ipkt::get_derived_instruction_obj(int instruction)
 {
+  
+  instruction_type_t name = get_instruction_name(instruction);
   
   Ibase* ret;
     
   if(name == LW)
   {
-    LoadIns* li = new LoadIns(name);
+    LoadIns* li = new LoadIns(instruction, name);
     ret = li;
   }
   
