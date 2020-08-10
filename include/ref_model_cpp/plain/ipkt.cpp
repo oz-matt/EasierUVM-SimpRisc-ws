@@ -2,6 +2,7 @@
 #include "ipkt.h"
 #include "ins/ibase.h"
 #include "ins/loadins.h"
+#include "ins/storeins.h"
 #include <string>
 
 Ibase* Ipkt::get_derived_instruction_obj(int instruction)
@@ -11,12 +12,31 @@ Ibase* Ipkt::get_derived_instruction_obj(int instruction)
   
   Ibase* ret;
     
-  if(name == LW)
+  switch(name)
   {
-    LoadIns* li = new LoadIns(instruction, name);
-    ret = li;
+    case LB:
+    case LH:
+    case LW:
+    case LBU:
+    case LHU:
+    {
+      LoadIns* li = new LoadIns(instruction, name);
+      ret = li;
+    }
+      break;
+      
+    case SB: 
+    case SH: 
+    case SW:
+    {
+      StoreIns* si = new StoreIns(instruction, name);
+      ret = si;
+    }
+      break;
+      
+      
   }
-  
+
   return ret;
 }
 
