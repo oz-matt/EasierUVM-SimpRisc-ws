@@ -4,10 +4,10 @@
 
 LoadIns::LoadIns(int instruction, instruction_type_t n) : Ibase(instruction, n)
 {
-  imm = 777;
+  this->imm = (instruction >> 20) & 0x0FFF;
 }
 
 int LoadIns::get_imm()
 {
-  return imm;
+  return this->imm;
 }

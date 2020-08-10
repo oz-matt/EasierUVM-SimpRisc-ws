@@ -4,13 +4,6 @@
 #include "ins/loadins.h"
 #include <string>
 
-Ipkt::Ipkt(int instruction)
-{
-  instruction_type_t n = get_instruction_name(instruction);
-  
-  //ib = new Ibase(n);
-}
-
 Ibase* Ipkt::get_derived_instruction_obj(int instruction)
 {
   
@@ -26,7 +19,6 @@ Ibase* Ipkt::get_derived_instruction_obj(int instruction)
   
   return ret;
 }
-
 
 instruction_type_t Ipkt::get_instruction_name(int instruction)
 {
@@ -204,57 +196,4 @@ instruction_type_t Ipkt::get_instruction_name(int instruction)
   return NOP;
 }
 
-std::string Ipkt::get_name_str()
-{
-  switch(ib->name)
-  {
-    case LUI: return "LUI"; 
-    case AUIPC: return "AUIPC"; 
-    case JAL: return "JAL"; 
-    case JALR: return "JALR"; 
-    case BEQ: return "BEQ"; 
-    case BNE: return "BNE"; 
-    case BLT: return "BLT"; 
-    case BGE: return "BGE"; 
-    case BLTU: return "BLTU";
-    
-    case BGEU: return "BGEU"; 
-    case LB: return "LB"; 
-    case LH: return "LH"; 
-    case LW: return "LW"; 
-    case LBU: return "LBU"; 
-    case LHU: return "LHU"; 
-    case SB: return "SB"; 
-    case SH: return "SH"; 
-    case SW: return "SW"; 
-    case ADDI: return "ADDI";
-    
-    case SLTI: return "SLTI"; 
-    case SLTIU: return "SLTIU"; 
-    case XORI: return "XORI"; 
-    case ORI: return "ORI"; 
-    case ANDI: return "ANDI"; 
-    case SLLI: return "SLLI"; 
-    case SRLI: return "SRLI"; 
-    case SRAI: return "SRAI";
-    
-    case ADD: return "ADD";
-    case SUB: return "SUB"; 
-    case SLL: return "SLL"; 
-    case SLT: return "SLT"; 
-    case SLTU: return "SLTU"; 
-    case XOR: return "XOR"; 
-    case SRL: return "SRL"; 
-    case SRA: return "SRA"; 
-    case OR: return "OR";
-    
-    case AND: return "AND"; 
-    case FENCE: return "FENCE"; 
-    case ECALL: return "ECALL"; 
-    case EBREAK: return "EBREAK"; 
-    case NOP: return "NOP";
-    
-    default: return "UNDEF_INS";
-  }
-}
 
