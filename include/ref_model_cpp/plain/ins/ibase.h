@@ -13,6 +13,17 @@ typedef enum {
     AND, FENCE, ECALL, EBREAK, NOP, 
 } instruction_type_t;
 
+typedef enum {
+	J_FORMAT,
+	U_FORMAT,
+	I_FORMAT,
+	I_FORMAT_SHIFT,
+	B_FORMAT,
+	R_FORMAT,
+	S_FORMAT
+} riscv_instr_format_t;
+
+
 class Ibase {
 
 public:
@@ -24,8 +35,10 @@ virtual int get_imm() = 0;
 virtual std::string get_asm_str() = 0;
 
 std::string get_name_str();
+riscv_instr_format_t get_format(instruction_type_t n);
 int sign_extend32(int n, int r);
 
+riscv_instr_format_t format;
 instruction_type_t name;
 int instruction, rd, rs1, rs2;
 
