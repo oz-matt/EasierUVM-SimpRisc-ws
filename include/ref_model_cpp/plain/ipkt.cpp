@@ -4,6 +4,8 @@
 #include "ins/loadins.h"
 #include "ins/storeins.h"
 #include <string>
+#include <stdio.h>
+#include <iostream>
 
 Ibase* Ipkt::get_derived_instruction_obj(int instruction)
 {

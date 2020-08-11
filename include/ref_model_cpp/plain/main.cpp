@@ -10,11 +10,11 @@ int main()
   ip.instruction = 50;
   ip.name = 3;
   
-  CRef c;
-  c.gg(&ip);
+  CRef* c = CRef::get_instance();
+  c->gg(&ip);
   
   cpu_output_t t;
-  t = *(c.get_cpu_output());
+  t = *(c->get_cpu_output());
   
    cout << t.in_data_bus << endl; 
    

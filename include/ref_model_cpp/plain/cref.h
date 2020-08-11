@@ -2,6 +2,7 @@
 #ifndef _CREF_H_
 #define _CREF_H_
 
+
 typedef struct {
 	int instruction;
 	int name;
@@ -15,14 +16,22 @@ typedef struct {
 
 
 class CRef {
+  static CRef* instance;  
 
 public:
-CRef();
-void gg(const insgen_pkt_t* ip);
-const cpu_output_t* get_cpu_output();
+  CRef();
+  
+  static CRef *get_instance() {
+    if (!instance) instance = new CRef;
+    return instance;
+  }
+   
+  void gg(const insgen_pkt_t* ip);
+  const cpu_output_t* get_cpu_output();
+  void set_output(int outd, int outa, int ind);
 
 private:
-cpu_output_t* c;
+  cpu_output_t* c;
 
 };
 
