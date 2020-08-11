@@ -13,9 +13,11 @@ class ArithIns: public Ibase {
 
 int get_imm();
 std::string get_asm_str();
+int get_shamt();
 
   private:
     int imm;
+    int shamt;
 
 };
 

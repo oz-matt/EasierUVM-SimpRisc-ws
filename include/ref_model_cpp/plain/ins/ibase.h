@@ -33,6 +33,7 @@ virtual ~Ibase(){};
 
 virtual int get_imm() = 0;
 virtual std::string get_asm_str() = 0;
+virtual int get_shamt();
 
 std::string get_name_str();
 riscv_instr_format_t get_format(instruction_type_t n);

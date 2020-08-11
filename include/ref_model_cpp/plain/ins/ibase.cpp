@@ -127,3 +127,8 @@ riscv_instr_format_t Ibase::get_format(instruction_type_t n)
     default: return I_FORMAT;
   }
 }
+
+int Ibase::get_shamt()
+{
+  return 0;
+}
