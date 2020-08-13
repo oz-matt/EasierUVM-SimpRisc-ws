@@ -12,6 +12,7 @@ typedef struct {
 	int out_data_bus;
 	int out_addr_bus;
 	int in_data_bus;
+	int memrw;
 } cpu_output_t;
 
 
@@ -26,9 +27,9 @@ public:
     return instance;
   }
    
-  void gg(const insgen_pkt_t* ip);
+  void execute(const insgen_pkt_t* ip);
   const cpu_output_t* get_cpu_output();
-  void set_output(int outd, int outa, int ind);
+  void set_output(int outd, int outa, int ind, int rw);
 
 private:
   cpu_output_t* c;

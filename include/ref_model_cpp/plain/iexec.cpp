@@ -15,7 +15,7 @@ void Iexec::execute(Ibase* i)
   
   CRef* c = CRef::get_instance();
   
-  int outdata, outaddr, indata;
+  int outdata, outaddr, indata, mrw;
   
   switch(i->name)
   {
@@ -24,6 +24,7 @@ void Iexec::execute(Ibase* i)
       outdata = rx[i->rs2] & 0xFF;
       outaddr = rx[i->rs1] + i->sign_extend32(12, i->get_imm());
       indata = 0;
+      mrw = 1;
     }      
       break;
     
@@ -32,6 +33,7 @@ void Iexec::execute(Ibase* i)
       outdata = rx[i->rs2] & 0xFFFF;
       outaddr = rx[i->rs1] + i->sign_extend32(12, i->get_imm());
       indata = 0;
+      mrw = 1;
     }      
       break;
     
@@ -40,11 +42,12 @@ void Iexec::execute(Ibase* i)
       outdata = rx[i->rs2];
       outaddr = rx[i->rs1] + i->sign_extend32(12, i->get_imm());
       indata = 0;
+      mrw = 1;
     }      
       break;
     
     default: return;
   }
   
-  c->set_output(outdata, outaddr, indata);
+  c->set_output(outdata, outaddr, indata, mrw);
 }
