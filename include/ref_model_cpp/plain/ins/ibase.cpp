@@ -14,7 +14,7 @@ Ibase::Ibase(int instruction, instruction_type_t n)
   this->rs2 = (instruction >> 20) & 0x1F;
 }
 
-int Ibase::sign_extend32(int n, int r)
+unsigned int Ibase::sign_extend32(int n, int r)
 {
   if(r & (1 << (n-1))) return ((0xFFFFFFFF << n) | r);
   else return r;

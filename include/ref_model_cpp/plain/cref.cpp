@@ -6,8 +6,11 @@
 #include <string>
 #include <stdio.h>
 #include <iostream>
+#include <bits/stdc++.h>
 
-int rx[32];
+unsigned int rx[32];
+unsigned int pc;
+std::map<int, int> mem;
 CRef* CRef::instance = 0;
 
 CRef::CRef()
@@ -35,10 +38,11 @@ void CRef::execute(const insgen_pkt_t* ip)
 	
 }
 
-void CRef::set_output(int outd, int outa, int ind, int rw)
+void CRef::set_output(int outd, int outa, int ind, int rw, int ws)
 {
   c->out_data_bus = outd;
   c->out_addr_bus = outa;
   c->in_data_bus = ind;
   c->memrw = rw;
+  c->wstrobe = ws;
 }

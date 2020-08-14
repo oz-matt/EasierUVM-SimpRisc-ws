@@ -15,6 +15,7 @@ typedef struct {
 	int out_addr_bus;
 	int in_data_bus;
 	int memrw;
+	int wstrobe;
 } cpu_output_t;
 
 

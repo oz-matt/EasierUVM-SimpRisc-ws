@@ -37,7 +37,7 @@ virtual int get_shamt();
 
 std::string get_name_str();
 riscv_instr_format_t get_format(instruction_type_t n);
-int sign_extend32(int n, int r);
+unsigned int sign_extend32(int n, int r);
 
 riscv_instr_format_t format;
 instruction_type_t name;
