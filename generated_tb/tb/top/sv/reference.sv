@@ -8,7 +8,7 @@
 //
 // Version:   1.0
 //
-// Code created by Easier UVM Code Generator version 2017-01-19 on Sat Aug  8 05:10:51 2020
+// Code created by Easier UVM Code Generator version 2017-01-19 on Sat Aug 15 09:08:34 2020
 //=============================================================================
 // Description: Reference model for use with Syosil scoreboard
 //=============================================================================
@@ -57,7 +57,7 @@ function void reference::write_reference_0(trans_rand_ins t);
 	m.out_data_bus = t.rand_instruction;
 	n = t.rand_instruction;
 	
-	s.instruction = 5;
+	s.instruction = 32'h5;
 	s.name = 1;
 	analysis_port_0.write(m);
 	

@@ -8,7 +8,7 @@ function void reference::write_reference_0(trans_rand_ins t);
 	m.out_data_bus = t.rand_instruction;
 	n = t.rand_instruction;
 	
-	s.instruction = 5;
+	s.instruction = 32'h5;
 	s.name = 1;
 	analysis_port_0.write(m);
 	

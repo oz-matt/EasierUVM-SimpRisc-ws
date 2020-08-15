@@ -28,12 +28,13 @@ void CRef::execute(const insgen_pkt_t* ip)
         CRef* c = CRef::get_instance();
 	Ipkt* i = new Ipkt();
 	Ibase* k = i->get_derived_instruction_obj(ip->instruction);
+	if(k){
 	std::cout << k->get_name_str() << std::endl;
 	//c->set_output(1, 6, 9);
 	Iexec exec;
 	
 	exec.execute(k);
-	
+	} 
 	//std::cout << c->
 	
 }
