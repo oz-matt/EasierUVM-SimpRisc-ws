@@ -113,10 +113,5 @@ wvSetCursor -win $_nWave3 20000.000000
 wvSetCursor -win $_nWave3 16254.028337
 wvSetCursor -win $_nWave3 16254.028337
 wvSetCursor -win $_nWave3 14122.736437 -snap {("G1" 1)}
-evbHierTree -win $_evbWnd4 -hier -select \
-           "\$trans_root/uvm_test_top/m_env/m_insgen_agent"
-evbHierTree -win $_evbWnd4 -select \
-           "\$trans_root/uvm_test_top/m_env/m_memw_coverage"
-evbHierTree -win $_evbWnd4 -click2
 nsMsgSwitchTab -tab general
 debExit

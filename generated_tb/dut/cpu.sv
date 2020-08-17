@@ -327,7 +327,7 @@ module cpu (
 	
 	always @(posedge clk or negedge mif.nreset) begin
 		if(!mif.nreset) begin
-			mif.rx <= '{default:32'h39393939};
+			mif.rx <= '{default:32'h0};
 			/*mif.rx[0] = 0;
 					mif.rx[1] = 256;
 			mif.rx[2] = 4;

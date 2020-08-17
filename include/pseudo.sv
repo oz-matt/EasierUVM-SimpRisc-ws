@@ -10,7 +10,7 @@ typedef struct {
 	int name;
 } insgen_pkt_t;
 
-typedef struct packed {
+typedef struct {
 	int out_data_bus;
 	int out_addr_bus;
 	int in_data_bus;

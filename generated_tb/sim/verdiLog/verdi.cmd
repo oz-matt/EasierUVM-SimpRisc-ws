@@ -116,22 +116,45 @@ wvSetCursor -win $_nWave3 14122.736437 -snap {("G1" 1)}
 evbHierTree -win $_evbWnd4 -select \
            "\$trans_root/uvm_test_top/m_env/m_memw_agent/m_monitor"
 evbHierTree -win $_evbWnd4 -click2
-evbSelect -win $_evbWnd4 -streamId 6 -id 18
-evbSelect -win $_evbWnd4 -streamId 6 -id 37
-evbSelect -win $_evbWnd4 -streamId 6 -id 62
-evbSelect -win $_evbWnd4 -streamId 4 -id 47
-evbSelect -win $_evbWnd4 -streamId 4 -id 75
-evbSelect -win $_evbWnd4 -streamId 4 -id 47
-evbSelect -win $_evbWnd4 -streamId 4 -id 25
-evbSelect -win $_evbWnd4 -streamId 4 -id 47
-evbSelect -win $_evbWnd4 -streamId 5 -id 17
-evbSelect -win $_evbWnd4 -streamId 5 -id 17
-evbSelect -win $_evbWnd4 -streamId 6 -id 62
-evbSelect -win $_evbWnd4 -streamId 6 -id 37
-evbSelect -win $_evbWnd4 -streamId 5 -id 36
-evbSelect -win $_evbWnd4 -streamId 6 -id 37
-evbSelect -win $_evbWnd4 -streamId 6 -id 62
-evbSelect -win $_evbWnd4 -streamId 5 -id 61
-evbSelect -win $_evbWnd4 -streamId 4 -id 47
-evbSelect -win $_evbWnd4 -streamId 4 -id 25
-evbSelect -win $_evbWnd4 -streamId 4 -id 47
+evbHierTree -win $_evbWnd4 -select "\$trans_root/uvm_test_top/m_env/m_reference"
+evbHierTree -win $_evbWnd4 -click2
+evbSelect -win $_evbWnd4 -streamId 7 -id 22
+evbSelect -win $_evbWnd4 -streamId 7 -id 30
+evbSelect -win $_evbWnd4 -streamId 6 -id 35
+evbSelect -win $_evbWnd4 -streamId 7 -id 30
+evbSelect -win $_evbWnd4 -streamId 6 -id 35
+evbSelect -win $_evbWnd4 -streamId 7 -id 22
+evbSelect -win $_evbWnd4 -streamId 6 -id 24
+evbSelect -win $_evbWnd4 -streamId 6 -id 35
+evbSelect -win $_evbWnd4 -streamId 7 -id 30
+evbSelect -win $_evbWnd4 -streamId 6 -id 55
+evbSelect -win $_evbWnd4 -streamId 7 -id 47
+evbSelect -win $_evbWnd4 -streamId 6 -id 55
+evbSelect -win $_evbWnd4 -streamId 7 -id 47
+evbSelect -win $_evbWnd4 -streamId 7 -id 30
+evbSelect -win $_evbWnd4 -streamId 6 -id 35
+evbSelect -win $_evbWnd4 -streamId 4 -id 42
+evbSelect -win $_evbWnd4 -streamId 6 -id 55
+evbSelect -win $_evbWnd4 -streamId 7 -id 47
+evbSelect -win $_evbWnd4 -streamId 6 -id 55
+evbSelect -win $_evbWnd4 -streamId 7 -id 47
+evbSelect -win $_evbWnd4 -streamId 6 -id 35
+evbSelect -win $_evbWnd4 -streamId 7 -id 30
+evbSelect -win $_evbWnd4 -streamId 6 -id 35
+evbSelect -win $_evbWnd4 -streamId 7 -id 30
+evbSelect -win $_evbWnd4 -streamId 6 -id 35
+evbSelect -win $_evbWnd4 -streamId 7 -id 30
+evbSelect -win $_evbWnd4 -streamId 6 -id 35
+evbSelect -win $_evbWnd4 -streamId 7 -id 30
+evbSelect -win $_evbWnd4 -streamId 7 -id 30
+evbSelect -win $_evbWnd4 -streamId 6 -id 35
+evbSelect -win $_evbWnd4 -streamId 7 -id 30
+evbSelect -win $_evbWnd4 -streamId 6 -id 35
+evbSelect -win $_evbWnd4 -streamId 7 -id 30
+evbSelect -win $_evbWnd4 -streamId 6 -id 35
+evbSelect -win $_evbWnd4 -streamId 7 -id 30
+evbSelect -win $_evbWnd4 -streamId 6 -id 35
+evbSelect -win $_evbWnd4 -streamId 7 -id 30
+evbSelect -win $_evbWnd4 -streamId 7 -id 30
+evbSelect -win $_evbWnd4 -streamId 6 -id 35
+evbSelect -win $_evbWnd4 -streamId 7 -id 30

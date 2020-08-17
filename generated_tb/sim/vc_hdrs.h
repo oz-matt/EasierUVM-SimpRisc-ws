@@ -38,10 +38,19 @@ typedef struct VeriC_Descriptor *vc_handle;
 #endif /* _VC_TYPES_ */
 
 typedef struct _vcs_dpi_insgen_pkt_t	insgen_pkt_t;
+typedef struct _vcs_dpi_cpu_output_t	cpu_output_t;
 
 struct	_vcs_dpi_insgen_pkt_t	{
 	int	instruction;
 	int	name;
+};
+
+struct	_vcs_dpi_cpu_output_t	{
+	int	out_data_bus;
+	int	out_addr_bus;
+	int	in_data_bus;
+	int	memrw;
+	int	wstrobe;
 };
 
 
@@ -96,7 +105,7 @@ struct	_vcs_dpi_insgen_pkt_t	{
 
  extern void get_reference_output(/* INPUT */insgen_pkt_t *ip);
 
- extern void cpu_resolve(const /* INPUT */svBitVecVal *t);
+ extern void cpu_resolve(/* INPUT */cpu_output_t *t);
 void SdisableFork();
 
 #ifdef __cplusplus
