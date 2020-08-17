@@ -8,7 +8,7 @@
 //
 // Version:   1.0
 //
-// Code created by Easier UVM Code Generator version 2017-01-19 on Sat Aug 15 09:08:34 2020
+// Code created by Easier UVM Code Generator version 2017-01-19 on Mon Aug 17 09:21:24 2020
 //=============================================================================
 // Description: Sequence item for memw_sequencer
 //=============================================================================
@@ -29,6 +29,8 @@ class memw_obj extends uvm_sequence_item;
   logic[31:0] out_data_bus;
   logic[31:0] out_addr_bus;
   logic[31:0] in_data_bus;
+  logic mem_rw;
+  logic[3:0] mem_wstrobe;
 
 
   extern function new(string name = "");
@@ -62,6 +64,8 @@ function void memw_obj::do_copy(uvm_object rhs);
   out_data_bus = rhs_.out_data_bus;
   out_addr_bus = rhs_.out_addr_bus;
   in_data_bus  = rhs_.in_data_bus; 
+  mem_rw       = rhs_.mem_rw;      
+  mem_wstrobe  = rhs_.mem_wstrobe; 
 endfunction : do_copy
 
 
@@ -74,6 +78,8 @@ function bit memw_obj::do_compare(uvm_object rhs, uvm_comparer comparer);
   result &= comparer.compare_field("out_data_bus", out_data_bus, rhs_.out_data_bus, $bits(out_data_bus));
   result &= comparer.compare_field("out_addr_bus", out_addr_bus, rhs_.out_addr_bus, $bits(out_addr_bus));
   result &= comparer.compare_field("in_data_bus", in_data_bus,   rhs_.in_data_bus,  $bits(in_data_bus));
+  result &= comparer.compare_field("mem_rw", mem_rw,             rhs_.mem_rw,       $bits(mem_rw));
+  result &= comparer.compare_field("mem_wstrobe", mem_wstrobe,   rhs_.mem_wstrobe,  $bits(mem_wstrobe));
   return result;
 endfunction : do_compare
 
@@ -92,6 +98,8 @@ function void memw_obj::do_record(uvm_recorder recorder);
   `uvm_record_field("out_data_bus", out_data_bus)
   `uvm_record_field("out_addr_bus", out_addr_bus)
   `uvm_record_field("in_data_bus",  in_data_bus) 
+  `uvm_record_field("mem_rw",       mem_rw)      
+  `uvm_record_field("mem_wstrobe",  mem_wstrobe) 
 endfunction : do_record
 
 
@@ -100,6 +108,8 @@ function void memw_obj::do_pack(uvm_packer packer);
   `uvm_pack_int(out_data_bus) 
   `uvm_pack_int(out_addr_bus) 
   `uvm_pack_int(in_data_bus)  
+  `uvm_pack_int(mem_rw)       
+  `uvm_pack_int(mem_wstrobe)  
 endfunction : do_pack
 
 
@@ -108,6 +118,8 @@ function void memw_obj::do_unpack(uvm_packer packer);
   `uvm_unpack_int(out_data_bus) 
   `uvm_unpack_int(out_addr_bus) 
   `uvm_unpack_int(in_data_bus)  
+  `uvm_unpack_int(mem_rw)       
+  `uvm_unpack_int(mem_wstrobe)  
 endfunction : do_unpack
 
 
@@ -117,8 +129,10 @@ function string memw_obj::convert2string();
   $sformat(s, {"%s\n",
     "out_data_bus = 'h%0h  'd%0d\n", 
     "out_addr_bus = 'h%0h  'd%0d\n", 
-    "in_data_bus  = 'h%0h  'd%0d\n"},
-    get_full_name(), out_data_bus, out_data_bus, out_addr_bus, out_addr_bus, in_data_bus, in_data_bus);
+    "in_data_bus  = 'h%0h  'd%0d\n", 
+    "mem_rw       = 'h%0h  'd%0d\n", 
+    "mem_wstrobe  = 'h%0h  'd%0d\n"},
+    get_full_name(), out_data_bus, out_data_bus, out_addr_bus, out_addr_bus, in_data_bus, in_data_bus, mem_rw, mem_rw, mem_wstrobe, mem_wstrobe);
   return s;
 endfunction : convert2string
 

@@ -13,7 +13,7 @@ Ibase* Ipkt::get_derived_instruction_obj(int instruction)
   
   instruction_type_t name = get_instruction_name(instruction);
   
-  Ibase* ret;
+  Ibase* ret = NULL;
     
   switch(name)
   {

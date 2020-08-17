@@ -8,7 +8,6 @@ Ibase::Ibase(int instruction, instruction_type_t n)
   this->instruction = instruction;
   this->name = n;
   
-  std::cout << 44 << std::endl;
   this->format = get_format(n);
   
   this->rd = (instruction >> 7) & 0x1F;

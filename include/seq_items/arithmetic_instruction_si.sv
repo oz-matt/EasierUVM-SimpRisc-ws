@@ -21,6 +21,7 @@ class arithmetic_instruction_si extends instruction_base_si;
 	endfunction
 	
 	virtual function string get_asm_string();
+		if(name == SLTIU) return $sformatf("\t\t%s\tx%0d,x%0d,%0d", name.name(), rd, rs1, `SIGN_EXTEND32(12, i_imm));
 		case(format) inside
 			R_FORMAT: return $sformatf("\t\t%s\tx%0d,x%0d,x%0d", name.name(), rd, rs1, rs2);
 			U_FORMAT: return $sformatf("\t\t%s\tx%0d,%0d", name.name(), rd, u_imm);
@@ -35,7 +36,7 @@ class arithmetic_instruction_si extends instruction_base_si;
 			OR, XOR, SLL, SRL, SUB, SRA};
 		(format == U_FORMAT) -> name inside {LUI, AUIPC};
 		(format == I_FORMAT_SHIFT) -> name inside {SLLI, SRLI, SRAI};
-		(format == I_FORMAT) -> name inside {ADDI, SLTI, ANDI, ORI, XORI};
+		(format == I_FORMAT) -> name inside {ADDI, SLTI, ANDI, ORI, XORI, SLTIU};
 	};*/
 
 endclass

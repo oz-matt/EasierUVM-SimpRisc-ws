@@ -10,6 +10,7 @@ vcs -sverilog -cm line+cond+fsm -covg_dump_range +acc +vpi +error+20 -l comp.log
 +incdir+../tb/top_test/sv \
 +incdir+../tb/top_tb/sv \
 +incdir+../ref_model_cpp/ \
++incdir+../ref_model_cpp/ins/ \
 -F ../dut/files.f \
 ../tb/include/verif_pkg.sv \
 ../tb/insgen/sv/insgen_pkg.sv \
@@ -22,4 +23,11 @@ vcs -sverilog -cm line+cond+fsm -covg_dump_range +acc +vpi +error+20 -l comp.log
 ../tb/top_tb/sv/top_th.sv \
 ../tb/top_tb/sv/top_tb.sv \
 ../tb/include/ref_model_cpp/ref.cpp \
+../tb/include/ref_model_cpp/cref.cpp \
+../tb/include/ref_model_cpp/ipkt.cpp \
+../tb/include/ref_model_cpp/iexec.cpp \
+../tb/include/ref_model_cpp/ins/ibase.cpp \
+../tb/include/ref_model_cpp/ins/arithins.cpp \
+../tb/include/ref_model_cpp/ins/loadins.cpp \
+../tb/include/ref_model_cpp/ins/storeins.cpp \
 -R +UVM_TESTNAME=top_test $* 

@@ -1,5 +1,5 @@
 ; -file event_file_name
--file /home/disk/EasierUVM-SimpRisc-ws/generated_tb/sim/inter.fsdb
+-file /home/disk/EasierUVM-SimpRisc-ws/generated_tb/sim/novas.fsdb
 
 ; -name attr_name [-id attr_id] -invisible|-visible [-packIdx idx]
 -name $stream -invisible 
@@ -12,42 +12,9 @@
 -name $type -visible 
 -name Msg -id 256 -visible 
 -name Severity -id 257 -visible 
--name scope_name -id 258 -visible 
--name field_name -id 259 -visible 
--name type_name -id 260 -visible 
--name action -id 261 -visible 
--name accessor -id 262 -visible 
--name resource -id 263 -visible 
--name uvm_severity -id 266 -visible 
--name uvm_verbosity -id 269 -visible 
--name file_name -id 270 -visible 
--name line_num -id 271 -visible 
--name name -id 272 -visible 
--name full_name -id 273 -visible 
--name full_type_name -id 274 -visible 
--name instance -id 275 -visible 
--name original_type -id 276 -visible 
--name override_type -id 277 -visible 
--name schedule -id 278 -visible 
--name inst_id -id 279 -visible 
--name phase -id 280 -visible 
--name domain -id 281 -visible 
--name caller_name -id 282 -visible 
--name provider_name -id 283 -visible 
--name component_objId -id 284 -visible 
--name component_class -id 285 -visible 
--name port_objId -id 286 -visible 
--name port_class -id 287 -visible 
--name component_name -id 288 -visible 
--name component_class_name -id 289 -visible 
--name vif_objId -id 290 -visible 
--name virtual_interface_declaration -id 291 -visible 
--name vif_declaration_filelineno -id 292 -visible 
--name interface_definition -id 293 -visible 
--name interface_declaration_filelineno -id 294 -visible 
--name interface_path -id 295 -visible 
--name source -id 296 -visible 
--name total -id 297 -visible 
--name count -id 298 -visible 
--name description -id 299 -visible 
--name label -id 304 -visible 
+-name id -id 258 -visible 
+-name uvm_severity -id 261 -visible 
+-name uvm_verbosity -id 264 -visible 
+-name file_name -id 265 -visible 
+-name line_num -id 266 -visible 
+-name label -id 271 -visible 

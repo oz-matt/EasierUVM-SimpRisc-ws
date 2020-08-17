@@ -34,7 +34,7 @@ void CRef::execute(const insgen_pkt_t* ip)
 	Iexec exec;
 	
 	exec.execute(k);
-	} 
+	}
 	//std::cout << c->
 	
 }
