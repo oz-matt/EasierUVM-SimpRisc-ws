@@ -13,6 +13,8 @@
 
 	assign insgen_if_0.clk = clk;
 	assign insgen_if_0.nreset = nreset;
+	assign memw_if_0.clk = clk;
+	assign memw_if_0.nreset = nreset;
 
 	always @(posedge clk) begin
 		if(memw_if_0.mem_rw) begin

@@ -113,5 +113,8 @@ wvSetCursor -win $_nWave3 20000.000000
 wvSetCursor -win $_nWave3 16254.028337
 wvSetCursor -win $_nWave3 16254.028337
 wvSetCursor -win $_nWave3 14122.736437 -snap {("G1" 1)}
+evbHierTree -win $_evbWnd4 -select "\$trans_root/uvm_test_top/m_env/m_reference"
+evbHierTree -win $_evbWnd4 -click2
+evbSelect -win $_evbWnd4 -streamId 6 -id 13
 nsMsgSwitchTab -tab general
 debExit

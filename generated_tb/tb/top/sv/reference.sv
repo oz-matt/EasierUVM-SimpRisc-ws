@@ -8,7 +8,7 @@
 //
 // Version:   1.0
 //
-// Code created by Easier UVM Code Generator version 2017-01-19 on Tue Aug 18 07:39:50 2020
+// Code created by Easier UVM Code Generator version 2017-01-19 on Tue Aug 18 23:43:32 2020
 //=============================================================================
 // Description: Reference model for use with Syosil scoreboard
 //=============================================================================
@@ -68,7 +68,7 @@ function void reference::write_reference_0(trans_rand_ins t);
 	m.mem_rw = c.memrw;
 	m.mem_wstrobe = c.wstrobe;
 	
-	/*`uvm_info(get_type_name(), $sformatf({"\r\n\r\nout_data_bus: %X \r\n",
+	`uvm_info(get_type_name(), $sformatf({"\r\n\r\nout_data_bus: %X \r\n",
 			"out_addr_bus: %X  \r\n",
 			"in_data_bus: %X  \r\n",
 			"mem_rw: %X  \r\n",
@@ -77,25 +77,18 @@ function void reference::write_reference_0(trans_rand_ins t);
 		m.out_addr_bus,
 		m.in_data_bus, 
 		m.mem_rw, 
-		m.mem_wstrobe), UVM_MEDIUM)*/
+		m.mem_wstrobe), UVM_MEDIUM)
 	
 	analysis_port_0.write(m);
 	
 endfunction
 
 function void cpu_resolve(cpu_output_t t);
-	`uvm_info("T", $sformatf({"\r\n\r\nout_data_bus: %X \r\n",
-			"out_addr_bus: %X  \r\n",
-			"in_data_bus: %X  \r\n",
-			"mem_rw: %X  \r\n",
-		"mem_wstrobe: %X \r\n\r\n"}, 
-		t.out_data_bus, 
-		t.out_addr_bus,
-		t.in_data_bus, 
-		t.memrw, 
-		t.wstrobe), UVM_MEDIUM)
 	uvm_config_db#(cpu_output_t)::set(null, "*", "cpu_output", t);
-endfunction// End of inlined include file
+	// cpu_output_t must NOT be a packed struct. For some reason, a packed struct caused 
+	// this 't' object to be written in reverse (wstrobe was = to out_data_bus etc)
+endfunction
+// End of inlined include file
 
 `endif // REFERENCE_SV
 

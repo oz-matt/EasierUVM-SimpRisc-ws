@@ -8,7 +8,7 @@
 //
 // Version:   1.0
 //
-// Code created by Easier UVM Code Generator version 2017-01-19 on Tue Aug 18 07:39:50 2020
+// Code created by Easier UVM Code Generator version 2017-01-19 on Tue Aug 18 23:43:32 2020
 //=============================================================================
 // Description: Monitor for memw
 //=============================================================================
@@ -57,11 +57,11 @@ endtask : run_phase
 
 // Start of inlined include file generated_tb/tb/include/inlines/memw_do_mon.sv
 task memw_monitor::do_mon;
-	//wait(vif.nreset);
+	wait(vif.nreset);
 	forever @(posedge vif.memclk)
 	begin
 		#1;
-		//if (vif.nreset) bein
+		//if (vif.nreset) begin
 		m_trans.out_data_bus = vif.out_data_bus;
 		//m_trans.out_data_bus_port2 = vif.out_data_bus_port2;
 		//m_trans.out_addr_bus_port2 = vif.out_addr_bus_port2;

@@ -1,9 +1,9 @@
 task memw_monitor::do_mon;
-	//wait(vif.nreset);
+	wait(vif.nreset);
 	forever @(posedge vif.memclk)
 	begin
 		#1;
-		//if (vif.nreset) bein
+		//if (vif.nreset) begin
 		m_trans.out_data_bus = vif.out_data_bus;
 		//m_trans.out_data_bus_port2 = vif.out_data_bus_port2;
 		//m_trans.out_addr_bus_port2 = vif.out_addr_bus_port2;
