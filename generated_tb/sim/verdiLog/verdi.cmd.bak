@@ -113,5 +113,14 @@ wvSetCursor -win $_nWave3 20000.000000
 wvSetCursor -win $_nWave3 16254.028337
 wvSetCursor -win $_nWave3 16254.028337
 wvSetCursor -win $_nWave3 14122.736437 -snap {("G1" 1)}
+evbSelect -win $_evbWnd4 -streamId 5 -id 9
+evbSelect -win $_evbWnd4 -streamId 5 -id 18
+evbSelect -win $_evbWnd4 -streamId 5 -id 27
+evbSelect -win $_evbWnd4 -streamId 5 -id 36
+evbSelect -win $_evbWnd4 -streamId 5 -id 45
+evbSelect -win $_evbWnd4 -streamId 5 -id 9
+evbSelect -win $_evbWnd4 -streamId 5 -id 18
+evbSelect -win $_evbWnd4 -streamId 5 -id 27
+evbSelect -win $_evbWnd4 -streamId 1 -id 14
 nsMsgSwitchTab -tab general
 debExit

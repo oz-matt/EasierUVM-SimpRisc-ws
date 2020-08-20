@@ -12,19 +12,20 @@ powerDumped = 0
 [Verdi_1]
 workMode = hardwareDebug
 [eBrowser.0]
-viewport = 0 533 1912 357
+viewport = -42 577 1912 357
 fsdb = /home/disk/EasierUVM-SimpRisc-ws/generated_tb/sim/novas.fsdb
 stream1 = $trans_root/uvm_test_top/m_env/m_insgen_agent/m_sequencer 30
 stream2 = $trans_root/uvm_test_top/m_env/m_insgen_coverage 30
 stream3 = $trans_root/uvm_test_top/m_env/m_memw_coverage 30
 stream4 = $trans_root/uvm_test_top/m_env/m_insgen_agent/m_driver 30
 stream5 = $trans_root/uvm_test_top/m_env/m_insgen_agent/m_monitor 30
+stream6 = $trans_root/uvm_test_top/m_env/m_reference 30
 isShortName = TRUE
-selectStream = $trans_root/uvm_test_top/m_env/m_insgen_agent/m_driver
+selectStream = $trans_root/uvm_test_top/m_env/m_reference
 startStream = $trans_root/uvm_test_top/m_env/m_insgen_agent/m_sequencer
-timeRatio = 1.256619
+timeRatio = 1.000000
 stratX = 0
-selectTrans = $trans_root/uvm_test_top/m_env/m_insgen_agent/m_driver 8
+selectTrans = $trans_root/uvm_test_top/m_env/m_reference 42
 mainMarker = 10.0n
 [evdpColumnConfigDialog]
 FsdbFile0 = /home/disk/EasierUVM-SimpRisc-ws/generated_tb/sim/novas.fsdb

@@ -17,8 +17,8 @@ endfunction : new
 
 
 task insgen_prand_ins_seq::pre_start();
-	instr_category_bm ibm = instr_category_bm'(STORE | LOAD);
-	m_config.init_params(false, ibm);
+	//instr_category_bm ibm = instr_category_bm'(STORE | LOAD);
+	//m_config.init_params(false, ibm);
 //uvm_config_db#(insgen_config)::set(null, "uvm_test_top.m_env.m_insgen_agent.*", "m_config", m_config);
 endtask : pre_start
 

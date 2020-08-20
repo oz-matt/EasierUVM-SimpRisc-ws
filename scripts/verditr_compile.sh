@@ -34,4 +34,4 @@ vcs -sverilog -lca -debug_access+all -assert enable_diag \
 ../tb/include/ref_model_cpp/ins/arithins.cpp \
 ../tb/include/ref_model_cpp/ins/loadins.cpp \
 ../tb/include/ref_model_cpp/ins/storeins.cpp \
--R +UVM_TESTNAME=test_direct_ins $* 
+-R +UVM_TESTNAME=test_rand_ins $* 

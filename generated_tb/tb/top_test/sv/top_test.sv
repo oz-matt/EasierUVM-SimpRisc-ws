@@ -8,7 +8,7 @@
 //
 // Version:   1.0
 //
-// Code created by Easier UVM Code Generator version 2017-01-19 on Thu Aug 20 10:15:30 2020
+// Code created by Easier UVM Code Generator version 2017-01-19 on Fri Aug 21 03:21:43 2020
 //=============================================================================
 // Description: Test class for top (included in package top_test_pkg)
 //=============================================================================
@@ -44,7 +44,12 @@ endfunction : new
 
 function void top_test::build_phase(uvm_phase phase);
 
-  // You can insert code here by setting test_prepend_to_build_phase in file common.tpl
+  // Start of inlined include file generated_tb/tb/include/inlines/test_prepend_build.sv
+  
+  
+  // Each unique test must extend top_test and use a type override for a 
+  // sequence extended from insgen_default_seq
+  // End of inlined include file
 
   // You could modify any test-specific configuration object variables here
 
@@ -101,6 +106,29 @@ foreach(isi[j])
 
 endfunction
 
+class test_rand_ins extends top_test;
+	`uvm_component_utils(test_rand_ins)
+	//top_env m_env;
+	extern function new(string name, uvm_component parent);
+	extern function void build_phase(uvm_phase phase);
+extern function void start_of_simulation_phase(uvm_phase phase);  // End of inlined include file
+	
+endclass
+
+
+function test_rand_ins::new(string name, uvm_component parent);
+	super.new(name, parent);
+endfunction : new
+
+function void test_rand_ins::build_phase(uvm_phase phase);
+	super.build_phase(phase);
+	insgen_default_seq::type_id::set_type_override(insgen_prand_ins_seq::get_type());
+endfunction : build_phase
+	
+function void test_rand_ins::start_of_simulation_phase(uvm_phase phase);
+	instr_category_bm ibm = instr_category_bm'(STORE | LOAD);
+	m_env.m_insgen_agent.m_config.init_params(true, ibm);
+endfunction
 // End of inlined include file
 
 `endif // TOP_TEST_SV

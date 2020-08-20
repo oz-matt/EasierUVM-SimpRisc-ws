@@ -8,7 +8,7 @@
 //
 // Version:   1.0
 //
-// Code created by Easier UVM Code Generator version 2017-01-19 on Thu Aug 20 10:15:30 2020
+// Code created by Easier UVM Code Generator version 2017-01-19 on Fri Aug 21 03:21:43 2020
 //=============================================================================
 // Description: Sequence for agent insgen
 //=============================================================================
@@ -84,14 +84,15 @@ endfunction : new
 
 
 task insgen_prand_ins_seq::pre_start();
-	instr_category_bm ibm = instr_category_bm'(STORE | LOAD);
-	m_config.init_params(false, ibm);
+	//instr_category_bm ibm = instr_category_bm'(STORE | LOAD);
+	//m_config.init_params(false, ibm);
 //uvm_config_db#(insgen_config)::set(null, "uvm_test_top.m_env.m_insgen_agent.*", "m_config", m_config);
 endtask : pre_start
 
 function void insgen_prand_ins_seq::mid_do(uvm_sequence_item this_item);
 	trans_rand_ins pkt;
 	$cast(pkt, this_item);
+	`uvm_info("T", $sformatf("ctr: %d, bvals: %d", m_config.init_cpu_regs_ctr, m_config.init_cpu_regs_with_rand_vals), UVM_MEDIUM);
 	if ((m_config.init_cpu_regs_ctr < 32) && (m_config.init_cpu_regs_with_rand_vals == true)) begin
 
 		// For each of the 32 cpu registers, generate and insert a random value
@@ -112,7 +113,7 @@ function void insgen_prand_ins_seq::mid_do(uvm_sequence_item this_item);
 		end
 	end
 	else begin
-		`uvm_info("T", "RandIns", UVM_MEDIUM);
+		//`uvm_info("T", "RandIns", UVM_MEDIUM);
 		pkt.ibsi = asmutils::get_rand_instruction(m_config.allowed_instr_types);
 	end
 endfunction : mid_do
