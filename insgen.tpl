@@ -32,5 +32,5 @@ agent_seq_inc = inlines/insgen_prand_ins_seq.sv inline
 agent_config_inc_inside_class = inlines/config_cextern.sv inline
 agent_config_inc_after_class = inlines/config_new.sv inline
 
-agent_factory_set = insgen_default_seq insgen_prand_inorder_ins_seq
+#agent_factory_set = insgen_default_seq insgen_prand_inorder_ins_seq
 

@@ -1,4 +1,22 @@
-function void top_test::start_of_simulation_phase(uvm_phase phase);
+class test_direct_ins extends top_test;
+	`uvm_component_utils(test_direct_ins)
+	//top_env m_env;
+	extern function new(string name, uvm_component parent);
+	extern function void build_phase(uvm_phase phase);
+extern function void start_of_simulation_phase(uvm_phase phase);  // End of inlined include file
+	
+endclass
+
+function test_direct_ins::new(string name, uvm_component parent);
+	super.new(name, parent);
+endfunction : new
+
+function void test_direct_ins::build_phase(uvm_phase phase);
+	super.build_phase(phase);
+	insgen_default_seq::type_id::set_type_override(insgen_prand_inorder_ins_seq::get_type());
+endfunction : build_phase
+	
+function void test_direct_ins::start_of_simulation_phase(uvm_phase phase);
 
 	instruction_base_si isi[$];
 raw_instruction_si r1 = new();
