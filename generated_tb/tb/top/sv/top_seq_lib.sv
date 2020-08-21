@@ -8,7 +8,7 @@
 //
 // Version:   1.0
 //
-// Code created by Easier UVM Code Generator version 2017-01-19 on Fri Aug 21 03:21:43 2020
+// Code created by Easier UVM Code Generator version 2017-01-19 on Sat Aug 22 06:12:37 2020
 //=============================================================================
 // Description: Sequence for top
 //=============================================================================
@@ -26,7 +26,7 @@ class top_default_seq extends uvm_sequence #(uvm_sequence_item);
   memw_agent    m_memw_agent;  
 
   // Number of times to repeat child sequences
-  int m_seq_count = 5;
+  int m_seq_count = 100;
 
   extern function new(string name = "");
   extern task body();

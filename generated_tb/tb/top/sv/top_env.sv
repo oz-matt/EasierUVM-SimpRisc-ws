@@ -8,7 +8,7 @@
 //
 // Version:   1.0
 //
-// Code created by Easier UVM Code Generator version 2017-01-19 on Fri Aug 21 03:21:43 2020
+// Code created by Easier UVM Code Generator version 2017-01-19 on Sat Aug 22 06:12:37 2020
 //=============================================================================
 // Description: Environment for top
 //=============================================================================
@@ -51,9 +51,9 @@ class top_env extends uvm_env;
   extern function void build_phase(uvm_phase phase);
   extern function void connect_phase(uvm_phase phase);
   extern function void end_of_elaboration_phase(uvm_phase phase);
-  extern task          run_phase(uvm_phase phase);
 
-  // You can insert code here by setting top_env_inc_inside_class in file common.tpl
+  // Start of inlined include file generated_tb/tb/include/inlines/top_env_dec.sv
+  extern task run_phase(uvm_phase phase);  // End of inlined include file
 
 endclass : top_env 
 
@@ -166,26 +166,22 @@ function void top_env::end_of_elaboration_phase(uvm_phase phase);
 endfunction : end_of_elaboration_phase
 
 
-// You can remove run_phase by setting top_env_generate_run_phase = no in file common.tpl
-
+// Start of inlined include file generated_tb/tb/include/inlines/top_env_run.sv
 task top_env::run_phase(uvm_phase phase);
-  top_default_seq vseq;
-  vseq = top_default_seq::type_id::create("vseq");
-  vseq.set_item_context(null, null);
-  if ( !vseq.randomize() )
-    `uvm_fatal(get_type_name(), "Failed to randomize virtual sequence")
-  vseq.m_insgen_agent = m_insgen_agent;
-  vseq.m_memw_agent   = m_memw_agent;  
-  vseq.m_config       = m_config;      
-  vseq.set_starting_phase(phase);
-  vseq.start(null);
+	top_default_seq vseq;
+	vseq = top_default_seq::type_id::create("vseq");
+	vseq.set_item_context(null, null);
+	if ( !vseq.randomize() )
+		`uvm_fatal(get_type_name(), "Failed to randomize virtual sequence")
+	vseq.m_insgen_agent = m_insgen_agent;
+	vseq.m_memw_agent   = m_memw_agent;  
+	vseq.m_config       = m_config;      
+	vseq.set_starting_phase(phase);
+	vseq.start(null);
 
-  // You can insert code here by setting top_env_append_to_run_phase in file common.tpl
+	// You can insert code here by setting top_env_append_to_run_phase in file common.tpl
 
-endtask : run_phase
-
-
-// You can insert code here by setting top_env_inc_after_class in file common.tpl
+endtask : run_phase// End of inlined include file
 
 `endif // TOP_ENV_SV
 

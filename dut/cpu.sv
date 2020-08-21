@@ -128,6 +128,7 @@ module cpu (
 					mif.mem_rw = 0;
 					mem_wstrobe = 4'b1111;
 					out_addr_bus = mif.rx[instruction.rs1] + `SIGN_EXTEND32(12, instruction.i_imm);
+					out_data_bus = 0;
 					rdbuffer = in_data_bus;
 				end
 				
@@ -135,6 +136,7 @@ module cpu (
 					mif.mem_rw = 0;
 					mem_wstrobe = 4'b0011;
 					out_addr_bus = mif.rx[instruction.rs1] + `SIGN_EXTEND32(12, instruction.i_imm);
+					out_data_bus = 0;
 					rdbuffer = `SIGN_EXTEND32(16, in_data_bus);
 				end
 				
@@ -142,6 +144,7 @@ module cpu (
 					mif.mem_rw = 0;
 					mem_wstrobe = 4'b0011;
 					out_addr_bus = mif.rx[instruction.rs1] + `SIGN_EXTEND32(12, instruction.i_imm);
+					out_data_bus = 0;
 					rdbuffer = {16'h0000, in_data_bus[15:0]};
 				end
 				
@@ -149,6 +152,7 @@ module cpu (
 					mif.mem_rw = 0;
 					mem_wstrobe = 4'b0001;
 					out_addr_bus = mif.rx[instruction.rs1] + `SIGN_EXTEND32(12, instruction.i_imm);
+					out_data_bus = 0;
 					rdbuffer = `SIGN_EXTEND32(8, in_data_bus);
 				end
 				
@@ -156,6 +160,7 @@ module cpu (
 					mif.mem_rw = 0;
 					mem_wstrobe = 4'b0001;
 					out_addr_bus = mif.rx[instruction.rs1] + `SIGN_EXTEND32(12, instruction.i_imm);
+					out_data_bus = 0;
 					rdbuffer = {24'h000000, in_data_bus[7:0]};
 				end
 				
