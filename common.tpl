@@ -31,3 +31,5 @@ top_env_generate_run_phase = no
 top_env_inc_after_class = inlines/top_env_run.sv inline
 top_env_inc_inside_class = inlines/top_env_dec.sv inline
 
+top_seq_inc = sequences/vseq_riseq.sv inline
+

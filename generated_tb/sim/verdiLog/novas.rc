@@ -364,7 +364,7 @@ QwQuestionMsgDlg = 796,406,324,114
 importDesignForm = 846,232,634,611
 QwFileDialogT = 667,366,590,325
 QwWarnMsgDlg = 686,648,600,250
-QwUserAskDlg = 854,764,324,134
+QwUserAskDlg = 856,764,324,134
 [Relationship]
 hideRecursiceNode = FALSE
 [Session Cache]

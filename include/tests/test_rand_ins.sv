@@ -16,6 +16,7 @@ endfunction : new
 function void test_rand_ins::build_phase(uvm_phase phase);
 	super.build_phase(phase);
 	insgen_default_seq::type_id::set_type_override(insgen_prand_ins_seq::get_type());
+	top_default_seq::type_id::set_type_override(vseq_riseq::get_type());
 endfunction : build_phase
 	
 function void test_rand_ins::start_of_simulation_phase(uvm_phase phase);
