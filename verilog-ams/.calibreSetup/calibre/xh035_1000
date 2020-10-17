@@ -1,0 +1,17 @@
+// ***************************************************************
+// *                                                             *
+// *                        CALIBRE XH035                        *
+// *                        - DRC / LVS -                        *
+// *                                                             *
+// *                     process code : 1000                     *
+// *                                                             *
+// ***************************************************************
+
+TITLE "XH035_1000 Calibre DRC/LVS File : MOS/no_MOS5A/MET2/no_MIM"
+
+#DEFINE top_metal    MET2
+#DEFINE mainModule   MOS
+#UNDEFINE MOS5A
+#UNDEFINE DMIM
+
+INCLUDE /home/disk/EasierUVM-SimpRisc-ws/verilog-ams/.xkit/setup/xh035/mentor/calibre/xh035.rul

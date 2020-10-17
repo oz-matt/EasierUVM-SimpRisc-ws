@@ -46,6 +46,8 @@ task vseq_riseq::body();
 				seq2.start(m_insgen_agent.m_sequencer, this);
 	end
 
+	`uvm_info("ANALOG", $sformatf("Starting PLL Confirmation at %d", $time), UVM_MEDIUM);
+
 	`uvm_info(get_type_name(), "Default sequence completed", UVM_HIGH)
 endtask : body
 

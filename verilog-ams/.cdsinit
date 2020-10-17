@@ -1,0 +1,115 @@
+/* 
+File Name:    :    .cdsinit
+Date          :    $Date: 2013-12-23 09:49:01 +0100 (Mon, 23 Dec 2013) $
+Revision      :    $Rev: 938 $
+Author        :    $Author: jdoblask $
+*/
+
+T_LIBRARIES = "./.xkit/setup/xh035/cadence/PDK"
+T_VERSION = "v1.2.12"
+T_TECH = "xh035"
+
+;// Select X-FAB process 
+
+XKIT = "v1.2.12"
+T_PROC = "xh035_1000"
+SIMULATOR = "spectre"
+
+printf("Loading .cdsinit for the %s X-Fab XKit.\n" upperCase(T_TECH) )
+
+;##############################################################################################
+;#                                                                                            #
+;# check Cadence IC version (supported X-Fab Environment) 
+;#                                                                                            #
+;##############################################################################################
+unless( index( getVersion() "6.1")
+       printf("ERROR: IC version %s is not supported!\n" getVersion() )
+       println("This session has been ABORTED.")
+       exit()
+
+);unless
+
+;##############################################################################################
+;#                                                                                            #
+;# load X-FAB specific callbacks 
+;#                                                                                            #
+;##############################################################################################
+printf( "    LOAD xh035_1000 SPECIFIC CALL-BACK ROUTINES\n" )
+load(strcat( "./.xkit/setup/xh035/cadence/PDK/skill/tips_"   lowerCase(T_PROC) ".il"))
+load("./.xkit/setup/xh035/cadence/PDK/skill/thesCallBack.il")
+
+
+;##############################################################################################
+;#                                                                                            #
+;# load X-FAB specific pCells
+;#                                                                                            #
+;##############################################################################################
+printf( "    LOAD ALL AVAILABLE P-CELL FUNCTIONS\n" )
+load("./.xkit/setup/xh035/cadence/PDK/skill/thesSdl.il")
+
+
+;##############################################################################################
+;#                                                                                            #
+;# Set Default options 
+;#                                                                                            #
+;##############################################################################################
+
+printf( "    LOAD THE ENVIRONMENT FILE\n" )
+load("./.xkit/setup/x_all/cadence/xenv/skill/xfabPdkSettings.ile")
+load("./.xkit/setup/x_all/cadence/xenv/skill/xfabVerilogIn.ile")
+
+if( boundp('XfabCadNoToolDefaults) && XfabCadNoToolDefaults then
+  printf( "\n --> Setting of the recommended EDA tool defaults is suppressed by .xfabcadrc\n")
+  printf( " --> To change this behavior, please modify the file in your home- or project directory.\n")
+else
+  load("./.xkit/setup/x_all/cadence/xenv/skill/xfabToolDefaults.ile")
+)
+
+
+;##############################################################################################
+;#                                                                                            #
+;# LOAD STANDARD BINDKEYS 
+;#                                                                                            #
+;##############################################################################################
+
+if( boundp('XfabCadNoSetBindKey) && XfabCadNoSetBindKey then
+  printf( "\n --> Standard bindkey settings suppressed by .xfabcadrc\n")
+  printf( " --> To change this behavior, please modify the file in your home- or project directory.\n")
+else
+  printf( "    LOAD DEFAULT BINDKEYS\n" )
+  let( (bindKeyFile)
+    foreach( bindKeyFile getDirFiles(prependInstallPath("samples/local"))
+      when( rexMatchp("BindKeys.il" bindKeyFile) 
+        unless( (!(rexMatchp("icfb" getVersion()) || rexMatchp("icca" getVersion())) && bindKeyFile == "prBindKeys.il") ||
+	        ( rexMatchp("virtuoso" getVersion()) && bindKeyFile == "awvBindKeys.il" )
+          loadi(strcat(prependInstallPath("samples/local/") bindKeyFile))
+        );unless
+      );when
+    );foreach
+  );let
+)
+
+
+;##############################################################################################
+;#                                                                                            #
+;# LOAD SOME SPECIAL INIT FUNCTIONS
+;#                                                                                            #
+;##############################################################################################
+load("./.xkit/setup/x_all/cadence/xenv/skill/xfabKitInit.ile")
+
+;** Assura
+if( isFile( strcat("./.avviewinit") ) then
+   load(strcat("./.avviewinit"))
+else
+   printf( " --> AssuraTools Setup not available\n" )
+)
+
+;** PVS
+if( isFile( strcat(".xkit/setup/xh035/cadence/pvs/PVS/xh035_DRC.rul") ) ||
+    isFile( strcat(".xkit/setup/xh035/cadence/pvs/PVS/xh035.rul") )  then
+  PVSPreFormTrigger.autoload = "./.xkit/setup/x_all/cadence/xenv/skill/pvs_trigger.ile"
+) 
+
+;** call regTimer 
+hiRegTimer("xfabKitInit()" 1)
+

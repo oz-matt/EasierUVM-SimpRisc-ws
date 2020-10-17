@@ -8,7 +8,7 @@
 //
 // Version:   1.0
 //
-// Code created by Easier UVM Code Generator version 2017-01-19 on Thu Aug 27 09:04:06 2020
+// Code created by Easier UVM Code Generator version 2017-01-19 on Sun Oct 18 05:40:29 2020
 //=============================================================================
 // Description: Sequence for top
 //=============================================================================
@@ -157,6 +157,8 @@ task vseq_riseq::body();
 				seq2.set_starting_phase( get_starting_phase() );
 				seq2.start(m_insgen_agent.m_sequencer, this);
 	end
+
+	`uvm_info("ANALOG", $sformatf("Starting PLL Confirmation at %d", $time), UVM_MEDIUM);
 
 	`uvm_info(get_type_name(), "Default sequence completed", UVM_HIGH)
 endtask : body

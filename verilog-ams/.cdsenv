@@ -1,0 +1,7 @@
+spectre.envOpts useAltergroup   boolean  nil
+
+schematic       viewNameList    string   "cmos_sch schematic symbol"
+
+ams.envOpts     invocationStyle string   "irun"
+ams.envOpts     netlisterMode   string   "OSS-based"
+ams.envOpts     cleanSnapShot   toggle   (t)

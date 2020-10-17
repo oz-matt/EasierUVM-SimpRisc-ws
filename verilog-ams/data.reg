@@ -1,0 +1,23 @@
+/* 
+File Name:    :    data.reg
+Date          :    $Date: 2012-11-23 13:48:17 +0100 (Fri, 23 Nov 2012) $
+Revision      :    $Rev: 582 $
+Author        :    $Author: wflohrer $
+File path:    :    ~
+Version:      :    1.1 (for Cadence 6.1) and XKIT
+*/
+
+
+DataFormat thesDatasheet {           // Define Data Sheets
+        Pattern = thesDocFile;
+        Default_Editor = dummyTool;
+        dfII_ViewType = thesDatasheet;
+        Co_Managed = thesDocFile.file;
+}
+DataFormat xfabDatasheet {           // Define Data Sheets
+        Pattern = thesDocFile.file;
+        Default_Editor = dummyTool;
+        dfII_ViewType = xfabDatasheet;
+        Co_Managed = thesDocFile.file;
+}
+

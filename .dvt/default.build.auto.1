@@ -1,7 +1,7 @@
 ################################################################################
 #                    DO NOT MANUALLY EDIT THIS FILE!                           #
 ################################################################################
-# This file contains the automatically generated build configuration (2020/08/15 07:34:51)
+# This file contains the automatically generated build configuration (2020/10/18 05:06:17)
 # requested at line 3 in /home/disk/EasierUVM-SimpRisc-ws/.dvt/default.build
 
 
@@ -24,10 +24,10 @@
 # +incdir+generated_tb/dut
 # +incdir+dut
 
-+incdir+generated_tb/tb/include
 +incdir+generated_tb/tb/insgen/sv
 +incdir+generated_tb/tb/memw/sv
 +incdir+generated_tb/tb/top/sv
++incdir+generated_tb/tb/include
 +incdir+generated_tb/tb/top_test/sv
 +incdir+uvm_syoscb/src
 +incdir+uvm_syoscb/tb
@@ -40,9 +40,11 @@
 uvm_syoscb/src/pk_syoscb.sv
 uvm_syoscb/tb/pk_scbtest.sv
 uvm_syoscb/tb/test/cl_scbtest_test_tlmpar.svh
+generated_tb/tb/include/sequences/vseq_riseq.sv
 uvm_syoscb/tb/test/cl_scbtest_test_ooo_tlm_ap.svh
-generated_tb/tb/include/verif_pkg.sv
 generated_tb/tb/include/reference_inc_after_class.sv
+generated_tb/tb/include/sequences/vseq_base.sv
+generated_tb/tb/include/tests/test_fill_cpu_rxs.sv
 uvm_syoscb/tb/scbtest_top.sv
 dut/axi_master_wrapper.sv
 dut/axi_mem.sv
@@ -72,12 +74,13 @@ dut/axil_int.sv
 dut/mdriver_int.sv
 generated_tb/dut/axil_int.sv
 generated_tb/dut/mdriver_int.sv
+generated_tb/tb/memw/sv/memw_if.sv
 dut/defines.sv
 generated_tb/dut/defines.sv
 generated_tb/tb/include/pkg/verif_pkg.sv
+generated_tb/tb/include/verif_pkg.sv
 generated_tb/tb/top_tb/sv/top_th.sv
 generated_tb/tb/memw/sv/memw_pkg.sv
-generated_tb/tb/memw/sv/memw_if.sv
 generated_tb/tb/insgen/sv/insgen_pkg.sv
 generated_tb/tb/top/sv/top_pkg.sv
 generated_tb/tb/top_test/sv/top_test_pkg.sv

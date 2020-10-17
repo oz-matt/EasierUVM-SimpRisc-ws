@@ -1,0 +1,9 @@
+*pexRulesFile: /home/disk/EasierUVM-SimpRisc-ws/verilog-ams/.calibreSetup/PEX_calibre/xh035_1000_max.rul
+*pexRunDir: calibre_pex
+*pexLayoutGetFromViewer: 1
+*pexSourceGetFromViewer: 1
+*pexPexGroundName: 1
+*pexPexNetlistFormat: CALIBREVIEW
+*cmnShowOptions: 1
+*cmnUseCBforRVE: 0
+*cmnSaveRunsetChanges: 0

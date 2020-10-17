@@ -1,0 +1,99 @@
+<!DOCTYPE CDS_DISPLAY_PREFS>
+<DISPLAY_PREFS>
+  <DISPLAY NAME="Cadence_top" >
+    <ICON NAME="cds_top.png" />
+    <COLOR>
+      <RED>170</RED>
+      <GREEN>0</GREEN>
+      <BLUE>0</BLUE>
+    </COLOR>
+  </DISPLAY>
+  <DISPLAY NAME="Cadence_lib" >
+    <ICON NAME="cds_lib.png" />
+    <COLOR>
+      <RED>200</RED>
+      <GREEN>0</GREEN>
+      <BLUE>0</BLUE>
+    </COLOR>
+  </DISPLAY>
+  <DISPLAY NAME="XFAB_top" >
+    <ICON NAME="xfab_top.png" />
+    <COLOR>
+      <RED>0</RED>
+      <GREEN>0</GREEN>
+      <BLUE>170</BLUE>
+    </COLOR>
+  </DISPLAY>
+  <DISPLAY NAME="XFAB_lib" >
+    <ICON NAME="xfab_lib.png" />
+    <COLOR>
+      <RED>0</RED>
+      <GREEN>0</GREEN>
+      <BLUE>200</BLUE>
+    </COLOR>
+  </DISPLAY>
+  <DISPLAY NAME="User_top" >
+    <ICON NAME="user_top.png" />
+    <COLOR>
+      <RED>200</RED>
+      <GREEN>0</GREEN>
+      <BLUE>255</BLUE>
+    </COLOR>
+  </DISPLAY>
+  <DISPLAY NAME="User_lib" >
+    <ICON NAME="user_lib.png" />
+    <COLOR>
+      <RED>170</RED>
+      <GREEN>0</GREEN>
+      <BLUE>255</BLUE>
+    </COLOR>
+  </DISPLAY>
+  <DISPLAY NAME="diglibs_top" >
+    <ICON NAME="diglibs_top.png" />
+    <COLOR>
+      <RED>0</RED>
+      <GREEN>0</GREEN>
+      <BLUE>170</BLUE>
+    </COLOR>
+  </DISPLAY>
+  <DISPLAY NAME="diglibs_lib" >
+    <ICON NAME="diglibs_lib.png" />
+    <COLOR>
+      <RED>0</RED>
+      <GREEN>0</GREEN>
+      <BLUE>200</BLUE>
+    </COLOR>
+  </DISPLAY>
+  <DISPLAY NAME="esdlibs_top" >
+    <ICON NAME="esdlibs_top.png" />
+    <COLOR>
+      <RED>0</RED>
+      <GREEN>0</GREEN>
+      <BLUE>170</BLUE>
+    </COLOR>
+  </DISPLAY>
+  <DISPLAY NAME="esdlibs_lib" >
+    <ICON NAME="esdlibs_lib.png" />
+    <COLOR>
+      <RED>0</RED>
+      <GREEN>0</GREEN>
+      <BLUE>200</BLUE>
+    </COLOR>
+  </DISPLAY>
+  <DISPLAY NAME="analoglibs_top" >
+    <ICON NAME="analoglibs_top.png" />
+    <COLOR>
+      <RED>0</RED>
+      <GREEN>0</GREEN>
+      <BLUE>170</BLUE>
+    </COLOR>
+  </DISPLAY>
+  <DISPLAY NAME="analoglibs_lib" >
+    <ICON NAME="analoglibs_lib.png" />
+    <COLOR>
+      <RED>0</RED>
+      <GREEN>0</GREEN>
+      <BLUE>200</BLUE>
+    </COLOR>
+  </DISPLAY>
+</DISPLAY_PREFS>

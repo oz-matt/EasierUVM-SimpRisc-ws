@@ -1,0 +1,225 @@
+;* ******************************************************************************
+;* File Name:    :    .cdsinit
+;* Date          :    $Date: 2013-02-04 17:50:00 +0100 (Mon, 04 Feb 2013) $
+;* Revision      :    $Rev: 729 $
+;* Author        :    $Author: wflohrer $
+;*
+;*
+;* DESCRIPTION   : This is the template file for .cdsinit_personal
+;* 
+;* Unwanted sections may be disabled by adding a ; at the start of each line
+;* Required sections may be selected by removing the ; at the start of each line
+;*
+;* ******************************************************************************
+
+
+;printf(" --> LOAD USER CUSTOMIZATION\n")
+
+;#####################################################################
+;# Please add any customisations here....
+;# NOT IN THE MAIN .cdsinit file. 
+;#####################################################################
+
+let( ((MainPath "") (elem "") (LocalPath ""))
+
+  foreach( elem getSkillPath() 
+    MainPath = strcat(MainPath " " elem)
+  )
+
+  ;;* add your local paths in this string
+  LocalPath = "" 
+  if( LocalPath!="" 
+    printf("ADDING YOUR SKILL LOCAL PATH -> %s\n" LocalPath)
+  )
+  setSkillPath( strcat( LocalPath " " MainPath))
+  
+) ; let
+
+;#####################################################################
+;#
+;# Set the correct path to the XFAB On-line Dokumentation
+;#
+;#####################################################################
+
+;  XFABDocBaseURLName = "file:/XFAB/"
+
+;#####################################################################
+;#
+;# Automatically open the library browser 
+;#
+;#####################################################################
+
+;  dmbOpenLibBrowser()
+
+
+;#####################################################################
+;#
+;# Automatically size & position the CIW
+;#
+;#####################################################################
+
+;  hiFlush()
+;  hiResizeWindow(window(1) list(3:30 750:180))      ; Left-hand side
+;  hiResizeWindow(window(1) list(400:30 1140:200))   ; Right-hand side
+;  hiResizeWindow(hiGetCIWindow() list( list(3 -30) list(800 200)) )
+
+ 
+
+;#####################################################################
+;#
+;# Automatically size & position the layout & LSW windows
+;#
+;#####################################################################
+
+; deRegUserTriggers("maskLayout" nil nil 'InstallLayout)
+; procedure( InstallLayout( l)
+;   deInstallApp( getCurrentWindow() "layout")
+;   hiResizeWindow(getCurrentWindow() list(125:30 1140:740))
+;   leResizeLSW( list(5:875 120:1750))
+;
+;  ;* put anything else you'd like to happen 
+;  ;* each time a layout window is opened here
+; )
+
+
+;###################################################################
+;#
+;# DEFAULT TEXT EDITOR
+;#
+;###################################################################
+;;
+; The variable editor defines the text editor to be used when any of
+; the applications invoke an editor. For example technology dump and 
+; edit operation opens an editor window. 
+;
+; The editor may also be set by 
+;               
+;         unix environment variable EDITOR
+;
+;             setenv EDITOR 'xedit'
+;
+;
+; When Design Framework is invoked the SKILL variable editor is set 
+; to the value of the unix variable EDITOR.
+;  
+; If EDITOR is not defined the SKILL variable
+; editor is set to "vi"
+;
+; You may also set the variable to execute a UNIX command
+; that invokes an xterm window of given size and location
+; and starts an editor program.
+; Example:
+;
+;    editor = "xterm -geometry 80x40 -e emacs"
+;
+; Size of xterm in the above example is 80 characters by 40 lines.
+; With some editors on certain platforms the variable editor must
+; be defined as shown above.
+;
+; Some application which require a text editor may be using the UNIX
+; variable EDITOR instead of the SKILL variable editor. It is a good
+; idea to set the UNIX variable EDITOR to the text editor of your
+; choice which will automatically set the SKILL variable editor.
+; 
+; Other Examples
+;
+;editor = "xterm -geometry 85x50 -e vi";
+;editor = "vi";
+;editor = "textedit";
+;
+;
+
+;############################################################################
+;#                                           
+;# DEFINE PERSONAL BIND KEYS
+;#
+;#############################################################################
+
+; hiSetBindKey("Schematics"	"None<Btn2Down>(2)"	"schHiDescendRead()")
+
+;############################################################################
+;#                                           
+;# SET UP USER PREFERENCES
+;#
+;#############################################################################
+
+; envSetVal( "ui"    "showScrollBars" 'boolean t)
+; envSetVal( "ui"    "winPlaceStyle"  'boolean nil)
+; envSetVal( "ui"    "infix"          'boolean t)
+; envSetVal( "ui"    "nestLimit"      'int  5)
+; envSetVal( "ui"    "dblClkTime      'int  400)
+; envSetVal( "ui"    "undoLevel"      'int  5)
+
+
+;############################################################################
+;#                                           
+;# SET THE PROMPT
+;#
+;#############################################################################
+
+;  setPrompts("> " "%d> ")
+
+;############################################################################
+;#                                           
+;# SET UP PREFERENCES FOR PLOTTER (if customisation file exists)
+;# The .cdsSchPlotTemplate and .cdsLePlotTemplate files can be
+;# created using the 'Save Template' button from the plotter form
+;#
+;#############################################################################
+
+when( isReadable("~/.cdsSchPlotTemplate")
+   schPlotTemplate =  "~/.cdsSchPlotTemplate")
+when( isReadable("~/.cdsLePlotTemplate")
+   lePlotTemplate  =  "~/.cdsLePlotTemplate")
+
+
+;############################################################################
+;#                                           
+;# Set Mixed-CAD options 
+;#
+;#############################################################################
+load("./.xkit/setup/x_all/cadence/xenv/skill/xfabMixedEnv.ile")
+
+
+;############################################################################
+;#                                           
+;# Set auCdl options - may need to change the defaults 
+;#
+;#############################################################################
+;* redefine the resistor threshold value in the CDL Out UI : *.RESI 
+;* Defaults by Cadence is 2000, by X-Fab is 1 and 0.001 for 0.18 and 0.13
+; CdlDefaultShortResi = 0.001
+
+
+;############################################################################
+;#                                           
+;# OTHER PERSONAL CUSTOMISATIONS - ADD THEM HERE
+;#
+;#############################################################################
+
+if( getShellEnvVar("CUSTOM_SKILL_PATH") then
+  if( isReadable(getShellEnvVar("CUSTOM_SKILL_PATH")) then
+    printf( "    Load customer specific Skill code from %s \n" getShellEnvVar("CUSTOM_SKILL_PATH"))
+    load(getShellEnvVar("CUSTOM_SKILL_PATH"))
+  else
+    printf("    ERROR: Permission denied to execute customer specific skill code at %s !\n\n" getShellEnvVar("CUSTOM_SKILL_PATH"))
+  )
+else
+  printf("    INFO: To customize this setup, please use the following environment variables:\n")
+  printf("          CUSTOM_SCRIPT_PATH - should point to the master shell or perl script\n")
+  printf("                             e.g.:\n")
+  printf("                             setenv CUSTOM_SCRIPT_PATH /path/to/my/script/LoadMyScripts.csh\n")
+  printf("          CUSTOM_SKILL_PATH - should point to your master skill load file\n")
+  printf("                             e.g.:\n")
+  printf("                             setenv CUSTOM_SKILL_PATH /path/to/my/skill/LoadMySkills.il\n")
+)
+
+
+;############################################################################
+;#                                           
+;# THE END! 
+;#
+;#############################################################################
+
+;printf(" --> END OF USER CUSTOMIZATION\n")
+;END OF THE USER CUSTOMIZATION FILE

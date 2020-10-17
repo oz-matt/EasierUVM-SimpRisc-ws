@@ -1,0 +1,33 @@
+# ------------------------------------------------------------------------------
+# X-FAB XH035 Cadence library manager combine  definitions
+# Please do not edit or modify this file!
+# xkit -m|--modules overwrites this file, any changes will be lost.
+# ------------------------------------------------------------------------------
+# License Specific Cadence libraries
+ASSIGN analogLib		 DISPLAY	Cadence_lib
+ASSIGN functional		 DISPLAY	Cadence_lib
+ASSIGN sbaLib		 DISPLAY	Cadence_lib
+ASSIGN ahdlLib		 DISPLAY	Cadence_lib
+ASSIGN basic		 DISPLAY	Cadence_lib
+ASSIGN sample		 DISPLAY	Cadence_lib
+ASSIGN US_8ths		 DISPLAY	Cadence_lib
+ASSIGN ieee		 DISPLAY	Cadence_lib
+ASSIGN ambit		 DISPLAY	Cadence_lib
+ASSIGN std		 DISPLAY	Cadence_lib
+ASSIGN synopsys		 DISPLAY	Cadence_lib
+ASSIGN connectLib		 DISPLAY	Cadence_lib
+DEFINE	CadenceLibs		./.xkit/setup/x_all/cadence/xenv/lib/libs/CadenceLibs
+ASSIGN	CadenceLibs		DISPLAY	Cadence_top
+ASSIGN	CadenceLibs		COMBINE	 analogLib functional sbaLib ahdlLib basic sample US_8ths ieee ambit std synopsys connectLib
+
+
+
+# X-FAB libraries
+ASSIGN	PRIMLIB		DISPLAY	XFAB_lib
+ASSIGN	TECH_XH035		DISPLAY	XFAB_lib
+DEFINE	XFABLibs	./.xkit/setup/x_all/cadence/xenv/lib/libs/XFABLibs
+ASSIGN	XFABLibs	DISPLAY	XFAB_top
+ASSIGN	XFABLibs	COMBINE	 PRIMLIB TECH_XH035
+# user specific Library Manager Combine/Display Definitions
+#DEFINE	UserLibs	./.xkit/setup/x_all/cadence/xenv/lib/libs/UserLibs
+#ASSIGN	UserLibs	DISPLAY	User_top

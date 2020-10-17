@@ -1,0 +1,24 @@
+# ------------------------------------------------------------------------------
+# XKIT library definition files
+#   xh035.lib:
+#     - contains X-FAB XH035 Cadence library definitions 
+# 	 and must not be changed, exept with tkit -m|--modules
+#     - tkit -m|--modules overwrites this file, any changes will be lost.
+#   cds.lib:
+#     - includes xh035.lib
+#     - can contain customer specific library definitions
+#     xkit -m|--modules does NOT change an existing cds.lib.
+# ------------------------------------------------------------------------------
+
+
+# ------------------------------------------------------------------------------
+# XH035 Cadence library definitions
+
+# X-FAB library definitions
+INCLUDE ./xh035.lib
+
+# Library Manager Combine/Display Definitions
+INCLUDE ./xh035_combine.lib
+
+# ------------------------------------------------------------------------------
+# Add user specific libraries below this line 

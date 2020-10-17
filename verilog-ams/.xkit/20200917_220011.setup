@@ -1,0 +1,17 @@
+#
+#
+# Linked PDK packages in /home/disk/EasierUVM-SimpRisc-ws/verilog-ams/.xkit/20200917_220011
+#
+# This file can be used to recreate the PDK setup with the defined package versions,
+# using the following command:
+#
+# xkit --setversion /home/disk/EasierUVM-SimpRisc-ws/verilog-ams/.xkit/20200917_220011.setup
+#
+# The PDK packages are installed at the following X_DIR location ($X_DIR):
+# /home/work/xkit/xkitroot
+#
+$X_DIR/xh035/cadence/v6_2/spectre/v6_2_3
+$X_DIR/xh035/cadence/v6_2/PDK/IC61/v6_2_2
+$X_DIR/xh035/mentor/v6_2/PEX_calibre/v6_2_1
+$X_DIR/xh035/mentor/v6_2/calibre/v6_2_1
+$X_DIR/x_all/cadence/xenv/v1_2_13

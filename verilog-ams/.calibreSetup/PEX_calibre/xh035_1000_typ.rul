@@ -1,0 +1,15 @@
+// **************************************************************
+// *                                                            *
+// *                        CALIBRE XH035                       *
+// *                    metal 2 / typical case                  *
+// *                          - PEX -                           *
+// *                                                            *
+// **************************************************************
+
+
+#DEFINE top_metal  MET2
+
+
+INCLUDE /home/disk/EasierUVM-SimpRisc-ws/verilog-ams/.xkit/setup/xh035/mentor/calibre/xh035.rul
+INCLUDE /home/disk/EasierUVM-SimpRisc-ws/verilog-ams/.xkit/setup/xh035/mentor/PEX_calibre/pex_m2_typ
+

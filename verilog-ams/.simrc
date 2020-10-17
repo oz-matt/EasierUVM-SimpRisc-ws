@@ -1,0 +1,121 @@
+/* 
+File Name:    :    .simrc
+Date          :    $Date: 2012-11-23 13:48:17 +0100 (Fri, 23 Nov 2012) $
+Revision      :    $Rev: 582 $
+Author        :    $Author: wflohrer $
+*/
+
+T_LIBRARIES = "./.xkit/setup/xh035/cadence/PDK/xh035"
+T_VERSION = "v1.2.12"
+T_TECH = "xh035"
+
+
+XKIT = "v1.2.12"
+T_PROC = "xh035_1000"
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;verilog
+
+
+simVerilogFlattenBuses               = 'nil
+simVerilogLaiLmsiNetlisting          = 'nil
+simReNetlistAll                      = 't
+simVerilogNetlistExplicit            = 't
+hnlVerilogNetlistStopCellExplicit    = 't
+hnlVerilogNetlistNonStopCellExplicit = 't
+/*
+hnlMaxLineLength 		     = 1024
+hnlMaxNameLength 		     = 150
+*/
+simVerilogPwrNetList                 = '("dummyPwrNet")
+simVerilogGndNetList                 = '("dummyGndNet")
+simVerilogSimPrecisionUnit           = "ps"
+
+verilogSimStopList = '( "symbol" )
+
+verilogSimViewList = '("behavioral" "functional" "schematic" "symbol" )
+
+simVerilogLibraryDirectory       = ""
+simVerilogLibraryFile            = ""
+
+
+simVerilogInteractiveCommandFile = ""
+simVerilogInvocationOptionsFile  = "./xh035.inc"
+simVerilogInvocationOptions = "+libext+.v+ +incdir+hdlFilesDir +sdf_verbose "
+
+; Post-layout simulation variables.
+;
+; The value "nil" of simVerilogDelayPrimitive means that the Cadence default 
+; delay calculator used is $dcalc_path(..., "net.cap"). If the value is "t", the
+; task dcalc_prim(..., "net.cap") will show up in the Run Directory
+; file "delayTask.cmd".
+;
+; For delay paths to be back-annotated:
+; Note 1: Cell ports are scalars.
+; Note 2: Port names are the same as their net names.
+; Note 3: No wired logic on a output port.
+;
+simVerilogDelayPrimitive    = nil
+; The report info goes into the file "si.out", and contains information
+; on the interconnect nets.
+simVerilogDelayDetailReport = t
+simVerilogDelayUseDefault   = t
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; For Analog Artist transistor level LVS comparison 
+  lvsSchematicViewList = '( "auLvs" "schematic" "cmos_sch" "symbol" )
+  lvsLayoutViewList    = '( "auLvs" "extracted" "schematic" "symbol")
+  lvsSchematicStopList = '( "auLvs" )
+  lvsLayoutStopList    = '( "auLvs" )
+
+; For Analog Artist macro-cell comparison 
+; lvsSchematicViewList = '( "msps" "auLvs" "schematic" "pr_sch" "prc_sch" "symbol" )
+; lvsLayoutViewList    = '( "msps" "auLvs" "extracted" "schematic" "symbol")
+; lvsSchematicStopList = '( "msps" "auLvs" "symbol")
+; lvsLayoutStopList    = '( "msps" "auLvs" "symbol")
+
+; For non Analog Artist (DFII) LVS comparison 
+; lvsSchematicViewList = '( "lvs" "schematic" "cmos_sch" )
+; lvsLayoutViewList    = '( "lvs" "extracted" "schematic" "cmos_sch" )
+; lvsSchematicStopList = '( "lvs" )
+; lvsLayoutStopList    = '( "lvs" )
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;** auCdl Netlisting Analog **
+;* require: CDS_Netlisting_Mode = Analog
+
+if(isFile("./.xkit/setup/xh035/cadence/PDK/skill/ansCdlCompPrim.ile") then
+    load("./.xkit/setup/xh035/cadence/PDK/skill/ansCdlCompPrim.ile")
+else
+  load("./.xkit/setup/x_all/cadence/xenv/skill/ansCdlCompPrim.ile")
+)
+
+auCdlCheckLDD = t
+auCdlSkipMEGA = t
+; auCdlCheckRESI = t
+; auCdlCheckRESSIZE = t
+
+;* more then default terminal mos device
+auCdlPrintEmptySUBCKT = t
+auCdlCDFPinCntrl = t
+; auCdlNoInhTermInTermOrder = t
+
+;* Blackbox
+;* require on cellview: auCdlPrintBlkBox = t
+; auCdlDisableBlkBox = nil ;* by default Blackbox is enabled
+
+; simSetDef('auCdlSimViewList, '("auCdl" "schematic" "cmos_sch"))
+; simSetDef('auCdlSimStopList, '("auCdl"))
+; simSetDef('cdlSimViewList,   '("cdl"   "schematic" "cmos_sch"))
+; simSetDef('cdlSimStopList,   '("cdl"))
+
+cdlSimViewList=list("auCdl" "schematic" "cmos_sch")
+cdlSimStopList=list("auCdl")
+
+cdlSimViewList=list("auCdl" "schematic" "cmos_sch")
+cdlSimStopList=list("auCdl")
+
