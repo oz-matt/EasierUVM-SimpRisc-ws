@@ -1,5 +1,0 @@
-ahdl_include “res.va”
-V0 (net1 0) vsource dc=1.0
-R0 (net1 net2) resistor r=10 
-I1 (net2 net3) res R=20
-R1 (net3 0) resistor r=10

@@ -1,8 +1,0 @@
-*drcRulesFile: /home/disk/EasierUVM-SimpRisc-ws/verilog-ams/.calibreSetup/calibre/xh035_1000
-*drcRunDir: calibre_drc
-*drcLayoutGetFromViewer: 1
-*drcViewSummary: 0
-*cmnWarnLayoutOverwrite: 0
-*cmnPromptSaveRunset: 0
-*cmnSaveRunsetChanges: 0
-*cmnShowOptions: 1
