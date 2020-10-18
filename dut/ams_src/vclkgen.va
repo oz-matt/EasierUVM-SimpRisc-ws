@@ -1,0 +1,26 @@
+`include "disciplines.vams"
+
+module vclkgen(p, n);
+
+inout p; electrical p;
+inout n; electrical n;
+
+parameter real period = 1n from [0:inf);
+parameter real vlevel = 3.0 from [0:inf);
+parameter real tt = 1p from [0:inf);
+
+integer onoroff;
+
+analog begin
+
+  @(initial_step) onoroff = 0;
+
+  @(timer(period/2, period/2)) begin
+    onoroff = !onoroff;
+  end
+
+  V(p,n) <+ transition(onoroff ? vlevel : 0, 0, tt);
+
+end
+
+endmodule

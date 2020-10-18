@@ -1,0 +1,36 @@
+`include "discipline.h"
+`include "constants.h"
+
+module freqdivider(in, out, gnd);
+  input in; electrical in;
+  output out; electrical out;
+  input gnd; electrical gnd;
+
+  parameter real divf = 1 from [1:50);
+  parameter real thresh = 1.5 from [0:50);
+  parameter real vhigh = 3.0 from [0:50);
+  parameter real tt = 1p from [0:50);
+
+  integer ctr;
+  integer tv;
+
+  analog begin
+
+    @(initial_step) begin
+      ctr = 0;
+      tv = 1;
+    end
+
+    @(cross(V(in, gnd) - thresh, 0)) begin
+      ctr = ctr + 1;
+      if (ctr >= divf) begin
+        tv = !tv;
+        ctr = 0;
+      end
+    end
+
+    V(out, gnd) <+ transition(tv * vhigh, 0, tt);
+
+  end
+
+endmodule

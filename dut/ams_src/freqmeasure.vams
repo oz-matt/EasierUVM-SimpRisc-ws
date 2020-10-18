@@ -1,0 +1,87 @@
+module freqmeasure(e1, gnd, freq, clk, maxv);
+
+  electrical e1, gnd;
+  ground gnd;
+  logic clk;
+  voltage rep;
+  input e1, gnd, clk;
+  
+  wreal freq, maxv;
+  output freq, maxv;
+
+  real t, s, a, f, o, m, b, mi, te;
+  real q[9:0], qm[9:0];
+
+  integer loi;
+
+integer i, k, j, k2, rdy2, rdy, ti=0;
+
+  analog begin
+
+  V(rep) <+ te;
+
+    @(initial_step) begin
+      t=0;
+      s=0;
+      i=0;
+      k=0;
+      k2=0;
+      rdy=0;
+      j=0;
+      rdy2=0;
+      a=0;
+      b=0;
+      f=0;
+      mi=0;loi=0;
+    end
+
+    @(cross(ddt(V(e1, gnd)), +1)) begin
+      s = $abstime - t;
+      t = $abstime;
+      i=i+1;
+      if(i>9) begin
+        i=0;
+        rdy=1;
+      end
+      q[i] = s;
+      if(rdy) begin
+        for(k=0;k<10;k=k+1) a = a + q[k];
+        f = 10/a;
+        a = 0;
+      end
+    end
+
+    @(cross(ddt(V(e1, gnd)), 0)) begin
+      j=j+1;
+      if(j>9) begin
+        j=0;
+        rdy2=1;
+      end
+      qm[j] = abs(V(e1, gnd));
+      if(rdy2) begin
+        for(k2=0;k2<10;k2=k2+1) b = b + qm[k2];
+        mi = b/10;
+        b = 0;
+      end
+    end
+
+    @(timer(7n)) loi=1;
+
+  end
+
+  //always @(absdelta(f,10)) begin
+  always #1 begin
+    o = f;
+    m = mi;
+  end
+
+
+  always @(absdelta(freq,10)) begin
+    te=freq;
+  end
+
+
+  assign freq = o;
+  assign maxv = m;
+
+endmodule

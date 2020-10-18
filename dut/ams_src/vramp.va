@@ -1,0 +1,39 @@
+`include "disciplines.vams"
+`include "constants.h"
+
+module vramp(vout, wrout);
+
+output vout; voltage vout;
+output wrout; wreal wrout;
+
+real wror;
+
+parameter real vs = -1; //starting voltage
+parameter real vf = 1; //finishing voltage
+parameter real td = 0; //delay before start
+parameter real tt = 10n; //time taken to ramp;
+
+real result[0:1];
+
+integer g;
+
+analog begin
+
+
+  @(initial_step) begin
+    result[0] = -5;
+    result[1] = 5;
+  end
+ 
+  @(timer(0)) g=vs;
+  @(timer(1p)) g=vf;
+
+  V(vout) <+ transition(g, 0, tt);
+
+end
+
+always #1 wror = V(vout);
+
+assign wrout = wror;
+
+endmodule

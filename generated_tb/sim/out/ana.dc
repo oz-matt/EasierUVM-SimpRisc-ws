@@ -1,0 +1,40 @@
+* "simulator" "XA" 
+* "format" "HSP" 
+* time = 0 
+*** BEGIN: DC Convergence Report 
+********************************************
+* Nodes that Failed to Converge 
+* Nodes name = node value $ node DCI | node DCV| instance Contributing the biggest current 
+********************************************
+* Nodes that were normally converged 
+* Nodes name = node value $ node DCI | node DCV| instance Contributing the biggest current 
+.nodeset 
++v(diode_simple.vn) = 0.00000e+00 $ 0.00000e+00 | 0.00000e+00 | 
++v(diode_simple.vp) = 0.00000e+00 $ 0.00000e+00 | 0.00000e+00 | 
++v(top.fm.freq) = 0.00000e+00 $ 0.00000e+00 | 0.00000e+00 | 
++v(top.fm.snps_devent_2) = 0.00000e+00 $ 0.00000e+00 | 0.00000e+00 | 
++v(top.fm.snps_aevent_5) = 1.00000e+00 $ 0.00000e+00 | 0.00000e+00 | 
++v(res_mod.vn) = 0.00000e+00 $ 0.00000e+00 | 0.00000e+00 | 
++v(res_mod.vp) = 0.00000e+00 $ 0.00000e+00 | 0.00000e+00 | 
++v(vramp.vout) = -1.00000e+00 $ 0.00000e+00 | 0.00000e+00 | 
++v(top.dr) = 0.00000e+00 $ 0.00000e+00 | 0.00000e+00 | 
++v(top.o1) = 1.63589e+00 $ -4.90766e-12 | -1.39546e-16 | top.i3cd (i=-6.46106e-04)
++v(top.o2) = 1.63589e+00 $ 4.63999e-19 | -1.39546e-16 | top.i3c2d (i=-6.46106e-04)
++v(top.cin) = 0.00000e+00 $ 1.63589e-12 | 0.00000e+00 | top.vpd (i=1.63589e-12)
++v(top.cme) = 1.94135e-01 $ 5.22346e-12 | 1.37207e-18 | top.i34d (i=9.35288e-04)
++v(top.cup) = 3.00000e+00 $ -1.50000e-12 | 0.00000e+00 | top.dff1d (i=-1.50000e-12)
++v(top.qbu) = 3.00000e+00 $ -3.00000e-12 | 0.00000e+00 | top.dff2d (i=-3.00300e-09)
++v(top.qdn) = 0.00000e+00 $ 1.50000e-12 | 0.00000e+00 | top.dff2d (i=1.50000e-12)
++v(top.qup) = 0.00000e+00 $ 0.00000e+00 | 0.00000e+00 | 
++v(top.vdd) = 3.00000e+00 $ -4.32529e-11 | 0.00000e+00 | top.v0d (i=-3.12955e-03)
++v(top.cmid) = 1.50000e+00 $ 6.88773e-18 | 9.98975e-07 | top.pfdm1d (i=-1.00000e-14)
++v(top.ondc) = 1.50000e+00 $ 0.00000e+00 | 2.65075e-14 | 
++v(top.tmid) = 1.50000e+00 $ 3.55578e-19 | -1.27071e-12 | top.cn1d (i=9.02045e-04)
++v(top.clkout) = 3.00000e+00 $ -3.00000e-12 | 0.00000e+00 | top.fdivd (i=-3.00000e-12)
++v(top.vcovgnd) = 2.71775e-01 $ 1.30976e-11 | -4.60359e-18 | top.i33d (i=1.29221e-03)
++v(top.vctrl) = 1.50000e+00 $ -6.88773e-18 | 9.98975e-07 | top.rlpfd (i=-6.88773e-18)
++v(top.clkin) = 0.00000e+00 $ 0.00000e+00 | 0.00000e+00 | 
++v(top.snps_dummy_1) = 0.00000e+00 $ 0.00000e+00 | 0.00000e+00 | 
++v(top.snps_dummy_2) = 0.00000e+00 $ 0.00000e+00 | 0.00000e+00 | 
++v(top.snps_dummy_3) = 0.00000e+00 $ 0.00000e+00 | 0.00000e+00 | 
++v(top.fm.rep) = 0.00000e+00 $ 0.00000e+00 | 0.00000e+00 | 

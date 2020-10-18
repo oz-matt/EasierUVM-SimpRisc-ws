@@ -1,0 +1,46 @@
+`include "discipline.h"
+`include "constants.h"
+
+// $Date: 1999/01/21 00:59:33 $
+// $Revision: 1.2 $
+//
+//
+// Based on the OVI Verilog-A Language Reference Manual, version 1.0 1996
+//
+//
+
+
+
+//--------------------
+// diode_simple
+//
+// -  Diode based on Schockley equation
+//
+// vanode:	Anode voltage [V,A]
+// vcathode:	Cathode voltage [V,A]
+//
+// INSTANCE parameters
+//    is   = saturation current with negative bias [A]
+//
+// MODEL parameters
+//    {none}
+//
+
+module diode_simple(vp, vn);
+inout vp, vn;
+electrical vp, vn;
+parameter real is = 1e-12 from (0:inf);
+
+   real vacross;
+
+   analog begin
+      vacross = V(vp, vn);
+      I(vp,vn) <+ is * (limexp(vacross/$vt) - 1);
+   end
+endmodule
+
+
+
+
+
+

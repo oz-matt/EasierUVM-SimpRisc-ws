@@ -1,0 +1,24 @@
+`include "disciplines.vams"
+
+ module vpulse(p,n);
+parameter real mag = 0;
+parameter real td = 1n; // delay
+parameter real tt = 1n; // output transition time (s)
+parameter real tw = 0n; // pulse width
+
+   output p, n;
+   electrical p, n;
+   real Vout, tend,rst;
+
+integer df;
+
+analog begin
+
+	@(initial_step) df = 0;
+
+	  @(timer(td)) df = !df;
+	  @(timer(td + tt + tw)) df = !df;
+
+	V(p, n) <+ transition(df ? mag : 0, td, tt);
+end
+endmodule

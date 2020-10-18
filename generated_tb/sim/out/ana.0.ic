@@ -1,0 +1,45 @@
+# "simulator" "XA"
+# "format" "SPECTRE"
+# "netlist" "simv.daidir/xa_cosim_top.scs"
+# "runtitle" ""
+# temperature =   27
+# time =    0
+# BEGIN: Saved Operating Point 
+# nodeset
+0 0
+diode_simple.vn 0
+diode_simple.vp 0
+top.s 0
+top.dr 0
+top.o1 1.63589
+top.o2 1.63589
+top.cin 0
+top.cme 0.194135
+top.cup 3
+top.qbu 3
+top.qdn 0
+top.qup 0
+top.vdd 3
+top.vwr 0
+top.cmid 1.5
+top.maxv 0
+top.ondc 1.5
+top.tmid 1.5
+top.clkout 3
+top.vcovgnd 0.271775
+top.vctrl 1.5
+top.clkin 0
+top.snps_dummy_1 0
+top.snps_dummy_2 0
+top.snps_dummy_3 0
+top.fm.rep 0
+top.fm.freq 0
+top.fm.snps_devent_2 0
+top.fm.snps_aevent_5 1
+res_mod.vn 0
+res_mod.vp 0
+res_mod.wr 0
+res_mod.clk 0
+vramp.vout -1
+vramp.snps_port0 0
+###   END: Saved Operating Point ###

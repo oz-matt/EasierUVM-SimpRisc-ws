@@ -1,0 +1,64 @@
+module top(s, maxv, vwr);
+
+electrical vcovgnd, o1, o2, ondc, vdd, vctrl, cme, cin, gnd, tmid, cg;
+electrical clkin, clkout, dr, qup, qdn, cup, qbu, cmid, fmid;
+ground gnd;
+output s, maxv, vwr;
+wreal s, maxv, vwr;
+reg clk;
+  integer i;
+
+initial clk = 0;
+always #1 clk <= !clk;
+
+  voltage probe_freq;
+freqmeasure fm(ondc, gnd, s, clk, maxv);
+
+//VCO
+vsrc #(3) v0(vdd, gnd);
+
+mos_level1 i4(o1, o2, vcovgnd, vcovgnd);
+mos_level1 i3(o2, o1, vcovgnd, vcovgnd);
+mos_level1p i3c(o1, o2, vdd, vdd);
+mos_level1p i3c2(o2, o1, vdd, vdd);
+varactor vr1(vctrl, o1);
+varactor vr2(vctrl, o2);
+ind #(1100p) i6(o1, o2);
+
+//CTRL
+cap #(500f) dcblock(o2, ondc);
+
+
+//CURR_SRC
+mos_level1 i33(vcovgnd, vdd, gnd, gnd);
+mos_level1 i34(cme, vdd, gnd, gnd);
+res#(3K) i35(cme, vdd);
+
+//I TRIGGER
+mos_level1 i32(o1, cin, gnd, gnd);
+vpulse#(.mag(3), .td(1n), .tt(1p), .tw(1n)) vp(cin, gnd);
+
+//DIGITIZER
+
+mos_level1p cp1(tmid, ondc, vdd, vdd);
+mos_level1 cn1(tmid, ondc, gnd, gnd);
+
+
+// PFD
+
+d_ff_r #(.tdel(3p), .trise(1p), .tfall(1p)) dff1(vdd, clkout, qup, cup, dr);
+d_ff_r #(.tdel(3p), .trise(1p), .tfall(1p)) dff2(vdd, clkin, qdn, qbu, dr);
+res #(1G) runused(qbu, gnd);
+and_gate ag1(qup, qdn, dr);
+mos_level1p pfdm1(cmid, cup, vdd, vdd);
+mos_level1 pfdm2(cmid, qdn, gnd, gnd);
+res #(3k) rlpf(cmid, vctrl);
+cap #(1n) clpf(vctrl, gnd);
+
+vclkgen #(.period(1n)) vref(clkin, gnd);
+
+freqdivider #(.divf(4)) fdiv(tmid, clkout, gnd);
+
+
+endmodule
+

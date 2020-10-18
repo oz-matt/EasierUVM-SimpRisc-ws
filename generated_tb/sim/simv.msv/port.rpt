@@ -1,0 +1,55 @@
+
+port.rpt
+--------
+
+The port.rpt file is generated at compile time, port.rpt contains:
+
+Basic port_map, port_connect and port_dir command syntax.
+
+User defined and default port_map, port_connect and port_dir commands.
+
+All multiple cell view HDL view names and matching spice subckt names.
+All multiple cell view HDL port names and port directions and spice 
+port names and directions.
+
+All single cell spice subckt port directions.
+Spice port directions for the mixed signal integration are derived 
+from an equivalent HDL cell view. 
+If there are no equivalent HDL cell views all spice ports will have,
+by default, inout direction.
+
+------------------------------------------------------------------------------------
+
+Basic port_map command syntax:
+------------------------------
+
+use_vhdl	-cell <cell name> port_map (spice_port_name => vhdl_port_name, ...);
+
+use_verilog	-cell <cell name> port_map (spice_port_name => verilog_port_name, ...);
+
+use_spice	-cell <cell name> port_map (vhdl_port_name => spice_port_name, ...);
+
+------------------------------------------------------------------------------------
+
+Basic port_connect command syntax:
+----------------------------------
+
+port_connect -cell <cell name> (vhdl|verilog|spice_port_name =><hierarchical path
+                                      to node in digital|analog hierarchy>,...);
+
+------------------------------------------------------------------------------------
+
+Basic port_dir command syntax:
+------------------------------
+
+port_dir -cell <cell name> (input port_name,port_name,..; output port_name,
+                                                                  port_name, ...);
+
+------------------------------------------------------------------------------------
+
+For complete information on all command arguments please refer to the mixed signal 
+simulation user guide
+
+------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------
+

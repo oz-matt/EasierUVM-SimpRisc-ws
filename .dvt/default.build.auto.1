@@ -1,7 +1,7 @@
 ################################################################################
 #                    DO NOT MANUALLY EDIT THIS FILE!                           #
 ################################################################################
-# This file contains the automatically generated build configuration (2020/10/18 05:06:17)
+# This file contains the automatically generated build configuration (2020/10/19 02:39:03)
 # requested at line 3 in /home/disk/EasierUVM-SimpRisc-ws/.dvt/default.build
 
 
@@ -33,11 +33,53 @@
 +incdir+uvm_syoscb/tb
 +incdir+uvm_syoscb/tb/test
 
+### AUTOCONFIG ERROR: Unresolved includes
+# The following includes could not be resolved:
+#`include "src/top.vams" in topsv.sv (/home/disk/EasierUVM-SimpRisc-ws/dut/ams_src/topsv.sv)
+#`include "src/top.vams" in topsv.sv (/home/disk/EasierUVM-SimpRisc-ws/generated_tb/dut/ams_src/topsv.sv)
+
+### AUTOCONFIG WARNING: Missing macro definitions
+# The following macros are used but not defined:
+# +define+CURRENT_ABSTOL
+# +define+CHARGE_ABSTOL
+# +define+VOLTAGE_ABSTOL
+# +define+FLUX_ABSTOL
+# +define+MAGNETO_MOTIVE_FORCE_ABSTOL
+# +define+TEMPERATURE_ABSTOL
+# +define+POWER_ABSTOL
+# +define+POSITION_ABSTOL
+# +define+VELOCITY_ABSTOL
+# +define+ACCELERATION_ABSTOL
+# +define+IMPULSE_ABSTOL
+# +define+FORCE_ABSTOL
+# +define+ANGLE_ABSTOL
+# +define+ANGULAR_VELOCITY_ABSTOL
+# +define+ANGULAR_ACCELERATION_ABSTOL
+# +define+ANGULAR_FORCE_ABSTOL
+
 # Available `ifdef / `ifndef controls:
+# +define+ACCELERATION_ABSTOL
+# +define+ANGLE_ABSTOL
+# +define+ANGULAR_ACCELERATION_ABSTOL
+# +define+ANGULAR_FORCE_ABSTOL
+# +define+ANGULAR_VELOCITY_ABSTOL
+# +define+CHARGE_ABSTOL
+# +define+CURRENT_ABSTOL
+# +define+FLUX_ABSTOL
+# +define+FORCE_ABSTOL
+# +define+IMPULSE_ABSTOL
+# +define+MAGNETO_MOTIVE_FORCE_ABSTOL
+# +define+POSITION_ABSTOL
+# +define+POWER_ABSTOL
 # +define+SYOSIL_APPLY_TLM_GP_CMP_WORKAROUND
+# +define+TEMPERATURE_ABSTOL
 # +define+UVM_POST_VERSION_1_1
+# +define+VELOCITY_ABSTOL
+# +define+VOLTAGE_ABSTOL
 
 uvm_syoscb/src/pk_syoscb.sv
+dut/ams_src/ams-models/disciplines.vams
+generated_tb/dut/ams_src/ams-models/disciplines.vams
 uvm_syoscb/tb/pk_scbtest.sv
 uvm_syoscb/tb/test/cl_scbtest_test_tlmpar.svh
 generated_tb/tb/include/sequences/vseq_riseq.sv
@@ -46,6 +88,10 @@ generated_tb/tb/include/reference_inc_after_class.sv
 generated_tb/tb/include/sequences/vseq_base.sv
 generated_tb/tb/include/tests/test_fill_cpu_rxs.sv
 uvm_syoscb/tb/scbtest_top.sv
+dut/ams_src/freqmeasure.vams
+dut/ams_src/top.vams
+dut/ams_src/topsv.sv
+dut/ams_src/vsrc.vams
 dut/axi_master_wrapper.sv
 dut/axi_mem.sv
 dut/design.sv
@@ -57,6 +103,10 @@ dut/sindrv.sv
 dut/soc_top.sv
 dut/testbench.sv
 dut/umem.sv
+generated_tb/dut/ams_src/freqmeasure.vams
+generated_tb/dut/ams_src/top.vams
+generated_tb/dut/ams_src/topsv.sv
+generated_tb/dut/ams_src/vsrc.vams
 generated_tb/dut/axi_master_wrapper.sv
 generated_tb/dut/axi_mem.sv
 generated_tb/dut/design.sv
@@ -74,13 +124,13 @@ dut/axil_int.sv
 dut/mdriver_int.sv
 generated_tb/dut/axil_int.sv
 generated_tb/dut/mdriver_int.sv
-generated_tb/tb/memw/sv/memw_if.sv
 dut/defines.sv
 generated_tb/dut/defines.sv
 generated_tb/tb/include/pkg/verif_pkg.sv
 generated_tb/tb/include/verif_pkg.sv
 generated_tb/tb/top_tb/sv/top_th.sv
 generated_tb/tb/memw/sv/memw_pkg.sv
+generated_tb/tb/memw/sv/memw_if.sv
 generated_tb/tb/insgen/sv/insgen_pkg.sv
 generated_tb/tb/top/sv/top_pkg.sv
 generated_tb/tb/top_test/sv/top_test_pkg.sv
@@ -88,4 +138,6 @@ generated_tb/tb/top_tb/sv/top_tb.sv
 generated_tb/tb/insgen/sv/insgen_if.sv
 generated_tb/dut/cpu.sv
 dut/cpu.sv
+dut/ams_src/ams-models/constants.vams
+generated_tb/dut/ams_src/ams-models/constants.vams
 

@@ -1,0 +1,43 @@
+`include "discipline.h"
+`include "constants.h"
+
+// $Date: 1997/08/28 05:46:24 $
+// $Revision: 1.1 $
+//
+//
+// Based on the OVI Verilog-A Language Reference Manual, version 1.0 1996
+//
+//
+ 
+
+
+//--------------------
+// ind
+//
+// -  inductor
+//
+// vp,vn:	terminals (V,A)
+//
+// INSTANCE parameters
+//    l = inductance (H)
+//
+// MODEL parameters
+//    {none}
+//
+
+module ind(vp, vn);
+inout vp, vn;
+electrical vp, vn;
+parameter real l = 0;
+
+   analog
+      V(vp, vn) <+ ddt(l*I(vp, vn));
+
+endmodule
+
+
+
+
+
+
+

@@ -1,0 +1,42 @@
+`include "discipline.h"
+`include "constants.h"
+
+// $Date: 1997/08/28 05:46:19 $
+// $Revision: 1.1 $
+//
+//
+// Based on the OVI Verilog-A Language Reference Manual, version 1.0 1996
+//
+//
+
+
+
+//--------------------
+// cap
+//
+// -  capacitor
+//
+// vp,vn:	terminals (V,A)
+//
+// INSTANCE parameters
+//    c = capacitance (F)
+//
+// MODEL parameters
+//    {none}
+//
+
+module cap(vp, vn);
+inout vp, vn;
+electrical vp, vn;
+parameter real c = 0;
+
+   analog
+      I(vp, vn) <+ ddt(c*V(vp, vn));
+endmodule
+
+
+
+
+
+
+

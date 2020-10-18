@@ -1,11 +1,11 @@
 #!/bin/sh
 cd ../generated_tb/sim;
 rm -rf csrc/ simv.vdb/ simv.daidir/ simv;
-vcs -sverilog -lca -debug_access+all -assert enable_diag \
+vcs -ams +ad -ams_discipline logic +systemverilogext+.sv -sverilog -lca -debug_access+all -assert enable_diag \
 		+define+ASSERT_ON -y $VCS_HOME/packages/sva +libext+.v \
 		+incdir+$VCS_HOME/packages/sva -P /home/disk/Verdi3_L-2016.06-1/share/PLI/VCS/LINUX64/novas.tab \
 								/home/disk/Verdi3_L-2016.06-1/share/PLI/VCS/LINUX64/pli.a -full64 +libext+.v+.h+.vh+.vlib \
-		-kdb +vcs+vcdpluson -l comp.log -timescale=1ns/1ps -ntb_opts uvm-1.2 \
+		-kdb +vcs+vcdpluson -l comp.log -timescale=1ns/1ps -adopt absdelta -ntb_opts uvm-1.2 \
 +incdir+../tb/include \
 +incdir+../tb/insgen/sv \
 +incdir+../tb/memw/sv \
@@ -16,6 +16,8 @@ vcs -sverilog -lca -debug_access+all -assert enable_diag \
 +incdir+../ref_model_cpp/ \
 +incdir+../ref_model_cpp/ins/ \
 -F ../dut/files.f \
+-F ../dut/ams_src/files.f \
+-F ../dut/ams_src/ams-models/files.f \
 ../tb/include/verif_pkg.sv \
 ../tb/insgen/sv/insgen_pkg.sv \
 ../tb/insgen/sv/insgen_if.sv \

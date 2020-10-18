@@ -1,0 +1,35 @@
+`include "discipline.h"
+`include "constants.h"
+
+
+module d_ff_r(vin_d, vclk, vout_q, vout_qbar, r);
+input vclk, vin_d, r;
+output vout_q, vout_qbar;
+electrical vout_q, vout_qbar, vclk, vin_d, r;
+parameter real vlogic_high = 3;
+parameter real vlogic_low = 0;
+parameter real vtrans_clk = 1.5;
+parameter real vtrans = 1.5;
+parameter real tdel = 3n from [0:inf);
+parameter real trise = 1n from (0:inf);
+parameter real tfall = 1n from (0:inf);
+
+   integer x;
+
+   analog begin
+
+      @ (cross( V(vclk) - vtrans_clk, +1 ))
+         x = (V(vin_d) > vtrans);
+
+      @ (cross( V(r) - vtrans, +1 ))
+         x = 0;
+
+         V(vout_q) <+ transition( vlogic_high*x + vlogic_low*!x,
+				   tdel, trise, tfall );
+         V(vout_qbar) <+ transition( vlogic_high*!x + vlogic_low*x,
+				      tdel, trise, tfall );
+    end
+endmodule
+
+
+
