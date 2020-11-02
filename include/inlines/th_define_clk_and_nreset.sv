@@ -1,6 +1,8 @@
 	logic clk = 0;
 	logic nreset;
 	
+	real frq, mag, vra, rdy;
+	
 	byte ram[int];
 
 	always #10 clk = ~clk;
@@ -10,6 +12,10 @@
 		nreset = 0;         // Active low reset in this example
 		#15 nreset = 1;
 	end
+	
+	
+	cpll180nm cpll(frq, mag, vra, rdy);
+	
 
 	assign insgen_if_0.clk = clk;
 	assign insgen_if_0.nreset = nreset;
@@ -17,6 +23,7 @@
 	assign memw_if_0.nreset = nreset;
 
 	always @(posedge clk) begin
+		$display("freq: %e, mag: %e, vramp: %e, rdy: %e", frq, mag, vra, rdy);
 		if(memw_if_0.mem_rw) begin
 			if(memw_if_0.mem_wstrobe & 'b0001) ram[memw_if_0.out_addr_bus] <= memw_if_0.out_data_bus[7:0];
 			if(memw_if_0.mem_wstrobe & 'b0010) ram[memw_if_0.out_addr_bus + 1] <= memw_if_0.out_data_bus[15:8];

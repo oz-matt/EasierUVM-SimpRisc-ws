@@ -4,7 +4,7 @@ nested_config_objects          = yes
 
 common_env_pkg = /pkg/verif_pkg.sv
 
-top_default_seq_count = 100
+top_default_seq_count = 5
 
 syosil_scoreboard_src_path = uvm_syoscb/src
 

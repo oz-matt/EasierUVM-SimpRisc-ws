@@ -1,18 +1,17 @@
-module top(s, maxv, vwr);
-
+module cpll180nm(s, maxv, vwr, vcswr);
 electrical vcovgnd, o1, o2, ondc, vdd, vctrl, cme, cin, gnd, tmid, cg;
 electrical clkin, clkout, dr, qup, qdn, cup, qbu, cmid, fmid;
 ground gnd;
-output s, maxv, vwr;
-wreal s, maxv, vwr;
+output s, maxv, vwr, vcswr;
+wreal s, maxv, vwr, vcswr;
 reg clk;
-  integer i;
+	integer i;
 
 initial clk = 0;
 always #1 clk <= !clk;
 
-  voltage probe_freq;
-freqmeasure fm(ondc, gnd, s, clk, maxv);
+	voltage probe_freq;
+freqmeasure fm(ondc, gnd, s, clk, maxv, , vctrl, vcswr);
 
 //VCO
 vsrc #(3) v0(vdd, gnd);

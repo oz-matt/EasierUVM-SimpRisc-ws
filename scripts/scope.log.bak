@@ -1,0 +1,110 @@
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+wm geometry . 900x785+193+33
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+wm geometry . 900x785+189+33
+Mdi:ArrangeIcons
+wm geometry . 900x785+186+30
+Mdi:ArrangeIcons
+wm geometry . 900x785+182+30
+Graph:Select Graph0
+Graph:DSel 0
+Graph:DSel
+ScopeSigMgr:loadpffile /home/disk/EasierUVM-SimpRisc-ws/generated_tb/sim/out/ana.wdb 1 openonly
+# PF:1
+pf:read PF:1 top_tb.th.amstop.v(clkout)
+# WF:1:1
+Graph addsignal WF:1:1 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal0
+pf:read PF:1 top_tb.th.amstop.v(clkout)
+# WF:1:1
+Graph addsignal WF:1:1 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal1
+Mdi:FullSize
+Mdi:ArrangeIcons
+wm geometry . 1916x822+0+25
+wm geometry .sigmgr 376x204+695+135
+wm geometry .sigmgr 376x204+691+135
+wm geometry .sigmgr 376x204+705+138
+wm geometry .sigmgr 376x204+715+138
+wm geometry .sigmgr 376x204+729+149
+wm geometry .sigmgr 376x204+736+152
+wm geometry .sigmgr 376x204+743+156
+wm geometry .sigmgr 376x204+757+163
+wm geometry .sigmgr 376x204+771+166
+wm geometry .sigmgr 376x204+803+177
+wm geometry .sigmgr 376x204+824+184
+wm geometry .sigmgr 376x204+845+187
+wm geometry .sigmgr 376x204+869+198
+wm geometry .sigmgr 376x204+901+205
+wm geometry .sigmgr 376x204+925+208
+wm geometry .sigmgr 376x204+992+222
+wm geometry .sigmgr 376x204+1030+229
+wm geometry .sigmgr 376x204+1069+229
+wm geometry .sigmgr 376x204+1174+229
+wm geometry .sigmgr 376x204+1226+236
+wm geometry .sigmgr 376x204+1286+236
+wm geometry .sigmgr 376x204+1335+236
+wm geometry .sigmgr 376x204+1394+236
+wm geometry .sigmgr 376x204+1447+236
+wm geometry .sigmgr 376x204+1503+236
+wm geometry .sigmgr 376x204+1536+236
+wm geometry .sigmgr 376x204+1586+236
+wm geometry .sigmgr 376x204+1573+223
+wm geometry .sigmgr 376x204+1574+224
+wm geometry .sigmgr 376x204+1536+516
+wm geometry .sigmgr 376x204+1520+516
+wm geometry .sigmgr 376x204+1516+516
+wm geometry .sigmgr 376x204+1513+516
+wm geometry .sigmgr 376x204+1506+516
+wm geometry .sigmgr 376x204+1499+516
+wm geometry .sigmgr 376x204+1488+516
+wm geometry .sigmgr 376x204+1464+516
+wm geometry .sigmgr 376x204+1436+516
+wm geometry .sigmgr 376x204+1422+516
+wm geometry .sigmgr 376x204+1411+513
+wm geometry .sigmgr 376x204+1394+513
+wm geometry .sigmgr 376x204+1380+510
+wm geometry .sigmgr 376x204+1366+510
+wm geometry .sigmgr 376x204+1348+506
+wm geometry .sigmgr 376x204+1317+499
+wm geometry .sigmgr 376x204+1282+496
+wm geometry .sigmgr 376x204+1268+492
+wm geometry .sigmgr 376x204+1254+489
+wm geometry .sigmgr 376x204+1247+489
+wm geometry .sigmgr 376x204+1240+485
+wm geometry .sigmgr 376x204+1229+485
+wm geometry .sigmgr 376x204+1226+482
+wm geometry .sigmgr 376x204+1222+482
+wm geometry .sigmgr 376x204+1222+478
+wm geometry .sigmgr 376x204+1219+478
+wm geometry .sigmgr 376x204+1222+475
+wm geometry .sigmgr 376x204+1225+471
+wm geometry .sigmgr 376x204+1229+461
+wm geometry .sigmgr 376x204+1232+457
+wm geometry .sigmgr 376x204+1232+450
+wm geometry .sigmgr 376x204+1239+440
+Graph:DSel
+Graph:Select Graph0
+Graph axisconfig {AxisY(1,0) AxisX(0)} -range {{3.2984111307605 -0.76030496204886} {263.406n 274.461n}}
+Graph:DSel
+Graph axisconfig {AxisY(1,0) AxisX(0)} -range {{3.5131580139779 -0.45965932554446} {266.44678305n 267.59702989n}}
+Graph:DSel
+Graph itemselect Signal1 add
+# Signal1
+Graph itemselect Signal1 add
+# Signal1
+Graph itemselect Signal1 rem
+Graph delsignal Signal1
+Graph:DSel
+pf:read PF:1 top_tb.th.amstop.v(tmid)
+# WF:1:2
+Graph addsignal WF:1:2 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal2
+wm geometry .sigmgr 376x204+2+26
+wm geometry .sigmgr._PF:1 208x315+2+26
+wm geometry .sigmgr 376x204+1239+440
+wm geometry .sigmgr._PF:1 208x315+958+463
+wm geometry .sigmgr._PF:1 208x315+2+26
+wm geometry .sigmgr._PF:1 208x315+958+463

@@ -1,6 +1,6 @@
 freqdivider.va
 freqmeasure.vams
-top.vams
+cpll180nm.vams
 vclkgen.va
 vpulse.va
 vramp.va

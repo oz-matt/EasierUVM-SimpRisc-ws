@@ -8,7 +8,7 @@
 //
 // Version:   1.0
 //
-// Code created by Easier UVM Code Generator version 2017-01-19 on Sun Oct 18 10:14:34 2020
+// Code created by Easier UVM Code Generator version 2017-01-19 on Tue Nov  3 06:00:00 2020
 //=============================================================================
 // Description: Test Harness
 //=============================================================================
@@ -24,6 +24,8 @@ module top_th;
   	logic clk = 0;
   	logic nreset;
   	
+  	real frq, mag, vra, rdy;
+  	
   	byte ram[int];
   
   	always #10 clk = ~clk;
@@ -33,6 +35,10 @@ module top_th;
   		nreset = 0;         // Active low reset in this example
   		#15 nreset = 1;
   	end
+  	
+  	
+  	cpll180nm cpll(frq, mag, vra, rdy);
+  	
   
   	assign insgen_if_0.clk = clk;
   	assign insgen_if_0.nreset = nreset;
@@ -40,6 +46,7 @@ module top_th;
   	assign memw_if_0.nreset = nreset;
   
   	always @(posedge clk) begin
+  		$display("freq: %e, mag: %e, vramp: %e, rdy: %e", frq, mag, vra, rdy);
   		if(memw_if_0.mem_rw) begin
   			if(memw_if_0.mem_wstrobe & 'b0001) ram[memw_if_0.out_addr_bus] <= memw_if_0.out_data_bus[7:0];
   			if(memw_if_0.mem_wstrobe & 'b0010) ram[memw_if_0.out_addr_bus + 1] <= memw_if_0.out_data_bus[15:8];

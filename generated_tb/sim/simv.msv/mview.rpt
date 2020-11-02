@@ -3,5 +3,5 @@
 ; For Spice: case s by default
 ; Lists of modules: Verilog Spice Verilog-A Adfmi
 ; Verilog Top Module(s)
-2 top top_tb
+1 top_tb
 ;done
