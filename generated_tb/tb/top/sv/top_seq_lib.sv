@@ -8,7 +8,7 @@
 //
 // Version:   1.0
 //
-// Code created by Easier UVM Code Generator version 2017-01-19 on Tue Nov  3 06:00:00 2020
+// Code created by Easier UVM Code Generator version 2017-01-19 on Mon Nov  9 03:41:30 2020
 //=============================================================================
 // Description: Sequence for top
 //=============================================================================
@@ -134,6 +134,13 @@ task vseq_riseq::body();
 
 	int rx_fill_ctr = 0;
 	
+	while (asmutils::check_pll_rdy() == 0) begin
+		$display("waiting for cpll. . .");
+		#1;
+	end
+	
+	$display("cpll done!");
+	
 	repeat(32)
 		begin
 		fill_rxs_seq seq1;
@@ -157,8 +164,6 @@ task vseq_riseq::body();
 				seq2.set_starting_phase( get_starting_phase() );
 				seq2.start(m_insgen_agent.m_sequencer, this);
 	end
-
-	`uvm_info("ANALOG", $sformatf("Starting PLL Confirmation at %d", $time), UVM_MEDIUM);
 
 	`uvm_info(get_type_name(), "Default sequence completed", UVM_HIGH)
 endtask : body
