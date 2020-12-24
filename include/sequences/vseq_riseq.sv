@@ -22,8 +22,8 @@ task vseq_riseq::body();
 
 	int rx_fill_ctr = 0;
 	
-	while (asmutils::check_pll_rdy() == 0) begin
-		$display("waiting for cpll. . .");
+	while (m_config.m_insgen_config.vif.pllrdy == 0) begin
+		//$display("waiting for cpll. . .");
 		#1;
 	end
 	

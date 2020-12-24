@@ -17,6 +17,7 @@
 	cpll180nm cpll(frq, mag, vra, rdy);
 	
 
+	assign insgen_if_0.pllrdy = rdy;
 	assign insgen_if_0.clk = clk;
 	assign insgen_if_0.nreset = nreset;
 	assign memw_if_0.clk = clk;

@@ -5,6 +5,7 @@ trans_var  = rand logic[31:0] adc_data;
 trans_var = instruction_base_si ibsi;
 
 if_port    = logic clk;
+if_port    = real pllrdy;
 if_port    = logic nreset;
 if_port    = logic[31:0] instr_bus;
 if_port    = logic[31:0] pc_out;

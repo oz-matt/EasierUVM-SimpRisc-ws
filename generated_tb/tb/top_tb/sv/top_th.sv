@@ -8,7 +8,7 @@
 //
 // Version:   1.0
 //
-// Code created by Easier UVM Code Generator version 2017-01-19 on Mon Nov  9 03:41:30 2020
+// Code created by Easier UVM Code Generator version 2017-01-19 on Thu Dec 24 10:48:36 2020
 //=============================================================================
 // Description: Test Harness
 //=============================================================================
@@ -40,6 +40,7 @@ module top_th;
   	cpll180nm cpll(frq, mag, vra, rdy);
   	
   
+  	assign insgen_if_0.pllrdy = rdy;
   	assign insgen_if_0.clk = clk;
   	assign insgen_if_0.nreset = nreset;
   	assign memw_if_0.clk = clk;

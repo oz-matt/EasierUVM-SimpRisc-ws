@@ -89,8 +89,4 @@ class asmutils;
 		
 	endfunction
 	
-	static function real check_pll_rdy();
-		return top_tb.th.rdy;
-	endfunction
-	
 endclass

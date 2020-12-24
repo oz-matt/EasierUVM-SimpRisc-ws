@@ -81,8 +81,10 @@ integer i, k, j, k2, rdy2, rdyi, ti=0;
 		o = f;
 		m = mi;
 		vcs = V(vctrl, gnd);
+		
+		$display("freq s: %e, mag : %e, vramp: %e", freq, maxv, vcswr);
 		if(abs(V(vctrl, gnd) - lastvc) < 0.0002) begin
-			$display("v+");
+			//$display("v+");
 			vctr = vctr + 1;
 			if(vctr > 9) begin
 				outrdy = 1;
@@ -90,7 +92,7 @@ integer i, k, j, k2, rdy2, rdyi, ti=0;
 			end
 		end
 		else begin 
-			$display("reset");
+			//$display("reset");
 			vctr = 0;
 		end
 		lastvc = V(vctrl, gnd);
