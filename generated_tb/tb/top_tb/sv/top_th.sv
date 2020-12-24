@@ -8,7 +8,7 @@
 //
 // Version:   1.0
 //
-// Code created by Easier UVM Code Generator version 2017-01-19 on Thu Dec 24 10:48:36 2020
+// Code created by Easier UVM Code Generator version 2017-01-19 on Fri Dec 25 03:04:36 2020
 //=============================================================================
 // Description: Test Harness
 //=============================================================================
@@ -41,6 +41,9 @@ module top_th;
   	
   
   	assign insgen_if_0.pllrdy = rdy;
+  	assign insgen_if_0.pllfreq = frq;
+  	assign insgen_if_0.pllmag = mag;
+  	assign insgen_if_0.pllvra = vra;
   	assign insgen_if_0.clk = clk;
   	assign insgen_if_0.nreset = nreset;
   	assign memw_if_0.clk = clk;

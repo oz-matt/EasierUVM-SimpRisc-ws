@@ -8,7 +8,7 @@
 //
 // Version:   1.0
 //
-// Code created by Easier UVM Code Generator version 2017-01-19 on Thu Dec 24 10:48:36 2020
+// Code created by Easier UVM Code Generator version 2017-01-19 on Fri Dec 25 03:04:36 2020
 //=============================================================================
 // Description: Signal interface for agent insgen
 //=============================================================================
@@ -26,6 +26,9 @@ interface insgen_if();
 
   logic clk;
   real pllrdy;
+  real pllfreq;
+  real pllmag;
+  real pllvra;
   logic nreset;
   logic[31:0] instr_bus;
   logic[31:0] pc_out;

@@ -6,6 +6,9 @@ trans_var = instruction_base_si ibsi;
 
 if_port    = logic clk;
 if_port    = real pllrdy;
+if_port    = real pllfreq;
+if_port    = real pllmag;
+if_port    = real pllvra;
 if_port    = logic nreset;
 if_port    = logic[31:0] instr_bus;
 if_port    = logic[31:0] pc_out;

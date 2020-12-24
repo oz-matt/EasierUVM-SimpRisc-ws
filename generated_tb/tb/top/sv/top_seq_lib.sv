@@ -8,7 +8,7 @@
 //
 // Version:   1.0
 //
-// Code created by Easier UVM Code Generator version 2017-01-19 on Thu Dec 24 10:48:36 2020
+// Code created by Easier UVM Code Generator version 2017-01-19 on Fri Dec 25 03:04:36 2020
 //=============================================================================
 // Description: Sequence for top
 //=============================================================================
@@ -136,6 +136,11 @@ task vseq_riseq::body();
 	
 	while (m_config.m_insgen_config.vif.pllrdy == 0) begin
 		//$display("waiting for cpll. . .");
+		$display("freq s: %e, mag : %e, vramp: %e", 
+			m_config.m_insgen_config.vif.pllfreq, 
+			m_config.m_insgen_config.vif.pllmag, 
+			m_config.m_insgen_config.vif.pllvra);
+		
 		#1;
 	end
 	

@@ -18,6 +18,9 @@
 	
 
 	assign insgen_if_0.pllrdy = rdy;
+	assign insgen_if_0.pllfreq = frq;
+	assign insgen_if_0.pllmag = mag;
+	assign insgen_if_0.pllvra = vra;
 	assign insgen_if_0.clk = clk;
 	assign insgen_if_0.nreset = nreset;
 	assign memw_if_0.clk = clk;

@@ -24,6 +24,11 @@ task vseq_riseq::body();
 	
 	while (m_config.m_insgen_config.vif.pllrdy == 0) begin
 		//$display("waiting for cpll. . .");
+		$display("freq s: %e, mag : %e, vramp: %e", 
+			m_config.m_insgen_config.vif.pllfreq, 
+			m_config.m_insgen_config.vif.pllmag, 
+			m_config.m_insgen_config.vif.pllvra);
+		
 		#1;
 	end
 	
