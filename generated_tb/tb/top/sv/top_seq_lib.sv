@@ -8,7 +8,7 @@
 //
 // Version:   1.0
 //
-// Code created by Easier UVM Code Generator version 2017-01-19 on Fri Dec 25 03:04:36 2020
+// Code created by Easier UVM Code Generator version 2017-01-19 on Mon Dec 28 10:02:32 2020
 //=============================================================================
 // Description: Sequence for top
 //=============================================================================
@@ -144,9 +144,15 @@ task vseq_riseq::body();
 		#1;
 	end
 	
-	$display("cpll done!");
+	$display("************************************");
+	$display("|                                  |");
+	$display("|                                  |");
+	$display("|          CPLL COMPLETED          |");
+	$display("|                                  |");
+	$display("|                                  |");
+	$display("************************************");
 	
-	repeat(32)
+	/*repeat(32)
 		begin
 		fill_rxs_seq seq1;
 		seq1 = fill_rxs_seq::type_id::create("seq1");
@@ -168,7 +174,7 @@ task vseq_riseq::body();
 				seq2.m_config = m_insgen_agent.m_config;
 				seq2.set_starting_phase( get_starting_phase() );
 				seq2.start(m_insgen_agent.m_sequencer, this);
-	end
+	end*/
 
 	`uvm_info(get_type_name(), "Default sequence completed", UVM_HIGH)
 endtask : body

@@ -275,12 +275,12 @@ CellNameToCase =
 PinNameToCase = 
 [InteractiveDebug]
 tbvLocalWatchArrayLimit = 50
-Watch_0 = 150 80 80 0 
-Watch_1 = 150 80 80 416 
-Watch_2 = 150 80 80 200 
-Watch_3 = 150 80 80 200 
-Watch_4 = 150 80 80 200 
-Watch_5 = 150 80 80 200 
+Watch_0 = 150 80 80 0
+Watch_1 = 150 80 80 416
+Watch_2 = 150 80 80 200
+Watch_3 = 150 80 80 200
+Watch_4 = 150 80 80 200
+Watch_5 = 150 80 80 200
 [Language]
 EditWindow_Font = COURIER12
 Background = ID_WHITE
@@ -363,8 +363,8 @@ qWaveSignalDialog = 558,204,800,479
 QwQuestionMsgDlg = 796,406,324,114
 importDesignForm = 846,232,634,611
 QwFileDialogT = 667,366,590,325
-QwWarnMsgDlg = 686,648,600,250
-QwUserAskDlg = 856,764,324,134
+QwWarnMsgDlg = 688,648,600,250
+QwUserAskDlg = 860,748,324,130
 [Relationship]
 hideRecursiceNode = FALSE
 [Session Cache]
@@ -441,12 +441,12 @@ SimMode = TRUE
 interactiveDebugging = TRUE
 KeepBreakPoints = FALSE
 vcs_svPath = ./simv
-vcs_svOption = +ntb_random_seed=1 -a simv.log +UVM_TESTNAME=top_test +UVM_VERBOSITY=UVM_MEDIUM + + +UVM_TR_RECORD +UVM_LOG_RECORD +UVM_VERDI_TRACE
+vcs_svOption =  
 uvmAware = TRUE
 smartlog = FALSE
 [SimulationPlus2]
-eventDumpUnfinish = FALSE
 dumpPowerRoot = FALSE
+eventDumpUnfinish = FALSE
 [Source]
 wordWrapOn = TRUE
 viewReuse = TRUE
@@ -1157,7 +1157,7 @@ StopAfterCompileOption = -tcl
 [turboSchema_Printer_Options]
 Orientation = Landscape
 [turbo_library]
-bdb_load_scope
+bdb_load_scope = 
 [verisity]
 TPLanguage = Verilog
 TPName = "Verisity SpeXsim"

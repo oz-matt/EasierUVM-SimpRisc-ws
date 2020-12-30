@@ -181,8 +181,8 @@ module cpu (
 					mif.mem_rw = 1; //umem controller uses instruction.funct3 to determine write width
 					out_addr_bus = mif.rx[instruction.rs1] + `SIGN_EXTEND32(12, instruction.s_imm);
 					gbuf = mif.rx[instruction.rs2];
-									mem_wstrobe = 4'b0001;
-									out_data_bus = {24'h000000, gbuf[7:0]};
+					mem_wstrobe = 4'b0001;
+					out_data_bus = {24'h000000, gbuf[7:0]};
 				end
 				
 				ADDI: begin

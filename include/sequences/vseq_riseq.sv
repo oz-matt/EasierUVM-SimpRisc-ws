@@ -40,7 +40,7 @@ task vseq_riseq::body();
 	$display("|                                  |");
 	$display("************************************");
 	
-	repeat(32)
+	/*repeat(32)
 		begin
 		fill_rxs_seq seq1;
 		seq1 = fill_rxs_seq::type_id::create("seq1");
@@ -62,7 +62,7 @@ task vseq_riseq::body();
 				seq2.m_config = m_insgen_agent.m_config;
 				seq2.set_starting_phase( get_starting_phase() );
 				seq2.start(m_insgen_agent.m_sequencer, this);
-	end
+	end*/
 
 	`uvm_info(get_type_name(), "Default sequence completed", UVM_HIGH)
 endtask : body
