@@ -8,7 +8,7 @@ reg clk;
 	integer i;
 
 initial clk = 0;
-always #1 clk <= !clk;
+always #1 clk <= !clk;  
 
 	voltage probe_freq;
 freqmeasure fm(ondc, gnd, s, clk, maxv, , vctrl, vcswr);

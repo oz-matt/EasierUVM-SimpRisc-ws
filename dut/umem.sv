@@ -1,7 +1,7 @@
 
 module umem(masterif.umem io,
 						aximem.mem mem,
-						wire logic[2:0] insf3);
+						wire[2:0] insf3);
 	
 	//byte imemory[int]; //memory space
 	

@@ -55,22 +55,6 @@ struct	_vcs_dpi_cpu_output_t	{
 
 
 
- extern SV_STRING verdi_dump_resource_value(/* INPUT */const char* rsrc);
-
- extern SV_STRING verdi_dump_component_interface(/* INPUT */const char* var_name, /* OUTPUT */int *ary_size, /* OUTPUT */SV_STRING *class_name, /* OUTPUT */SV_STRING *vif_var_name);
-
- extern SV_STRING verdi_upper_scope(/* INPUT */const char* inst_scope_name);
-
- extern void verdi_dhier_interface(/* INPUT */const char* var_name);
-
- extern int pli_dhier_begin_event(/* INPUT */const char* streamN);
-
- extern void pli_dhier_set_label(/* INPUT */int handle, /* INPUT */const char* label);
-
- extern void pli_dhier_add_attribute(/* INPUT */int handle, /* INPUT */const char* attr_name, /* INPUT */const char* attr_value);
-
- extern void pli_dhier_end_event(/* INPUT */int handle);
-
  extern int uvm_hdl_check_path(/* INPUT */const char* path);
 
  extern int uvm_hdl_deposit(/* INPUT */const char* path, const /* INPUT */svLogicVecVal *value);
@@ -83,7 +67,7 @@ struct	_vcs_dpi_cpu_output_t	{
 
  extern int uvm_hdl_read(/* INPUT */const char* path, /* OUTPUT */svLogicVecVal *value);
 
- extern SV_STRING uvm_dpi_get_next_arg_c(/* INPUT */int init);
+ extern SV_STRING uvm_dpi_get_next_arg_c();
 
  extern SV_STRING uvm_dpi_get_tool_name_c();
 
@@ -101,12 +85,10 @@ struct	_vcs_dpi_cpu_output_t	{
 
  extern SV_STRING uvm_glob_to_re(/* INPUT */const char* glob);
 
- extern void m__uvm_report_dpi(/* INPUT */int severity, /* INPUT */const char* id, /* INPUT */const char* message, /* INPUT */int verbosity, /* INPUT */const char* filename, /* INPUT */int line);
-
  extern void get_reference_output(/* INPUT */insgen_pkt_t *ip);
 
  extern void cpu_resolve(/* INPUT */cpu_output_t *t);
-void SdisableFork();
+void Wterminate();
 
 #ifdef __cplusplus
 }
