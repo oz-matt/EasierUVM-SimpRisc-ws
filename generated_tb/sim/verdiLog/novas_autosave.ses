@@ -10,7 +10,9 @@ FSDBMsgShow = 0
 AnnotationShow = 0
 powerDumped = 0
 [hb]
-viewport = 0 25 1916 851 634 331 304 1914
+postSimFile = /home/iclab608/EasierUVM-simprisc-ws/generated_tb/sim/novas.fsdb
+syncTime = 0
+viewport = 0 28 1764 725 581 186 267 1762
 interactiveMode = False
 viewType = Source
 simulatorMode = False
@@ -29,3 +31,25 @@ leadingZero = False
 signalPane = False
 sdfCheckUndef = FALSE
 simFlow = FALSE
+[nMemoryManager]
+FsdbFile = /home/iclab608/EasierUVM-simprisc-ws/generated_tb/sim/novas.fsdb
+UserActionNum = 0
+nMemWindowNum = 0
+[wave.0]
+viewPort = 0 28 1764 365 166 65
+SessionFile = /home/iclab608/EasierUVM-simprisc-ws/generated_tb/sim/verdiLog/novas_autosave.ses.wave.0
+displayGrid = FALSE
+hierarchicalName = FALSE
+snap = TRUE
+displayLeadingZeros = FALSE
+fixDelta = FALSE
+displayCursorMarker = FALSE
+autoUpdate = FALSE
+highlightGlitchs = FALSE
+waveformSync = FALSE
+displayErrors = TRUE
+displayMsgSymbols = TRUE
+showMsgDescriptions = TRUE
+autoFit = FALSE
+displayDeltaY = FALSE
+centerCursor = FALSE

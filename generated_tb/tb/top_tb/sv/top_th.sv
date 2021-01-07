@@ -8,7 +8,7 @@
 //
 // Version:   1.0
 //
-// Code created by Easier UVM Code Generator version 2017-01-19 on Tue Jan  5 04:18:25 2021
+// Code created by Easier UVM Code Generator version 2017-01-19 on Fri Jan  8 02:10:48 2021
 //=============================================================================
 // Description: Test Harness
 //=============================================================================
@@ -50,7 +50,6 @@ module top_th;
   	assign memw_if_0.nreset = nreset;
   
   	always @(posedge clk) begin
-  		$display("freq: %e, mag: %e, vramp: %e, rdy: %e", frq, mag, vra, rdy);
   		if(memw_if_0.mem_rw) begin
   			if(memw_if_0.mem_wstrobe & 'b0001) ram[memw_if_0.out_addr_bus] <= memw_if_0.out_data_bus[7:0];
   			if(memw_if_0.mem_wstrobe & 'b0010) ram[memw_if_0.out_addr_bus + 1] <= memw_if_0.out_data_bus[15:8];

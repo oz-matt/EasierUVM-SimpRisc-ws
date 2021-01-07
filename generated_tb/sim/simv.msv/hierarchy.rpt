@@ -5,9 +5,11 @@
 vcs_paramclassrepository(vcs_paramclassrepository)
 _vcs_mirror_class_package(_vcs_mirror_class_package)
 _vcs_DPI_package(_vcs_DPI_package)
-_vcs_unit__1996613151(_vcs_unit__1996613151)
+_vcs_unit__3668485489(_vcs_unit__3668485489)
 std(std)
 uvm_pkg(uvm_pkg)
+_vcs_msglog(_vcs_msglog)
+uvm_custom_install_recording(uvm_custom_install_recording)
 vramp{vramp}
 diode_simple{diode_simple}
 res_mod{res_mod}

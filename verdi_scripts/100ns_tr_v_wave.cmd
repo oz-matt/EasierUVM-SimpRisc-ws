@@ -71,7 +71,7 @@ evbHierTree -win $_evbWnd4 -select \
            "\$trans_root/uvm_test_top/m_env/m_insgen_agent/m_sequencer"
 evbHierTree -win $_evbWnd4 -click2
 evbOpenFSDB -win $_evbWnd4 -f \
-           "/home/disk/EasierUVM-SimpRisc-ws/generated_tb/sim/novas.fsdb"
+           "/home/iclab608/EasierUVM-SimpRisc-ws/generated_tb/sim/novas.fsdb"
 evbHierTree -win $_evbWnd4 -select \
            "\$trans_root/uvm_test_top/m_env/m_insgen_agent/m_sequencer"
 evbHierTree -win $_evbWnd4 -click2
