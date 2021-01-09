@@ -1,6 +1,6 @@
 @verdi rc file Version 1.0
 [General]
-VerdiVersion = Verdi3_L-2016.06-1
+VerdiVersion = Verdi3_I-2014.03-SP2
 [KeyNote]
 Line1 = Automatic Backup 0
 [TestBench]
@@ -8,15 +8,19 @@ ConstrViewShow = 0
 InherViewShow = 0
 FSDBMsgShow = 0
 AnnotationShow = 0
-powerDumped = 0
+[ba]
+options = "-incr -clockSkew 0 -loopUnroll 0 -bboxEmptyModule 0 -bboxIgnoreProtected 0 -cellModel 0 -cont_ba_err 0 "
 [hb]
 postSimFile = /home/iclab608/EasierUVM-simprisc-ws/generated_tb/sim/novas.fsdb
 syncTime = 0
-viewport = 0 28 1764 725 581 186 267 1762
+viewport = 0 28 1764 725 581 443 263 1762
+activeNode = "soc_top"
+activeScope = "soc_top"
+activeFile = "../dut/soc_top.sv"
 interactiveMode = False
 viewType = Source
 simulatorMode = False
-sourceBeginLine = 0
+sourceBeginLine = 1
 baMode = False
 srcLineNum = True
 syncSignal = False
@@ -29,14 +33,24 @@ DnDtraceCrossHierOnly = True
 traceIncTopPort = False
 leadingZero = False
 signalPane = False
+Scope1 = "soc_top"
+multipleSelection = 1 1 2 0 0
 sdfCheckUndef = FALSE
-simFlow = FALSE
+[hb.sourceTab.1]
+scope = soc_top
+File = /home/iclab608/EasierUVM-simprisc-ws/generated_tb/dut/soc_top.sv
+Line = 2
+[imp.design1]
+dbEnum =  oh
+invokeDir = /home/iclab608/EasierUVM-simprisc-ws/generated_tb/sim
+design = DebussyLib
+hostCommand = hostCommand -f verdi_files.f -sv
 [nMemoryManager]
 FsdbFile = /home/iclab608/EasierUVM-simprisc-ws/generated_tb/sim/novas.fsdb
 UserActionNum = 0
 nMemWindowNum = 0
 [wave.0]
-viewPort = 0 28 1764 365 166 65
+viewPort = -9 410 1759 457 166 65
 SessionFile = /home/iclab608/EasierUVM-simprisc-ws/generated_tb/sim/verdiLog/novas_autosave.ses.wave.0
 displayGrid = FALSE
 hierarchicalName = FALSE
