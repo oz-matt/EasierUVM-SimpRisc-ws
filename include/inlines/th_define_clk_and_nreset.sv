@@ -5,12 +5,14 @@
 	
 	byte ram[int];
 
-	always #10 clk = ~clk;
-
-	initial
-	begin
-		nreset = 0;         // Active low reset in this example
-		#15 nreset = 1;
+	//always #10 clk = ~clk;
+  
+  	initial
+  	begin
+  		nreset = 0;         // Active low reset in this example
+  		#15 nreset = 1;
+	  	wait(rdy);
+	  	forever #10 clk = ~clk;
 	end
 	
 	

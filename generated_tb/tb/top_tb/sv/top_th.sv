@@ -8,7 +8,7 @@
 //
 // Version:   1.0
 //
-// Code created by Easier UVM Code Generator version 2017-01-19 on Sat Jan  9 08:45:48 2021
+// Code created by Easier UVM Code Generator version 2017-01-19 on Sun Jan 10 00:41:38 2021
 //=============================================================================
 // Description: Test Harness
 //=============================================================================
@@ -28,12 +28,14 @@ module top_th;
   	
   	byte ram[int];
   
-  	always #10 clk = ~clk;
-  
-  	initial
-  	begin
-  		nreset = 0;         // Active low reset in this example
-  		#15 nreset = 1;
+  	//always #10 clk = ~clk;
+    
+    	initial
+    	begin
+    		nreset = 0;         // Active low reset in this example
+    		#15 nreset = 1;
+  	  	wait(rdy);
+  	  	forever #10 clk = ~clk;
   	end
   	
   	

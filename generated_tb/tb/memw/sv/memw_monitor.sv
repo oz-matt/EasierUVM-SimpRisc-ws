@@ -8,7 +8,7 @@
 //
 // Version:   1.0
 //
-// Code created by Easier UVM Code Generator version 2017-01-19 on Sat Jan  9 08:45:48 2021
+// Code created by Easier UVM Code Generator version 2017-01-19 on Sun Jan 10 00:41:38 2021
 //=============================================================================
 // Description: Monitor for memw
 //=============================================================================
@@ -58,7 +58,7 @@ endtask : run_phase
 // Start of inlined include file generated_tb/tb/include/inlines/memw_do_mon.sv
 task memw_monitor::do_mon;
 	wait(vif.nreset);
-	/*forever @(posedge vif.memclk)
+	forever @(posedge vif.memclk)
 	begin
 		#1;
 		//if (vif.nreset) begin
@@ -85,7 +85,7 @@ task memw_monitor::do_mon;
 			
 		analysis_port.write(m_trans);
 	//end
-	end*/
+	end
 endtask// End of inlined include file
 
 // You can insert code here by setting monitor_inc_after_class in file memw.tpl
