@@ -1,5 +1,5 @@
 task memw_monitor::do_mon;
-	wait(vif.nreset);
+	/*wait(vif.nreset);
 	forever @(posedge vif.memclk)
 	begin
 		#1;
@@ -27,5 +27,5 @@ task memw_monitor::do_mon;
 			
 		analysis_port.write(m_trans);
 	//end
-	end
+	end*/
 endtask

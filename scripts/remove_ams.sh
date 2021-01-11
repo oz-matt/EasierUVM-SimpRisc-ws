@@ -1,7 +1,7 @@
 #!/bin/sh
 cd ../generated_tb/sim;
 rm -rf csrc/ simv.vdb/ simv.daidir/ simv;
-vcs -ams +ad -ams_discipline logic +systemverilogext+.sv +define+USEAMS -sverilog -cm line+cond+fsm -covg_dump_range +acc +vpi +error+20 -lca -debug_access+all -assert enable_diag \
+vcs +systemverilogext+.sv -sverilog -cm line+cond+fsm -covg_dump_range +acc +vpi +error+20 -lca -debug_access+all -assert enable_diag \
 		+define+ASSERT_ON -y $VCS_HOME/packages/sva +libext+.v \
 		+incdir+$VCS_HOME/packages/sva -P /opt/synopsys/Verdi_2014_03/share/PLI/VCS/LINUX64/novas.tab \
 								/opt/synopsys/Verdi_2014_03/share/PLI/VCS/LINUX64/pli.a  -load libnovas.so:FSDBDumpCmd -full64 +libext+.v+.h+.vh+.vlib \
@@ -16,8 +16,6 @@ vcs -ams +ad -ams_discipline logic +systemverilogext+.sv +define+USEAMS -sverilo
 +incdir+../ref_model_cpp/ \
 +incdir+../ref_model_cpp/ins/ \
 -F ../dut/files.f \
--F ../dut/ams_src/files.f \
--F ../dut/ams_src/ams-models/files.f \
 ../tb/include/verif_pkg.sv \
 ../tb/insgen/sv/insgen_pkg.sv \
 ../tb/insgen/sv/insgen_if.sv \
