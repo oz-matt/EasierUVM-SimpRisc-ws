@@ -12,21 +12,4 @@
 ../dut/sindrv.sv
 ../dut/design.sv
 ../dut/soc_top.sv
-../dut/ams_src/freqdivider.va
-../dut/ams_src/freqmeasure.vams
-../dut/ams_src/cpll180nm.vams
-../dut/ams_src/vclkgen.va
-../dut/ams_src/vpulse.va
-../dut/ams_src/vramp.va
-../dut/ams_src/vsrc.vams
-../dut/ams_src/ams-models/and_gate.va
-../dut/ams_src/ams-models/cap.va
-../dut/ams_src/ams-models/d_ff_r.va
-../dut/ams_src/ams-models/diode_simple.va
-../dut/ams_src/ams-models/ind.va
-../dut/ams_src/ams-models/mos_level1.va
-../dut/ams_src/ams-models/mos_level1p.va
-../dut/ams_src/ams-models/res.va
-../dut/ams_src/ams-models/res-mod.va
-../dut/ams_src/ams-models/varactor.va
 

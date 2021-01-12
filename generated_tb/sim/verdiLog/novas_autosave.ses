@@ -13,7 +13,7 @@ options = "-incr -clockSkew 0 -loopUnroll 0 -bboxEmptyModule 0 -bboxIgnoreProtec
 [hb]
 postSimFile = /home/iclab608/EasierUVM-simprisc-ws/generated_tb/sim/novas.fsdb
 syncTime = 0
-viewport = 0 28 1764 725 581 443 263 1762
+viewport = 0 28 1764 725 581 300 237 1762
 activeNode = "soc_top"
 activeScope = "soc_top"
 activeFile = "../dut/soc_top.sv"
@@ -34,7 +34,6 @@ traceIncTopPort = False
 leadingZero = False
 signalPane = False
 Scope1 = "soc_top"
-multipleSelection = 1 1 2 0 0
 sdfCheckUndef = FALSE
 [hb.sourceTab.1]
 scope = soc_top
@@ -50,7 +49,7 @@ FsdbFile = /home/iclab608/EasierUVM-simprisc-ws/generated_tb/sim/novas.fsdb
 UserActionNum = 0
 nMemWindowNum = 0
 [wave.0]
-viewPort = -9 410 1759 457 166 65
+viewPort = 0 30 1764 215 166 65
 SessionFile = /home/iclab608/EasierUVM-simprisc-ws/generated_tb/sim/verdiLog/novas_autosave.ses.wave.0
 displayGrid = FALSE
 hierarchicalName = FALSE

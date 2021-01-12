@@ -294,8 +294,8 @@ nWaveOpenFsdbDirHistory = /home/iclab608/EasierUVM-simprisc-ws/generated_tb/sim/
 .fsdb.alias\"" "\"/home/iclab608/EasierUVM-simprisc-ws/generated_tb/sim\"",/home/iclab608/EasierUVM-simprisc-ws/generated_tb/sim,
 [Form]
 version = Verdi3_I-2014.03-SP2
-wave/getSignal.fm = 100,100,800,479
 wave/openWFile.fm = 100,58,825,682
+wave/getSignal.fm = 100,100,800,479
 [General]
 autoSaveSession = FALSE
 TclAutoSource = 
@@ -759,7 +759,7 @@ connectTBrowserInContainer = TRUE
 SEQShowComparisonIcon = TRUE
 SEQAddDriverLoadInSameGroup = TRUE
 getSignalForm = 100 100 800 479 163 381 387 89
-viewPort = -9 410 1759 457 166 65
+viewPort = 0 30 1764 215 166 65
 signalSpacing = 5
 digitalSignalHeight = 15
 analogSignalHeight = 98
@@ -986,8 +986,8 @@ hierarchyDelimiter = /
 RecentFile1 = /home/iclab608/EasierUVM-simprisc-ws/generated_tb/sim/novas.fsdb
 RecentFile2 = /home/iclab608/EasierUVM-simprisc-ws/generated_tb/sim/inter.fsdb
 RecentFile3 = /home/iclab608/EasierUVM-simprisc-ws/generated_tb/sim/nova.fsdb
-RecentFile4 = "/home/iclab608/EasierUVM-simprisc-ws/generated_tb/sim/novas.fsdb"
-RecentFile5 = "/home/disk/EasierUVM-SimpRisc-ws/generated_tb/sim/inter.fsdb"
+RecentFile4 = /home/iclab608/EasierUVM-simprisc-ws/generated_tb/sim/novas.fsdb
+RecentFile5 = /home/disk/EasierUVM-SimpRisc-ws/generated_tb/sim/inter.fsdb
 open_file_time_range = FALSE
 value_window_aligment = Right
 signal_window_alignment = Auto
@@ -1281,7 +1281,7 @@ AddImportArgument = FALSE
 LineBreakWithScope = TRUE
 StopAfterCompileOption = -s
 [wave.0]
-viewPort = -9 410 1759 457 166 65
+viewPort = 0 30 1764 215 166 65
 [wave.1]
 viewPort = 127 219 960 332 100 65
 [wave.2]

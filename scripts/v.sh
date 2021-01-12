@@ -1,3 +1,3 @@
 #!/bin/sh
 cd ../generated_tb/sim;
-verdi -f verdi_files.f -sv -ba -ssf novas.fsdb
+./simv +ntb_random_seed=1 +UVM_TESTNAME=test_rand_ins +UVM_VERBOSITY=UVM_MEDIUM +UVM_TR_RECORD +UVM_LOG_RECORD +UVM_VERDI_TRACE -verdi 
