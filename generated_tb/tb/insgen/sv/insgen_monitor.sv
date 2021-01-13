@@ -8,7 +8,7 @@
 //
 // Version:   1.0
 //
-// Code created by Easier UVM Code Generator version 2017-01-19 on Wed Jan 13 00:50:24 2021
+// Code created by Easier UVM Code Generator version 2017-01-19 on Wed Jan 13 18:14:59 2021
 //=============================================================================
 // Description: Monitor for insgen
 //=============================================================================
@@ -57,16 +57,15 @@ endtask : run_phase
 
 // Start of inlined include file generated_tb/tb/include/inlines/insgen_monitor_inc.sv
 task insgen_monitor::do_mon;
-	/*wait(vif.nreset);
-	forever  @(posedge vif.clk) begin
-		#1;
-		m_trans.rand_instruction = vif.instr_bus;
-		m_trans.adc_data = vif.adc_in;
-		analysis_port.write(m_trans);
-		`uvm_info(get_type_name(), $sformatf("ins: %X, adc: %X", vif.instr_bus, vif.adc_in), UVM_MEDIUM);
-	end*/
-endtask
-// End of inlined include file
+  wait(vif.nreset);
+  forever  @(posedge vif.clk) begin
+    #1;
+    m_trans.rand_instruction = vif.instr_bus;
+    m_trans.adc_data = vif.adc_in;
+    //analysis_port.write(m_trans);
+    `uvm_info(get_type_name(), $sformatf("ins: %X, adc: %X", m_trans.rand_instruction, m_trans.adc_data), UVM_MEDIUM);
+  end
+endtask// End of inlined include file
 
 // You can insert code here by setting monitor_inc_after_class in file insgen.tpl
 

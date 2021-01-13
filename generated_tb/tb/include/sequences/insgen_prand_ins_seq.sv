@@ -44,7 +44,7 @@ function void insgen_prand_ins_seq::mid_do(uvm_sequence_item this_item);
     end
   end
   else begin*/
-    `uvm_info("T", "RandIns", UVM_MEDIUM);
+    //`uvm_info("T", "RandIns", UVM_MEDIUM);
     pkt.ibsi = asmutils::get_rand_instruction(m_config.allowed_instr_types);
   //end
 endfunction : mid_do

@@ -8,7 +8,7 @@
 //
 // Version:   1.0
 //
-// Code created by Easier UVM Code Generator version 2017-01-19 on Wed Jan 13 00:50:24 2021
+// Code created by Easier UVM Code Generator version 2017-01-19 on Wed Jan 13 18:14:59 2021
 //=============================================================================
 // Description: Sequence for top
 //=============================================================================
@@ -158,7 +158,7 @@ task vseq_riseq::body();
   $display("Skipping AMS PLL");
     end
     `endif
-    /*
+    
   repeat(64)
     begin
     fill_rxs_seq seq1;
@@ -170,11 +170,10 @@ task vseq_riseq::body();
    //seq1.set_starting_phase( get_starting_phase() );
     seq1.start(m_insgen_agent.m_sequencer, this);
   end
-  */
+  
   repeat (m_seq_count)
   begin
         insgen_default_seq seq2;
-  `uvm_info(get_type_name(), "Default sequence completed", UVM_LOW);
         seq2 = insgen_default_seq::type_id::create("seq2");
         seq2.set_item_context(this, m_insgen_agent.m_sequencer);
         if ( !seq2.randomize() )
@@ -184,7 +183,6 @@ task vseq_riseq::body();
         seq2.start(m_insgen_agent.m_sequencer, this);
   end
 
-  `uvm_info(get_type_name(), "Default sequence completed", UVM_HIGH)
 endtask : body
 
 
