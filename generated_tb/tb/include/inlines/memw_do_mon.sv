@@ -2,7 +2,7 @@ task memw_monitor::do_mon;
   wait(vif.nreset);
   forever @(posedge vif.memclk)
   begin
-    #2;
+    #1;
     //if (vif.nreset) begin
     m_trans.out_data_bus = vif.out_data_bus;
     //m_trans.out_data_bus_port2 = vif.out_data_bus_port2;
@@ -23,9 +23,9 @@ task memw_monitor::do_mon;
     m_trans.out_addr_bus,
     m_trans.in_data_bus, 
     m_trans.mem_rw, 
-    m_trans.mem_wstrobe), UVM_MEDIUM)
+    m_trans.mem_wstrobe), UVM_HIGH)
       
-    //analysis_port.write(m_trans);
+    analysis_port.write(m_trans);
   //end
   end
 endtask

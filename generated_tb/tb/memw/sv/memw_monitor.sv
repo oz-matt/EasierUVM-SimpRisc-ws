@@ -8,7 +8,7 @@
 //
 // Version:   1.0
 //
-// Code created by Easier UVM Code Generator version 2017-01-19 on Wed Jan 13 18:45:17 2021
+// Code created by Easier UVM Code Generator version 2017-01-19 on Fri Jan 15 04:37:23 2021
 //=============================================================================
 // Description: Monitor for memw
 //=============================================================================
@@ -60,7 +60,7 @@ task memw_monitor::do_mon;
   wait(vif.nreset);
   forever @(posedge vif.memclk)
   begin
-    #2;
+    #1;
     //if (vif.nreset) begin
     m_trans.out_data_bus = vif.out_data_bus;
     //m_trans.out_data_bus_port2 = vif.out_data_bus_port2;
@@ -81,9 +81,9 @@ task memw_monitor::do_mon;
     m_trans.out_addr_bus,
     m_trans.in_data_bus, 
     m_trans.mem_rw, 
-    m_trans.mem_wstrobe), UVM_MEDIUM)
+    m_trans.mem_wstrobe), UVM_HIGH)
       
-    //analysis_port.write(m_trans);
+    analysis_port.write(m_trans);
   //end
   end
 endtask// End of inlined include file
